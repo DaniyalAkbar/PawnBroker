@@ -16,6 +16,7 @@ public class EmployeeCRUD {
     }
     Db d = new Db(context);
     public void addEmployee(employee u){
+
         String sql = "insert into employee(Fname, Lname) values('"+u.getFname()+"','"+u.getLname()+"')";
         d.executequery(sql);
     }

@@ -9,10 +9,10 @@ import com.example.www.model.users;
 import java.nio.file.attribute.UserPrincipalLookupService;
 import java.util.ArrayList;
 
-public class usercrud {
+public class UserCRUD {
     Context context;
 
-    public usercrud(Context context){
+    public UserCRUD(Context context){
         this.context=context;
     }
     Db d = new Db(context);
