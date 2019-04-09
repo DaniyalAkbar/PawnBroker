@@ -20,7 +20,7 @@ public class TestimonialCRUD {
         d.executequery(sql);
     }
     public void updateTestimonial(testimonial u){
-        String sql = "update testimonial set testimonial='"+u.getTestimonial()+"',UID='"+u.getUid()+"',adate='"+u.getAdate()+"' ";
+        String sql = "update testimonial set testimonial='"+u.getTestimonial()+"',UID='"+u.getUid()+"',adate='"+u.getAdate()+"' where TID='"+u.getTid()+"' ";
         d.executequery(sql);
     }
     public void deleteTestimonial(int TID){

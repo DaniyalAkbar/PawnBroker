@@ -28,7 +28,7 @@ public class AnnouncementsCRUD {
         d.executequery(sql);
     }
     public void update(announcements u){
-        String sql = "update announcements set announcements='"+u.getAnnouncement()+"',type='"+u.getType()+"',date='"+u.getDate()+"'";
+        String sql = "update announcements set announcements='"+u.getAnnouncement()+"',type='"+u.getType()+"',date='"+u.getDate()+"' where AID='"+u.getAID()+"' ";
         d.executequery(sql);
     }
     public void delete(int AID){

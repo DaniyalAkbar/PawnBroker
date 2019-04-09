@@ -107,6 +107,7 @@
         android:layout_marginLeft="66dp"
         android:layout_marginBottom="212dp"
         android:textSize="30dp"
-        android:text="ADD USER" />
+        android:textAllCaps="true"
+        android:text="Add User" />
 
 </RelativeLayout>

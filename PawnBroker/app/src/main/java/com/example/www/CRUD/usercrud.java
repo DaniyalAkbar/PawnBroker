@@ -9,20 +9,20 @@ import com.example.www.model.users;
 import java.nio.file.attribute.UserPrincipalLookupService;
 import java.util.ArrayList;
 
-public class usercrud {
+public class UserCRUD {
     Context context;
 
-    public usercrud(Context context){
+    public UserCRUD(Context context){
         this.context=context;
     }
     Db d = new Db(context);
     public void add(users u){
 
-        String sql = "insert into users(Fname,Lname,regdate) values('"+u.getFname()+"','"+u.getLname()+"','"+u.getRegDate()+"')";
+        String sql = "insert into users(Fname, Lname, regdate) values('"+u.getFname()+"','"+u.getLname()+"','"+u.getRegDate()+"')";
         d.executequery(sql);
     }
     public void update(users u){
-        String sql = "update users set fname='"+u.getFname()+"',lname='"+u.getLname()+"',regdate='"+u.getRegDate()+"'";
+        String sql = "update users set fname='"+u.getFname()+"',lname='"+u.getLname()+"',regdate='"+u.getRegDate()+"' where UID='"+u.getUID()+"' ";
         d.executequery(sql);
     }
     public  ArrayList<users> viewall(){

@@ -20,7 +20,7 @@ public class VisitationCRUD {
         d.executequery(sql);
     }
     public void updateVisitation(visitation u){
-        String sql = "update visitation set visitation='"+u.getVisitation()+"',empid='"+u.getEmpid()+"', vdate='"+u.getVdate()+"' ";
+        String sql = "update visitation set visitation='"+u.getVisitation()+"',empid='"+u.getEmpid()+"', vdate='"+u.getVdate()+"' where vid='"+u.getVid()+"' ";
         d.executequery(sql);
     }
     public void deleteVisitation(int vid){
