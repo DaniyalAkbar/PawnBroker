@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <Button
+        android:id="@+id/btnUsers"
+        android:layout_width="221dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+       android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:text="Users"
+        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteY="126dp" />
+
+    <Button
+        android:id="@+id/btnEmployee"
+        android:layout_width="221dp"
+        android:layout_below="@id/btnUsers"
+
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+
+        android:layout_marginTop="20dp"
+        android:text="Employees"
+        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteY="126dp" />
+
+    <Button
+        android:id="@+id/btnTransactions"
+        android:layout_width="221dp"
+
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/btnEmployee"
+        android:layout_marginTop="20dp"
+        android:text="Transactions"
+
+        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteY="126dp" />
+
+    <Button
+        android:id="@+id/btnPayments"
+        android:layout_width="221dp"
+
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnTransactions"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Payments"
+
+        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteY="126dp" />
+
+    <Button
+        android:id="@+id/btnTestimonial"
+        android:layout_width="221dp"
+
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnPayments"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="TestiMonials"
+
+        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteY="126dp" />
+    <Button
+        android:id="@+id/btnAnnouncments"
+        android:layout_width="221dp"
+
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnTestimonial"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Announcements"
+
+        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteY="126dp" />
+    <Button
+        android:id="@+id/btnVisitation"
+        android:layout_width="221dp"
+
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnAnnouncments"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Visitations"
+
+        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteY="126dp" />
+</RelativeLayout>
