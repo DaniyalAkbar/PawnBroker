@@ -8,61 +8,61 @@
 
 
     <Button
-        android:id="@+id/addUserBtn"
+        android:id="@+id/addTestimonialBtn"
         android:layout_width="132dp"
         android:layout_height="47dp"
         android:layout_centerHorizontal="true"
 
 
         android:layout_marginTop="80dp"
-        android:text="Add User"
+        android:text="Add Testimonial"
         tools:layout_editor_absoluteX="116dp"
         tools:layout_editor_absoluteY="45dp" />
 
     <Button
-        android:id="@+id/viewUserBtn"
+        android:id="@+id/viewTestimonialBtn"
         android:layout_width="132dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/addUserBtn"
+        android:layout_below="@+id/addTestimonialBtn"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="View All Users"
+        android:text="View All Testimonials"
         tools:layout_editor_absoluteX="116dp"
         tools:layout_editor_absoluteY="107dp" />
 
     <Button
-        android:id="@+id/searchUserBtn"
+        android:id="@+id/searchTestimonialBtn"
         android:layout_width="132dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/viewUserBtn"
+        android:layout_below="@id/viewTestimonialBtn"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="Search User"
+        android:text="Search Testimonial"
         tools:layout_editor_absoluteX="116dp"
         tools:layout_editor_absoluteY="171dp" />
 
     <Button
-        android:id="@+id/deleteUserBtn"
+        android:id="@+id/deleteTestimonialBtn"
         android:layout_width="132dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/searchUserBtn"
+        android:layout_below="@id/searchTestimonialBtn"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="Delete User"
+        android:text="Delete Testimonial"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.43"
         tools:layout_editor_absoluteX="116dp" />
 
     <Button
-        android:id="@+id/updateUserBtn"
+        android:id="@+id/updateTestimonialBtn"
         android:layout_width="132dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/deleteUserBtn"
+        android:layout_below="@+id/deleteTestimonialBtn"
 
         android:layout_centerHorizontal="true"
         android:layout_marginTop="21dp"
-        android:text="Update User"
+        android:text="Update Testimonial"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.551"
@@ -80,7 +80,7 @@
         android:layout_marginLeft="112dp"
         android:layout_marginTop="33dp"
         android:textColor="@android:color/black"
-        android:text="Users Menu"
+        android:text="Testimonials"
         android:textAlignment="center"
         android:textSize="25dp" />
 </RelativeLayout>
