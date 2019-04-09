@@ -8,61 +8,61 @@
 
 
     <Button
-        android:id="@+id/addTransactionBtn"
+        android:id="@+id/addUserBtn"
         android:layout_width="132dp"
         android:layout_height="47dp"
         android:layout_centerHorizontal="true"
 
 
         android:layout_marginTop="80dp"
-        android:text="Add Transaction"
+        android:text="Add User"
         tools:layout_editor_absoluteX="116dp"
         tools:layout_editor_absoluteY="45dp" />
 
     <Button
-        android:id="@+id/viewTransactionBtn"
+        android:id="@+id/viewUserBtn"
         android:layout_width="132dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/addTransactionBtn"
+        android:layout_below="@+id/addUserBtn"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="View All Transactions"
+        android:text="View All Users"
         tools:layout_editor_absoluteX="116dp"
         tools:layout_editor_absoluteY="107dp" />
 
     <Button
-        android:id="@+id/searchTransactionBtn"
+        android:id="@+id/searchUserBtn"
         android:layout_width="132dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/viewTransactionBtn"
+        android:layout_below="@id/viewUserBtn"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="Search Transaction"
+        android:text="Search User"
         tools:layout_editor_absoluteX="116dp"
         tools:layout_editor_absoluteY="171dp" />
 
     <Button
-        android:id="@+id/deleteTransactionBtn"
+        android:id="@+id/deleteUserBtn"
         android:layout_width="132dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/searchTransactionBtn"
+        android:layout_below="@id/searchUserBtn"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="Delete Transaction"
+        android:text="Delete User"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.43"
         tools:layout_editor_absoluteX="116dp" />
 
     <Button
-        android:id="@+id/updateTransactionBtn"
+        android:id="@+id/updateUserBtn"
         android:layout_width="132dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/deleteTransactionBtn"
+        android:layout_below="@+id/deleteUserBtn"
 
         android:layout_centerHorizontal="true"
         android:layout_marginTop="21dp"
-        android:text="Update Transaction"
+        android:text="Update User"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.551"
@@ -80,7 +80,7 @@
         android:layout_marginLeft="112dp"
         android:layout_marginTop="33dp"
         android:textColor="@android:color/black"
-        android:text="Transactions"
+        android:text="Users Menu"
         android:textAlignment="center"
         android:textSize="25dp" />
 </RelativeLayout>

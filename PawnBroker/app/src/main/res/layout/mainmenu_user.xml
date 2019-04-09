@@ -80,7 +80,7 @@
         android:layout_marginLeft="112dp"
         android:layout_marginTop="33dp"
         android:textColor="@android:color/black"
-        android:text="Users"
+        android:text="Users Menu"
         android:textAlignment="center"
         android:textSize="25dp" />
 </RelativeLayout>

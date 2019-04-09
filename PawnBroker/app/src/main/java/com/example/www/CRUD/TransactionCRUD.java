@@ -20,7 +20,7 @@ public class TransactionCRUD {
         d.executequery(sql);
     }
     public void updateTransaction(transaction u){
-        String sql = "update transaction set amount='"+u.getAmount()+"',type='"+u.getType()+"', tdate='"+u.getTdate()+"' ";
+        String sql = "update transaction set amount='"+u.getAmount()+"',type='"+u.getType()+"', tdate='"+u.getTdate()+"' where TrID='"+u.getTrID()+"' ";
         d.executequery(sql);
     }
     public void deleteTransaction(int TrID){

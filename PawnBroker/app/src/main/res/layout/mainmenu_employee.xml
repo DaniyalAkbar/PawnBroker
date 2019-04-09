@@ -8,55 +8,57 @@
 
 
     <Button
-        android:id="@+id/addEmployeeBtn"
+        android:id="@+id/addUserBtn"
         android:layout_width="132dp"
         android:layout_height="47dp"
         android:layout_centerHorizontal="true"
+
+
         android:layout_marginTop="80dp"
-        android:text="Add Employee"
+        android:text="Add User"
         tools:layout_editor_absoluteX="116dp"
         tools:layout_editor_absoluteY="45dp" />
 
     <Button
-        android:id="@+id/viewEmployeeBtn"
+        android:id="@+id/viewUserBtn"
         android:layout_width="132dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/addEmployeeBtn"
+        android:layout_below="@+id/addUserBtn"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="View All Employee"
+        android:text="View All Users"
         tools:layout_editor_absoluteX="116dp"
         tools:layout_editor_absoluteY="107dp" />
 
     <Button
-        android:id="@+id/searchEmployeeBtn"
+        android:id="@+id/searchUserBtn"
         android:layout_width="132dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/viewEmployeeBtn"
+        android:layout_below="@id/viewUserBtn"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="Search Employee"
+        android:text="Search User"
         tools:layout_editor_absoluteX="116dp"
         tools:layout_editor_absoluteY="171dp" />
 
     <Button
-        android:id="@+id/deleteEmployeeBtn"
+        android:id="@+id/deleteUserBtn"
         android:layout_width="132dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/searchEmployeeBtn"
+        android:layout_below="@id/searchUserBtn"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="Delete Employee"
+        android:text="Delete User"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.43"
         tools:layout_editor_absoluteX="116dp" />
 
     <Button
-        android:id="@+id/updateEmployeeBtn"
+        android:id="@+id/updateUserBtn"
         android:layout_width="132dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/deleteEmployeeBtn"
+        android:layout_below="@+id/deleteUserBtn"
 
         android:layout_centerHorizontal="true"
         android:layout_marginTop="21dp"
@@ -78,7 +80,7 @@
         android:layout_marginLeft="112dp"
         android:layout_marginTop="33dp"
         android:textColor="@android:color/black"
-        android:text="Employees"
+        android:text="Users Menu"
         android:textAlignment="center"
         android:textSize="25dp" />
 </RelativeLayout>

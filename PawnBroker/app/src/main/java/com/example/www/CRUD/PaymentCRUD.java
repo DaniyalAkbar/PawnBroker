@@ -21,7 +21,7 @@ public class PaymentCRUD {
         d.executequery(sql);
     }
     public void updatePayment(payment u){
-        String sql = "update payment set amount='"+u.getAmount()+"',type='"+u.getType()+"',pdate='"+u.getPdate()+"', TrID='"+u.getTrID()+"'   ";
+        String sql = "update payment set amount='"+u.getAmount()+"',type='"+u.getType()+"',pdate='"+u.getPdate()+"' TrID='"+u.getTrID()+"' where pid='"+u.getPid()+"'  ";
         d.executequery(sql);
     }
     public void deletePayment(int pid){

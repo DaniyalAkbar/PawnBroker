@@ -8,61 +8,61 @@
 
 
     <Button
-        android:id="@+id/addPaymentBtn"
+        android:id="@+id/addUserBtn"
         android:layout_width="132dp"
         android:layout_height="47dp"
         android:layout_centerHorizontal="true"
 
 
         android:layout_marginTop="80dp"
-        android:text="Add Payment"
+        android:text="Add User"
         tools:layout_editor_absoluteX="116dp"
         tools:layout_editor_absoluteY="45dp" />
 
     <Button
-        android:id="@+id/viewPaymentBtn"
+        android:id="@+id/viewUserBtn"
         android:layout_width="132dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/addPaymentBtn"
+        android:layout_below="@+id/addUserBtn"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="View All Payments"
+        android:text="View All Users"
         tools:layout_editor_absoluteX="116dp"
         tools:layout_editor_absoluteY="107dp" />
 
     <Button
-        android:id="@+id/searchPaymentBtn"
+        android:id="@+id/searchUserBtn"
         android:layout_width="132dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/viewPaymentBtn"
+        android:layout_below="@id/viewUserBtn"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="Search Payment"
+        android:text="Search User"
         tools:layout_editor_absoluteX="116dp"
         tools:layout_editor_absoluteY="171dp" />
 
     <Button
-        android:id="@+id/deletePaymentBtn"
+        android:id="@+id/deleteUserBtn"
         android:layout_width="132dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/searchPaymentBtn"
+        android:layout_below="@id/searchUserBtn"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="Delete Payment"
+        android:text="Delete User"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.43"
         tools:layout_editor_absoluteX="116dp" />
 
     <Button
-        android:id="@+id/updatePaymentBtn"
+        android:id="@+id/updateUserBtn"
         android:layout_width="132dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/deletePaymentBtn"
+        android:layout_below="@+id/deleteUserBtn"
 
         android:layout_centerHorizontal="true"
         android:layout_marginTop="21dp"
-        android:text="Update Payment"
+        android:text="Update User"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.551"
@@ -80,7 +80,7 @@
         android:layout_marginLeft="112dp"
         android:layout_marginTop="33dp"
         android:textColor="@android:color/black"
-        android:text="Payments"
+        android:text="Users Menu"
         android:textAlignment="center"
         android:textSize="25dp" />
 </RelativeLayout>
