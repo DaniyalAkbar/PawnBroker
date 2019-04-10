@@ -32,7 +32,7 @@ public class PaymentCRUD {
     public ArrayList<payment> viewAllPayments(){
         Cursor c = d.executerawquery("select * from payment");
         ArrayList<payment> getPayments = new ArrayList<>();
-        while(c!=null){
+        while(c.moveToNext()){
             payment u = new payment();
             u.setPid(c.getInt(c.getColumnIndex("pid")));
             u.setPdate(c.getString(c.getColumnIndex("pdate")));
@@ -46,7 +46,7 @@ public class PaymentCRUD {
     public payment searchPaymentsByDate(String date){
         Cursor c = d.executerawquery("select * from payment where pdate='"+date+"'");
         payment u = new payment();
-        while(c!=null){
+        while(c.moveToNext()){
             u.setPid((c.getInt(c.getColumnIndex("pid"))));
             u.setAmount(c.getFloat(c.getColumnIndex("amount")));
             u.setType(c.getString(c.getColumnIndex("type")));
@@ -58,7 +58,7 @@ public class PaymentCRUD {
     public payment searchPaymentsByType(String type){
         Cursor c = d.executerawquery("select * from payment where type='"+type+"'");
         payment u = new payment();
-        while(c!=null){
+        while(c.moveToNext()){
             u.setPid((c.getInt(c.getColumnIndex("pid"))));
             u.setAmount(c.getFloat(c.getColumnIndex("amount")));
             u.setType(c.getString(c.getColumnIndex("type")));
@@ -71,7 +71,7 @@ public class PaymentCRUD {
     public payment searchPaymentsByTransaction(int TrID){
         Cursor c = d.executerawquery("select * from payment where TrID='"+TrID+"'");
         payment u = new payment();
-        while(c!=null){
+        while(c.moveToNext()){
             u.setPid((c.getInt(c.getColumnIndex("pid"))));
             u.setAmount(c.getFloat(c.getColumnIndex("amount")));
             u.setType(c.getString(c.getColumnIndex("type")));

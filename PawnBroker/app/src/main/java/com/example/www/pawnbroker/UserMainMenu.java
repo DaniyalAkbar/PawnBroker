@@ -25,6 +25,30 @@ public class UserMainMenu extends AppCompatActivity {
                 startActivity(new Intent(UserMainMenu.this,AddUser.class));
             }
         });
+        viewbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(UserMainMenu.this,ViewUser.class));
+            }
+        });
+        viewbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(UserMainMenu.this,ViewUser.class));
+            }
+        });
+        deletebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(UserMainMenu.this,DeleteUser.class));
+            }
+        });
+        updatebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(UserMainMenu.this,UpdateUser.class));
+            }
+        });
 
 
 

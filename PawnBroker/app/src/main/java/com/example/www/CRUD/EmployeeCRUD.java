@@ -32,7 +32,7 @@ public class EmployeeCRUD {
     public ArrayList<employee> viewAllEmployee(){
         Cursor c = d.executerawquery("select * from employee");
         ArrayList<employee> getEmployee = new ArrayList<>();
-        while(c!=null){
+        while(c.moveToNext()){
             employee u = new employee();
             u.setEmpid(c.getInt(c.getColumnIndex("empid")));
             u.setFname(c.getString(c.getColumnIndex("Fname")));
@@ -44,7 +44,7 @@ public class EmployeeCRUD {
     public employee searchEmployeeByID(int id){
         Cursor c = d.executerawquery("select * from employee where empid='"+id+"'");
         employee u = new employee();
-        while(c!=null){
+        while(c.moveToNext()){
             u.setEmpid(c.getInt(c.getColumnIndex("empid")));
             u.setFname(c.getString(c.getColumnIndex("Fname")));
             u.setLname(c.getString(c.getColumnIndex("Lname")));
@@ -55,7 +55,7 @@ public class EmployeeCRUD {
     public employee searchEmployeeByFname(String fname){
         Cursor c = d.executerawquery("select * from employee where Fname='"+fname+"'");
         employee u = new employee();
-        while(c!=null){
+        while(c.moveToNext()){
             u.setEmpid(c.getInt(c.getColumnIndex("empid")));
             u.setFname(c.getString(c.getColumnIndex("Fname")));
             u.setLname(c.getString(c.getColumnIndex("Lname")));

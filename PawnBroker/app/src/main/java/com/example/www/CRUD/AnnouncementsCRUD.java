@@ -38,7 +38,7 @@ public class AnnouncementsCRUD {
     public  ArrayList<announcements> viewAllAnnouncements(){
         Cursor c = d.executerawquery("select * from announcements");
         ArrayList<announcements> getAnnouncements = new ArrayList<>();
-        while(c!=null){
+        while(c.moveToNext()){
             announcements u = new announcements();
             u.setAID(c.getInt(c.getColumnIndex("AID")));
             u.setAnnouncement(c.getString(c.getColumnIndex("announcements")));
@@ -52,7 +52,7 @@ public class AnnouncementsCRUD {
     public announcements searchAnnouncementsByDate(String date){
         Cursor c = d.executerawquery("select * from announcements where date='"+date+"'");
         announcements u = new announcements();
-        while(c!=null){
+        while(c.moveToNext()){
             u.setAID((c.getInt(c.getColumnIndex("UID"))));
             u.setAnnouncement(c.getString(c.getColumnIndex("announcements")));
             u.setType(c.getString(c.getColumnIndex("type")));
@@ -63,7 +63,7 @@ public class AnnouncementsCRUD {
     public announcements searchAnnouncementsByType(String type){
         Cursor c = d.executerawquery("select * from announcements where type='"+type+"'");
         announcements u = new announcements();
-        while(c!=null){
+        while(c.moveToNext()){
             u.setAID((c.getInt(c.getColumnIndex("UID"))));
             u.setAnnouncement(c.getString(c.getColumnIndex("announcements")));
             u.setType(c.getString(c.getColumnIndex("type")));

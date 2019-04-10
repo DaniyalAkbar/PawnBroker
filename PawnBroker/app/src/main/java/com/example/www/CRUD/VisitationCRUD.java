@@ -31,7 +31,7 @@ public class VisitationCRUD {
     public ArrayList<visitation> viewAllVisitation(){
         Cursor c = d.executerawquery("select * from visitation");
         ArrayList<visitation> getVisitation = new ArrayList<>();
-        while(c!=null){
+        while(c.moveToNext()){
             visitation u = new visitation();
             u.setVid(c.getInt(c.getColumnIndex("vid")));
             u.setVdate(c.getString(c.getColumnIndex("vdate")));
@@ -44,7 +44,7 @@ public class VisitationCRUD {
     public visitation searchVisitationByID(int vid){
         Cursor c = d.executerawquery("select * from visitation where vid='"+vid+"'");
         visitation u = new visitation();
-        while(c!=null){
+        while(c.moveToNext()){
             u.setVid(c.getInt(c.getColumnIndex("vid")));
             u.setVdate(c.getString(c.getColumnIndex("vdate")));
             u.setEmpid(c.getInt(c.getColumnIndex("empid")));
@@ -55,7 +55,7 @@ public class VisitationCRUD {
     public visitation searchVisitationByDate(String date){
         Cursor c = d.executerawquery("select * from visitation where vdate='"+date+"'");
         visitation u = new visitation();
-        while(c!=null){
+        while(c.moveToNext()){
             u.setVid(c.getInt(c.getColumnIndex("vid")));
             u.setVdate(c.getString(c.getColumnIndex("vdate")));
             u.setEmpid(c.getInt(c.getColumnIndex("empid")));
@@ -66,7 +66,7 @@ public class VisitationCRUD {
     public visitation searchVisitationByEmp(int empid){
         Cursor c = d.executerawquery("select * from visitation where empid='"+empid+"'");
         visitation u = new visitation();
-        while(c!=null){
+        while(c.moveToNext()){
             u.setVid(c.getInt(c.getColumnIndex("vid")));
             u.setVdate(c.getString(c.getColumnIndex("vdate")));
             u.setEmpid(c.getInt(c.getColumnIndex("empid")));

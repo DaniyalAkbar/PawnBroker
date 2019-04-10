@@ -17,13 +17,13 @@ public class Db {
         db.execSQL(sql);
     }
     public void createtables(){
-        executequery("create table if not exists users(UID Integer autoincrement,Fname varchar,Lname varchar,regdate date)");
-        executequery("create table if not exists announcements(AID Integer autoincrement, announcement varchar,type varchar,adate date)");
-        executequery("create table if not exists testimonial(TID Integer autoincrement,testimonial varchar,UID varchar references users(UID),adate date)");
-        executequery("create table if not exists transaction(TrID Integer autoincrement,amount real,type varchar,tdate varchar)");
-        executequery("create table if not exists payment(PID Integer autoincrement,amount real,date varchar,pdate varchar)");       //transaction foreign key needs to be added
-        executequery("create table if not exists employee(empid Integer autoincrement,Fnmae varchar, Lname varchar)");
-        executequery("create table if not exists visitation(vid Integer autoincrement,visitation varchar, empid int references employee(empid),vdate date)");
+        executequery("create table if not exists users(UID Integer primary key autoincrement,Fname varchar,Lname varchar,regdate date)");
+        executequery("create table if not exists announcements(AID Integer primary key autoincrement, announcement varchar,type varchar,adate date)");
+        executequery("create table if not exists testimonial(TID Integer primary key autoincrement,testimonial varchar,UID varchar references users(UID),adate date)");
+        executequery("create table if not exists transactions(TrID Integer primary key autoincrement,amount real,type varchar,tdate varchar)");
+        executequery("create table if not exists payment(PID Integer primary key autoincrement,amount real,date varchar,pdate varchar)");       //transaction foreign key needs to be added
+        executequery("create table if not exists employee(empid Integer primary key autoincrement,Fnmae varchar, Lname varchar)");
+        executequery("create table if not exists visitation(vid Integer primary key autoincrement,visitation varchar, empid int references employee(empid),vdate date)");
 
     }
     public Cursor executerawquery(String sql){

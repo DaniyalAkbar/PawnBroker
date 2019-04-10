@@ -23,7 +23,7 @@ public class AddUser extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_user);
-        AddUserBtnButton=(Button)findViewById(R.id.addUserBtn);
+        AddUserBtnButton=(Button)findViewById(R.id.UserSubmitBtn);
         FirstName=(EditText)findViewById(R.id.txtFirstName);
         LastName=(EditText)findViewById(R.id.txtLastName);
         RegDate=(EditText)findViewById(R.id.txtRegDate);

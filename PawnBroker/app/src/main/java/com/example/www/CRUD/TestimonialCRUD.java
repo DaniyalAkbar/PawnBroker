@@ -31,7 +31,7 @@ public class TestimonialCRUD {
     public ArrayList<testimonial> viewAllTestimonial(){
         Cursor c = d.executerawquery("select * from testimonial");
         ArrayList<testimonial> getTestimonial = new ArrayList<>();
-        while(c!=null){
+        while(c.moveToNext()){
             testimonial u = new testimonial();
             u.setTid(c.getInt(c.getColumnIndex("TID")));
             u.setAdate(c.getString(c.getColumnIndex("adate")));
@@ -44,7 +44,7 @@ public class TestimonialCRUD {
     public testimonial searchTestimonialByDate(String date){
         Cursor c = d.executerawquery("select * from testimonial where adate='"+date+"'");
         testimonial u = new testimonial();
-        while(c!=null){
+        while(c.moveToNext()){
             u.setTid(c.getInt(c.getColumnIndex("TID")));
             u.setAdate(c.getString(c.getColumnIndex("adate")));
             u.setTestimonial(c.getString(c.getColumnIndex("testimonial")));
@@ -55,7 +55,7 @@ public class TestimonialCRUD {
     public testimonial searchTestimonialsByUserID(int UID){
         Cursor c = d.executerawquery("select * from testimonial where UID='"+UID+"'");
         testimonial u = new testimonial();
-        while(c!=null){
+        while(c.moveToNext()){
             u.setTid(c.getInt(c.getColumnIndex("TID")));
             u.setAdate(c.getString(c.getColumnIndex("adate")));
             u.setTestimonial(c.getString(c.getColumnIndex("testimonial")));
