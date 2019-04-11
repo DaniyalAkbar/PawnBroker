@@ -2,6 +2,7 @@ package com.example.www.CRUD;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.widget.Toast;
 
 import com.example.www.DB.Db;
 import com.example.www.model.transaction;
@@ -9,12 +10,14 @@ import com.example.www.model.transaction;
 import java.util.ArrayList;
 
 public class TransactionCRUD {
-
+    Db d;
     Context context;
     public TransactionCRUD(Context context){
         this.context=context;
+        d= new Db(context);
+        d.OpenorCreatDB();
     }
-    Db d = new Db(context);
+
     public void addTransaction(transaction u){
         String sql = "insert into transaction(amount, type, tdate) values('"+u.getAmount()+"','"+u.getType()+"','"+u.getTdate()+"')";
         d.executequery(sql);
@@ -28,23 +31,28 @@ public class TransactionCRUD {
         d.executequery(sql);
     }
 
-    public ArrayList<transaction> viewAllTransaction(){
+    public ArrayList<String> viewAllTransaction(){
         Cursor c = d.executerawquery("select * from transaction");
-        ArrayList<transaction> getTransaction = new ArrayList<>();
-        while(c!=null){
-            transaction u = new transaction();
-            u.setTrID(c.getInt(c.getColumnIndex("TrID")));
-            u.setAmount(c.getFloat(c.getColumnIndex("amount")));
-            u.setTdate(c.getString(c.getColumnIndex("tdate")));
-            u.setType(c.getString(c.getColumnIndex("type")));
+        ArrayList<String> getTransaction = new ArrayList<>();
+        while(c.moveToNext()){
+            String u =null;
+            u=String.valueOf(c.getInt(c.getColumnIndex("TrID")));
+            u+="\t";
+            u+=String.valueOf(c.getFloat(c.getColumnIndex("amount")));
+            u+=" ";
+            u+=c.getString(c.getColumnIndex("tdate"));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("type"));
+
             getTransaction.add(u);
+            Toast.makeText(context, getTransaction.get(0).toString(), Toast.LENGTH_SHORT).show();
         }
         return  getTransaction;
     }
     public transaction searchTransactionByDate(String date){
         Cursor c = d.executerawquery("select * from transaction where tdate='"+date+"'");
         transaction u = new transaction();
-        while(c!=null){
+        while(c.moveToNext()){
             u.setTrID(c.getInt(c.getColumnIndex("TrID")));
             u.setAmount(c.getFloat(c.getColumnIndex("amount")));
             u.setTdate(c.getString(c.getColumnIndex("tdate")));
@@ -55,7 +63,7 @@ public class TransactionCRUD {
     public transaction searchTransactionByID(int TrID){
         Cursor c = d.executerawquery("select * from transaction where TrID='"+TrID+"'");
         transaction u = new transaction();
-        while(c!=null){
+        while(c.moveToNext()){
             u.setTrID(c.getInt(c.getColumnIndex("TrID")));
             u.setAmount(c.getFloat(c.getColumnIndex("amount")));
             u.setTdate(c.getString(c.getColumnIndex("tdate")));

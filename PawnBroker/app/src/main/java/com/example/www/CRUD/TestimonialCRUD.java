@@ -2,6 +2,7 @@ package com.example.www.CRUD;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.widget.Toast;
 
 import com.example.www.DB.Db;
 import com.example.www.model.testimonial;
@@ -11,10 +12,12 @@ import java.util.ArrayList;
 public class TestimonialCRUD {
 
     Context context;
+    Db d;
     public TestimonialCRUD(Context context){
         this.context=context;
+        d= new Db(context);
+        d.OpenorCreatDB();
     }
-    Db d = new Db(context);
     public void addTestimonial(testimonial u){
         String sql = "insert into testimonial(testimonial, uid, adate) values('"+u.getTestimonial()+"','"+u.getUid()+"','"+u.getAdate()+"')";
         d.executequery(sql);
@@ -28,23 +31,28 @@ public class TestimonialCRUD {
         d.executequery(sql);
     }
 
-    public ArrayList<testimonial> viewAllTestimonial(){
+    public ArrayList<String> viewAllTestimonial(){
         Cursor c = d.executerawquery("select * from testimonial");
-        ArrayList<testimonial> getTestimonial = new ArrayList<>();
-        while(c!=null){
-            testimonial u = new testimonial();
-            u.setTid(c.getInt(c.getColumnIndex("TID")));
-            u.setAdate(c.getString(c.getColumnIndex("adate")));
-            u.setTestimonial(c.getString(c.getColumnIndex("testimonial")));
-            u.setUid(c.getInt(c.getColumnIndex("UID")));
+        ArrayList<String> getTestimonial = new ArrayList<>();
+        while(c.moveToNext()){
+            String u =null;
+            u=String.valueOf(c.getInt(c.getColumnIndex("TID")));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("adate"));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("testimonial"));
+            u+="\t";
+            u=String.valueOf(c.getInt(c.getColumnIndex("UID")));
+
             getTestimonial.add(u);
+            Toast.makeText(context, getTestimonial.get(0).toString(), Toast.LENGTH_SHORT).show();
         }
         return  getTestimonial;
     }
     public testimonial searchTestimonialByDate(String date){
         Cursor c = d.executerawquery("select * from testimonial where adate='"+date+"'");
         testimonial u = new testimonial();
-        while(c!=null){
+        while(c.moveToNext()){
             u.setTid(c.getInt(c.getColumnIndex("TID")));
             u.setAdate(c.getString(c.getColumnIndex("adate")));
             u.setTestimonial(c.getString(c.getColumnIndex("testimonial")));
@@ -55,7 +63,7 @@ public class TestimonialCRUD {
     public testimonial searchTestimonialsByUserID(int UID){
         Cursor c = d.executerawquery("select * from testimonial where UID='"+UID+"'");
         testimonial u = new testimonial();
-        while(c!=null){
+        while(c.moveToNext()){
             u.setTid(c.getInt(c.getColumnIndex("TID")));
             u.setAdate(c.getString(c.getColumnIndex("adate")));
             u.setTestimonial(c.getString(c.getColumnIndex("testimonial")));

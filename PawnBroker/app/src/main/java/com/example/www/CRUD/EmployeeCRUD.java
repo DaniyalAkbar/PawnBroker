@@ -2,6 +2,7 @@ package com.example.www.CRUD;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.widget.Toast;
 
 import com.example.www.DB.Db;
 import com.example.www.model.employee;
@@ -11,10 +12,12 @@ import java.util.ArrayList;
 public class EmployeeCRUD {
 
     Context context;
+    Db d;
     public EmployeeCRUD(Context context){
         this.context=context;
+        d= new Db(context);
+        d.OpenorCreatDB();
     }
-    Db d = new Db(context);
     public void addEmployee(employee u){
 
         String sql = "insert into employee(Fname, Lname) values('"+u.getFname()+"','"+u.getLname()+"')";
@@ -29,22 +32,26 @@ public class EmployeeCRUD {
         d.executequery(sql);
     }
 
-    public ArrayList<employee> viewAllEmployee(){
+    public ArrayList<String> viewAllEmployee(){
         Cursor c = d.executerawquery("select * from employee");
-        ArrayList<employee> getEmployee = new ArrayList<>();
-        while(c!=null){
-            employee u = new employee();
-            u.setEmpid(c.getInt(c.getColumnIndex("empid")));
-            u.setFname(c.getString(c.getColumnIndex("Fname")));
-            u.setLname(c.getString(c.getColumnIndex("Lname")));
+        ArrayList<String> getEmployee = new ArrayList<>();
+        while(c.moveToNext()){
+            String u =null;
+            u=String.valueOf(c.getInt(c.getColumnIndex("empid")));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("Fname"));
+            u+=" ";
+            u+=c.getString(c.getColumnIndex("Lname"));
+
             getEmployee.add(u);
+            Toast.makeText(context, getEmployee.get(0).toString(), Toast.LENGTH_SHORT).show();
         }
         return  getEmployee;
     }
     public employee searchEmployeeByID(int id){
         Cursor c = d.executerawquery("select * from employee where empid='"+id+"'");
         employee u = new employee();
-        while(c!=null){
+        while(c.moveToNext()){
             u.setEmpid(c.getInt(c.getColumnIndex("empid")));
             u.setFname(c.getString(c.getColumnIndex("Fname")));
             u.setLname(c.getString(c.getColumnIndex("Lname")));
@@ -55,7 +62,7 @@ public class EmployeeCRUD {
     public employee searchEmployeeByFname(String fname){
         Cursor c = d.executerawquery("select * from employee where Fname='"+fname+"'");
         employee u = new employee();
-        while(c!=null){
+        while(c.moveToNext()){
             u.setEmpid(c.getInt(c.getColumnIndex("empid")));
             u.setFname(c.getString(c.getColumnIndex("Fname")));
             u.setLname(c.getString(c.getColumnIndex("Lname")));

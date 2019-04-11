@@ -2,6 +2,7 @@ package com.example.www.CRUD;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.widget.Toast;
 
 import com.example.www.DB.Db;
 import com.example.www.model.payment;
@@ -11,11 +12,12 @@ import java.util.ArrayList;
 public class PaymentCRUD {
 
     Context context;
-
+    Db d;
     public PaymentCRUD(Context context){
         this.context=context;
+        d= new Db(context);
+        d.OpenorCreatDB();
     }
-    Db d = new Db(context);
     public void addPayment(payment u){
         String sql = "insert into payment(amount, type, pdate, TrID) values('"+u.getAmount()+"','"+u.getType()+"','"+u.getPdate()+"', '"+u.getTrID()+"')";
         d.executequery(sql);
@@ -29,24 +31,30 @@ public class PaymentCRUD {
         d.executequery(sql);
     }
 
-    public ArrayList<payment> viewAllPayments(){
+    public ArrayList<String> viewAllPayments(){
         Cursor c = d.executerawquery("select * from payment");
-        ArrayList<payment> getPayments = new ArrayList<>();
-        while(c!=null){
-            payment u = new payment();
-            u.setPid(c.getInt(c.getColumnIndex("pid")));
-            u.setPdate(c.getString(c.getColumnIndex("pdate")));
-            u.setAmount(c.getFloat(c.getColumnIndex("amount")));
-            u.setType(c.getString(c.getColumnIndex("type")));
-            u.setTrID(c.getInt(c.getColumnIndex("TrID")));
+        ArrayList<String> getPayments = new ArrayList<>();
+        while(c.moveToNext()){
+            String u =null;
+            u=String.valueOf(c.getInt(c.getColumnIndex("pid")));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("pdate"));
+            u+="\t";
+            u+=String.valueOf(c.getFloat(c.getColumnIndex("amount")));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("type"));
+            u+="\t";
+            u=String.valueOf(c.getInt(c.getColumnIndex("TrID")));
+
             getPayments.add(u);
+            Toast.makeText(context, getPayments.get(0).toString(), Toast.LENGTH_SHORT).show();
         }
         return  getPayments;
     }
     public payment searchPaymentsByDate(String date){
         Cursor c = d.executerawquery("select * from payment where pdate='"+date+"'");
         payment u = new payment();
-        while(c!=null){
+        while(c.moveToNext()){
             u.setPid((c.getInt(c.getColumnIndex("pid"))));
             u.setAmount(c.getFloat(c.getColumnIndex("amount")));
             u.setType(c.getString(c.getColumnIndex("type")));
@@ -58,7 +66,7 @@ public class PaymentCRUD {
     public payment searchPaymentsByType(String type){
         Cursor c = d.executerawquery("select * from payment where type='"+type+"'");
         payment u = new payment();
-        while(c!=null){
+        while(c.moveToNext()){
             u.setPid((c.getInt(c.getColumnIndex("pid"))));
             u.setAmount(c.getFloat(c.getColumnIndex("amount")));
             u.setType(c.getString(c.getColumnIndex("type")));
@@ -71,7 +79,7 @@ public class PaymentCRUD {
     public payment searchPaymentsByTransaction(int TrID){
         Cursor c = d.executerawquery("select * from payment where TrID='"+TrID+"'");
         payment u = new payment();
-        while(c!=null){
+        while(c.moveToNext()){
             u.setPid((c.getInt(c.getColumnIndex("pid"))));
             u.setAmount(c.getFloat(c.getColumnIndex("amount")));
             u.setType(c.getString(c.getColumnIndex("type")));
