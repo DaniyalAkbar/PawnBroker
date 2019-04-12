@@ -19,24 +19,30 @@ public class UserMainMenu extends AppCompatActivity {
         updatebtn=(Button)findViewById(R.id.updateUserBtn);
         deletebtn=(Button)findViewById(R.id.deleteUserBtn);
         searchbtn=(Button)findViewById(R.id.searchUserBtn);
+<<<<<<< HEAD
         deletebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(UserMainMenu.this,DeleteUser.class));
             }
         });
+=======
+>>>>>>> master
         addbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(UserMainMenu.this,AddUser.class));
             }
         });
+<<<<<<< HEAD
         viewbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(UserMainMenu.this,ViewUser.class));
             }
         });
+=======
+>>>>>>> master
 
 
 

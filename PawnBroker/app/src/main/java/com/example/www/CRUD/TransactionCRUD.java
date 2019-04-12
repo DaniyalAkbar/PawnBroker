@@ -23,7 +23,11 @@ public class TransactionCRUD {
         d.executequery(sql);
     }
     public void updateTransaction(transaction u){
+<<<<<<< HEAD
         String sql = "update transactions set amount='"+u.getAmount()+"',type='"+u.getType()+"', tdate='"+u.getTdate()+"' where TrID='"+u.getTrID()+"' ";
+=======
+        String sql = "update transaction set amount='"+u.getAmount()+"',type='"+u.getType()+"', tdate='"+u.getTdate()+"' where TrID='"+u.getTrID()+"' ";
+>>>>>>> master
         d.executequery(sql);
     }
     public void deleteTransaction(int TrID){
@@ -32,7 +36,11 @@ public class TransactionCRUD {
     }
 
     public ArrayList<String> viewAllTransaction(){
+<<<<<<< HEAD
         Cursor c = d.executerawquery("select * from transactions");
+=======
+        Cursor c = d.executerawquery("select * from transaction");
+>>>>>>> master
         ArrayList<String> getTransaction = new ArrayList<>();
         while(c.moveToNext()){
             String u =null;

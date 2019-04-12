@@ -67,7 +67,11 @@
         android:layout_marginTop="179dp"
         android:text="Last Name:"
         android:textColor="@android:color/black"
+<<<<<<< HEAD
         android:textSize="25dp" />
+=======
+        android:textSize="30dp" />
+>>>>>>> master
 
     <Button
         android:id="@+id/txtEmployeeSubmitBtn"
@@ -81,6 +85,10 @@
         android:layout_marginBottom="288dp"
         android:text="Add Employee"
         android:textAllCaps="false"
+<<<<<<< HEAD
         android:textSize="25dp" />
+=======
+        android:textSize="30dp" />
+>>>>>>> master
 
 </RelativeLayout>

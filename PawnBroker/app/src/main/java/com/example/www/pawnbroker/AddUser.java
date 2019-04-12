@@ -1,6 +1,9 @@
 package com.example.www.pawnbroker;
 
+<<<<<<< HEAD
 import android.content.DialogInterface;
+=======
+>>>>>>> master
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
@@ -24,7 +27,11 @@ public class AddUser extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_user);
+<<<<<<< HEAD
         AddUserBtnButton=(Button)findViewById(R.id.txtUserSubmitBtn);
+=======
+        AddUserBtnButton=(Button)findViewById(R.id.addUserBtn);
+>>>>>>> master
         FirstName=(EditText)findViewById(R.id.txtFirstName);
         LastName=(EditText)findViewById(R.id.txtLastName);
         RegDate=(EditText)findViewById(R.id.txtRegDate);
@@ -38,16 +45,25 @@ public class AddUser extends AppCompatActivity {
                     u.setLname(LastName.getText().toString());
                     u.setRegDate(fm.parse(RegDate.getText().toString()).toString());
                     new UserCRUD(AddUser.this).add(u);
+<<<<<<< HEAD
                     ShowDialog("New User Added Successfully");
 
                 }catch (java.text.ParseException e){
                     ShowDialog("Incorrect Date Format. Please Try Again");
 
+=======
+                    AlertDialog.Builder AD = new AlertDialog.Builder(AddUser.this);
+                    AD.setTitle("User Added");
+                    AD.setMessage("New User Added Successfully to Database");
+                }catch (java.text.ParseException e){
+                    Toast.makeText(AddUser.this, "Incorrect Date Format", Toast.LENGTH_SHORT).show();
+>>>>>>> master
                     e.printStackTrace();
                 }
             }
         });
     }
+<<<<<<< HEAD
     public void ShowDialog(String Message)
     {
         AlertDialog.Builder AD = new AlertDialog.Builder(AddUser.this);
@@ -61,4 +77,6 @@ public class AddUser extends AppCompatActivity {
         });
         AD.show();
     }
+=======
+>>>>>>> master
 }

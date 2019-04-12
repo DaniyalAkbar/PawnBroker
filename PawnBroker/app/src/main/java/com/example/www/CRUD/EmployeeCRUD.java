@@ -36,7 +36,11 @@ public class EmployeeCRUD {
         Cursor c = d.executerawquery("select * from employee");
         ArrayList<String> getEmployee = new ArrayList<>();
         while(c.moveToNext()){
+<<<<<<< HEAD
             String u;
+=======
+            String u =null;
+>>>>>>> master
             u=String.valueOf(c.getInt(c.getColumnIndex("empid")));
             u+="\t";
             u+=c.getString(c.getColumnIndex("Fname"));
@@ -44,7 +48,11 @@ public class EmployeeCRUD {
             u+=c.getString(c.getColumnIndex("Lname"));
 
             getEmployee.add(u);
+<<<<<<< HEAD
 
+=======
+            Toast.makeText(context, getEmployee.get(0).toString(), Toast.LENGTH_SHORT).show();
+>>>>>>> master
         }
         return  getEmployee;
     }

@@ -39,9 +39,14 @@ public class UserCRUD {
     public  ArrayList<String> viewall(){
         Cursor c = d.executerawquery("select * from users");
         ArrayList<String> getusers = new ArrayList<>();
+<<<<<<< HEAD:PawnBroker/app/src/main/java/com/example/www/CRUD/UserCRUD.java
         c.moveToFirst();
         while(c.moveToNext()){
             String u;
+=======
+        while(c.moveToNext()){
+            String u =null;
+>>>>>>> master:PawnBroker/app/src/main/java/com/example/www/CRUD/usercrud.java
             u=String.valueOf(c.getInt(c.getColumnIndex("UID")));
             u+="\t";
             u+=c.getString(c.getColumnIndex("Fname"));
@@ -51,7 +56,11 @@ public class UserCRUD {
                 u+=c.getString(c.getColumnIndex("regdate"));
 
             getusers.add(u);
+<<<<<<< HEAD:PawnBroker/app/src/main/java/com/example/www/CRUD/UserCRUD.java
 
+=======
+            Toast.makeText(context, getusers.get(0).toString(), Toast.LENGTH_SHORT).show();
+>>>>>>> master:PawnBroker/app/src/main/java/com/example/www/CRUD/usercrud.java
         }
         return  getusers;
 
