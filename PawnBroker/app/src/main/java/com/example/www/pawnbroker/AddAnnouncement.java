@@ -2,43 +2,41 @@ package com.example.www.pawnbroker;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
+import com.example.www.CRUD.AnnouncementsCRUD;
 import com.example.www.CRUD.UserCRUD;
+import com.example.www.model.announcements;
 import com.example.www.model.users;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.concurrent.ExecutionException;
 
-public class AddUser extends AppCompatActivity {
-    Button AddUserBtnButton;
-    EditText FirstName,LastName,RegDate;
+public class AddAnnouncement extends AppCompatActivity {
+    Button AddAnnouncementBtnButton;
+    EditText Annoucncement,ADate,Type;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_user);
-        AddUserBtnButton=(Button)findViewById(R.id.txtUserSubmitBtn);
-        FirstName=(EditText)findViewById(R.id.txtFirstName);
-        LastName=(EditText)findViewById(R.id.txtLastName);
-        RegDate=(EditText)findViewById(R.id.txtRegDate);
-        AddUserBtnButton.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.add_announcement);
+        AddAnnouncementBtnButton=(Button)findViewById(R.id.txtAnnouncementSubmitBtn);
+        Annoucncement=(EditText)findViewById(R.id.txtAnnouncement);
+        ADate=(EditText)findViewById(R.id.txtDateAnnouncement);
+        Type=(EditText)findViewById(R.id.txtTypeAnnouncement);
+        AddAnnouncementBtnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-                    users u= new users();
+                    announcements a= new announcements();
                     SimpleDateFormat fm = new SimpleDateFormat("dd-MM-yyyy");
-                    u.setFname(FirstName.getText().toString());
-                    u.setLname(LastName.getText().toString());
-                    u.setRegDate(fm.parse(RegDate.getText().toString()).toString());
-                    new UserCRUD(AddUser.this).add(u);
-                    ShowDialog("New User Added Successfully");
+                    a.setAnnouncement(Annoucncement.getText().toString());
+                    a.setType(Type.getText().toString());
+                    a.setDate(fm.parse(ADate.getText().toString()).toString());
+                    new AnnouncementsCRUD(AddAnnouncement.this).addAnnouncement(a);
+                    ShowDialog("New Annoucement Added Successfully");
 
                 }catch (java.text.ParseException e){
                     ShowDialog("Incorrect Date Format. Please Try Again");
@@ -50,7 +48,7 @@ public class AddUser extends AppCompatActivity {
     }
     public void ShowDialog(String Message)
     {
-        AlertDialog.Builder AD = new AlertDialog.Builder(AddUser.this);
+        AlertDialog.Builder AD = new AlertDialog.Builder(AddAnnouncement.this);
         AD.setTitle("PawnBroker");
         AD.setMessage(Message);
         AD.setNeutralButton("Ok", new DialogInterface.OnClickListener() {

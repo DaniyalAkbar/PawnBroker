@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
-        android:text="Add an Employee"
+        android:text="Add a Transaction"
         android:textSize="30sp"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
@@ -25,11 +25,11 @@
         android:layout_marginEnd="22dp"
         android:layout_marginRight="22dp"
         android:width="200dp"
-        android:id="@+id/txtFirstName"
+        android:id="@+id/txAmount"
         />
 
     <EditText
-        android:id="@+id/txtLastName"
+        android:id="@+id/txtDateTransaction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txttitle"
@@ -39,6 +39,19 @@
         android:layout_marginTop="116dp"
         android:layout_marginEnd="22dp"
         android:layout_marginRight="22dp"
+        android:width="200dp" />
+
+    <EditText
+        android:id="@+id/txtTypeTransaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txttitle"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="199dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:width="200dp" />
 
     <TextView
@@ -53,7 +66,7 @@
         android:layout_marginTop="100dp"
         android:textColor="@android:color/black"
         android:textSize="25dp"
-        android:text="First Name:" />
+        android:text="Amount:" />
 
     <TextView
         android:id="@+id/textView4"
@@ -65,22 +78,36 @@
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
         android:layout_marginTop="179dp"
-        android:text="Last Name:"
+        android:text="Date:"
+        android:textColor="@android:color/black"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="166dp"
+        android:layout_height="42dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="262dp"
+        android:text="Type:"
         android:textColor="@android:color/black"
         android:textSize="25dp" />
 
     <Button
-        android:id="@+id/txtEmployeeSubmitBtn"
+        android:id="@+id/txtTransactionSubmitBtn"
         android:layout_width="287dp"
         android:layout_height="59dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="68dp"
-        android:layout_marginLeft="68dp"
-        android:layout_marginBottom="288dp"
-        android:text="Add Employee"
+        android:layout_marginStart="66dp"
+        android:layout_marginLeft="66dp"
+        android:layout_marginBottom="212dp"
+        android:textSize="30dp"
         android:textAllCaps="false"
-        android:textSize="25dp" />
+        android:text="Add Transaction" />
 
 </RelativeLayout>
