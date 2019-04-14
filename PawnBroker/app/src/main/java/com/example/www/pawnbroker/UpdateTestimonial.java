@@ -9,37 +9,39 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.www.CRUD.AnnouncementsCRUD;
 import com.example.www.CRUD.TestimonialCRUD;
-import com.example.www.model.announcements;
 import com.example.www.model.testimonial;
 
 import java.text.SimpleDateFormat;
 
-public class AddTestimonial extends AppCompatActivity {
+public class UpdateTestimonial extends AppCompatActivity {
     Button AddTestimonialBtnButton;
-    EditText Testimonial,TDate,UID;
+    EditText Testimonial,TDate,UID,TestID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_testimonial);
+        setContentView(R.layout.update_testimonial);
         AddTestimonialBtnButton=(Button)findViewById(R.id.txtTestimonialSubmitBtn);
+        TestID=(EditText) findViewById(R.id.txtTestimonialID);
         Testimonial=(EditText)findViewById(R.id.txtTestimonial);
         TDate=(EditText)findViewById(R.id.txtDateTestimonial);
         UID=(EditText)findViewById(R.id.txtUIDFk);
         UID.setInputType(InputType.TYPE_CLASS_NUMBER);
         UID.setInputType(InputType.TYPE_CLASS_PHONE);
+        TestID.setInputType(InputType.TYPE_CLASS_NUMBER);
+        TestID.setInputType(InputType.TYPE_CLASS_PHONE);
+
         AddTestimonialBtnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
                     testimonial t= new testimonial();
                     SimpleDateFormat fm = new SimpleDateFormat("dd-MM-yyyy");
-
+                    t.setTid(Integer.parseInt(TestID.getText().toString()));
                     t.setTestimonial(Testimonial.getText().toString());
                     t.setUid(Integer.parseInt(UID.getText().toString()));
                     t.setAdate(fm.parse(TDate.getText().toString()).toString());
-                    new TestimonialCRUD(AddTestimonial.this).addTestimonial(t);
+                    new TestimonialCRUD(UpdateTestimonial.this).addTestimonial(t);
                     ShowDialog("New Testimonial Added Successfully");
 
                 }catch (java.text.ParseException e){
@@ -54,7 +56,7 @@ public class AddTestimonial extends AppCompatActivity {
     }
     public void ShowDialog(String Message)
     {
-        AlertDialog.Builder AD = new AlertDialog.Builder(AddTestimonial.this);
+        AlertDialog.Builder AD = new AlertDialog.Builder(UpdateTestimonial.this);
         AD.setTitle("PawnBroker");
         AD.setMessage(Message);
         AD.setNeutralButton("Ok", new DialogInterface.OnClickListener() {

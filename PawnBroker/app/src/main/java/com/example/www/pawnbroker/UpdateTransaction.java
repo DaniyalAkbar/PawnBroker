@@ -5,39 +5,43 @@ import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.www.CRUD.PaymentCRUD;
 import com.example.www.CRUD.TransactionCRUD;
-import com.example.www.model.payment;
 import com.example.www.model.transaction;
 
 import java.text.SimpleDateFormat;
 
-public class AddPayment extends AppCompatActivity {
-    Button AddPaymenttBtnButton;
-    EditText Amount,PDate,Trid;
+public class UpdateTransaction extends AppCompatActivity {
+    Button AddTransactiontBtnButton;
+    EditText Amount,TDate,Type,TrID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_payment);
-        AddPaymenttBtnButton=(Button)findViewById(R.id.txtPaymentSubmitBtn);
+        setContentView(R.layout.update_transaction);
+        AddTransactiontBtnButton=(Button)findViewById(R.id.txtTransactionSubmitBtn);
         Amount=(EditText)findViewById(R.id.txAmount);
-        PDate=(EditText)findViewById(R.id.txtDatePayment);
-        Trid=(EditText)findViewById(R.id.txtIDTransaction);
-        AddPaymenttBtnButton.setOnClickListener(new View.OnClickListener() {
+        TrID=(EditText)findViewById(R.id.txtTrID);
+        TDate=(EditText)findViewById(R.id.txtDateTransaction);
+        Type=(EditText)findViewById(R.id.txtTypeTransaction);
+        TrID.setInputType(InputType.TYPE_CLASS_NUMBER);
+        TrID.setInputType(InputType.TYPE_CLASS_PHONE);
+
+        AddTransactiontBtnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-                    payment p= new payment();
+                    transaction t= new transaction();
                     SimpleDateFormat fm = new SimpleDateFormat("dd-MM-yyyy");
-                    p.setAmount(Float.parseFloat(Amount.getText().toString()));
-                    p.setTrID(Integer.parseInt(Trid.getText().toString()));
-                    p.setPdate(fm.parse(PDate.getText().toString()).toString());
-                    new PaymentCRUD(AddPayment.this).addPayment(p);
-                    ShowDialog("New Payment Added Successfully");
+                    t.setTrID(Integer.parseInt(TrID.getText().toString()));
+                    t.setAmount(Float.parseFloat(Amount.getText().toString()));
+                    t.setType(Type.getText().toString());
+                    t.setTdate(fm.parse(TDate.getText().toString()).toString());
+                    new TransactionCRUD(UpdateTransaction.this).addTransaction(t);
+                    ShowDialog("Transaction Updated Successfully");
 
                 }catch (java.text.ParseException e){
                     ShowDialog("Incorrect Date Format. Please Try Again");
@@ -54,7 +58,7 @@ public class AddPayment extends AppCompatActivity {
     }
     public void ShowDialog(String Message)
     {
-        AlertDialog.Builder AD = new AlertDialog.Builder(AddPayment.this);
+        AlertDialog.Builder AD = new AlertDialog.Builder(UpdateTransaction.this);
         AD.setTitle("PawnBroker");
         AD.setMessage(Message);
         AD.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
