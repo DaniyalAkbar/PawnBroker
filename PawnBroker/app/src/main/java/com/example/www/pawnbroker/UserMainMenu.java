@@ -37,6 +37,13 @@ public class UserMainMenu extends AppCompatActivity {
                 startActivity(new Intent(UserMainMenu.this,ViewUser.class));
             }
         });
+        searchbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(UserMainMenu.this,SearchUserByAdmin.class));
+            }
+        });
+
 
 
 

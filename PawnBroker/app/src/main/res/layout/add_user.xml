@@ -105,7 +105,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="66dp"
         android:layout_marginLeft="66dp"
-        android:layout_marginBottom="212dp"
+        android:layout_marginBottom="170dp"
         android:textSize="30dp"
         android:textAllCaps="true"
         android:text="Add User" />

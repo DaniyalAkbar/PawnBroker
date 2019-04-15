@@ -13,10 +13,8 @@ public class ViewUser extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_forall);
-        lv=(ListView)findViewById(R.id.lv);
+        lv=(ListView)findViewById(R.id.lvUsers);
         ArrayAdapter AL = new ArrayAdapter(ViewUser.this,android.R.layout.simple_list_item_1,new UserCRUD(ViewUser.this).viewall());
         lv.setAdapter(AL);
-
-
     }
 }

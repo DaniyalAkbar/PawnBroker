@@ -56,8 +56,28 @@ public class UserCRUD {
         return  getusers;
 
     }
-    public users searchUserByFirstName(String FirstName){
-        Cursor c = d.executerawquery("select * from users where Fname='"+FirstName+"'");
+    public  ArrayList<String> searchUserByFirstName(String fname){
+        Cursor c = d.executerawquery("select * from users where Fname = '"+fname+"' ");
+        ArrayList<String> arrayList = new ArrayList<>();
+        c.moveToFirst();
+        while(c.moveToNext()){
+            String u;
+            u=String.valueOf(c.getInt(c.getColumnIndex("UID")));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("Fname"));
+            u+=" ";
+            u+=c.getString(c.getColumnIndex("Lname"));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("regdate"));
+
+            arrayList.add(u);
+
+        }
+        return  arrayList;
+
+    }
+    public users searchUserByLastName(String LastName){
+        Cursor c = d.executerawquery("select * from users where Lname='"+LastName+"'");
         users u = new users();
         while(c.moveToNext()){
             u.setUID(c.getInt(c.getColumnIndex("UID")));

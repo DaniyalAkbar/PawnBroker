@@ -22,8 +22,8 @@ public class AddTestimonial extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_testimonial);
-        AddTestimonialBtnButton=(Button)findViewById(R.id.txtTestimonialSubmitBtn);
+        setContentView(R.layout.add_announcement);
+        AddTestimonialBtnButton=(Button)findViewById(R.id.txtAnnouncementSubmitBtn);
         Testimonial=(EditText)findViewById(R.id.txtTestimonial);
         TDate=(EditText)findViewById(R.id.txtDateTestimonial);
         UID=(EditText)findViewById(R.id.txtUIDFk);
@@ -35,7 +35,6 @@ public class AddTestimonial extends AppCompatActivity {
                 try {
                     testimonial t= new testimonial();
                     SimpleDateFormat fm = new SimpleDateFormat("dd-MM-yyyy");
-
                     t.setTestimonial(Testimonial.getText().toString());
                     t.setUid(Integer.parseInt(UID.getText().toString()));
                     t.setAdate(fm.parse(TDate.getText().toString()).toString());
