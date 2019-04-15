@@ -2,7 +2,6 @@ package com.example.www.CRUD;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.widget.Toast;
 
 import com.example.www.DB.Db;
 import com.example.www.model.employee;
@@ -48,26 +47,54 @@ public class EmployeeCRUD {
         }
         return  getEmployee;
     }
-    public employee searchEmployeeByID(int id){
+    public ArrayList<String> searchEmployeeByID(int id){
         Cursor c = d.executerawquery("select * from employee where empid='"+id+"'");
-        employee u = new employee();
+        ArrayList<String> getEmployee = new ArrayList<>();
         while(c.moveToNext()){
-            u.setEmpid(c.getInt(c.getColumnIndex("empid")));
-            u.setFname(c.getString(c.getColumnIndex("Fname")));
-            u.setLname(c.getString(c.getColumnIndex("Lname")));
+            String u;
+            u=String.valueOf(c.getInt(c.getColumnIndex("empid")));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("Fname"));
+            u+=" ";
+            u+=c.getString(c.getColumnIndex("Lname"));
+
+            getEmployee.add(u);
+
         }
-        return  u;
+        return  getEmployee;
     }
 
-    public employee searchEmployeeByFname(String fname){
+    public ArrayList<String> searchEmployeeByFname(String fname){
         Cursor c = d.executerawquery("select * from employee where Fname='"+fname+"'");
-        employee u = new employee();
+        ArrayList<String> getEmployee = new ArrayList<>();
         while(c.moveToNext()){
-            u.setEmpid(c.getInt(c.getColumnIndex("empid")));
-            u.setFname(c.getString(c.getColumnIndex("Fname")));
-            u.setLname(c.getString(c.getColumnIndex("Lname")));
+            String u;
+            u=String.valueOf(c.getInt(c.getColumnIndex("empid")));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("Fname"));
+            u+=" ";
+            u+=c.getString(c.getColumnIndex("Lname"));
+
+            getEmployee.add(u);
+
         }
-        return  u;
+        return  getEmployee;
+    }
+    public ArrayList<String> searchEmployeeByLname(String lname){
+        Cursor c = d.executerawquery("select * from employee where lname='"+lname+"'");
+        ArrayList<String> getEmployee = new ArrayList<>();
+        while(c.moveToNext()){
+            String u;
+            u=String.valueOf(c.getInt(c.getColumnIndex("empid")));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("Fname"));
+            u+=" ";
+            u+=c.getString(c.getColumnIndex("Lname"));
+
+            getEmployee.add(u);
+
+        }
+        return  getEmployee;
     }
 
 

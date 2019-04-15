@@ -11,11 +11,10 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.www.CRUD.UserCRUD;
-import com.example.www.model.users;
 
 import java.util.ArrayList;
 
-public class SearchUserByAdmin extends AppCompatActivity {
+public class SearchUser extends AppCompatActivity {
 
     EditText et;
     ListView lv;
@@ -35,7 +34,7 @@ public class SearchUserByAdmin extends AppCompatActivity {
         arrLst.add("First Name");
         arrLst.add("Last Name");
         arrLst.add("Registration Date");
-        ArrayAdapter adapt = new ArrayAdapter(SearchUserByAdmin.this, android.R.layout.simple_list_item_1,arrLst);
+        ArrayAdapter adapt = new ArrayAdapter(SearchUser.this, android.R.layout.simple_list_item_1,arrLst);
         spinner.setAdapter(adapt);
 
 
@@ -43,26 +42,22 @@ public class SearchUserByAdmin extends AppCompatActivity {
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ArrayList<users> arrayList = new ArrayList<users>();
-
+                ArrayAdapter AL = null;
+                String input = et.getText().toString().trim();
 
                 if(spinner.getSelectedItem().equals("First Name")){
-                    //u = new UserCRUD(SearchUserByAdmin.this).searchUserByFirstName(et.getText().toString());
-                    String input = et.getText().toString();
-                    Toast.makeText(SearchUserByAdmin.this, input.toString(), Toast.LENGTH_SHORT).show();
-                    ArrayAdapter AL = new ArrayAdapter(SearchUserByAdmin.this,android.R.layout.simple_list_item_1,new UserCRUD(SearchUserByAdmin.this).searchUserByFirstName(input.toString()));
-                    lv.setAdapter(AL);
+                    Toast.makeText(SearchUser.this, "u entered first name", Toast.LENGTH_SHORT).show();
+                    AL = new ArrayAdapter(SearchUser.this,android.R.layout.simple_list_item_1,new UserCRUD(SearchUser.this).searchUserByFirstName(input.toString()));
                 }
                 else if(spinner.getSelectedItem().equals("Last Name")){
-                    //u = new UserCRUD(SearchUserByAdmin.this).searchUserByLastName(et.getText().toString());
+                    Toast.makeText(SearchUser.this, "u entered last name", Toast.LENGTH_SHORT).show();
+                    AL = new ArrayAdapter(SearchUser.this,android.R.layout.simple_list_item_1,new UserCRUD(SearchUser.this).searchUserByLastName(input.toString()));
                 }
                 else if(spinner.getSelectedItem().equals("Registration Date")){
-                    //u = new UserCRUD(SearchUserByAdmin.this).searchUserByRegDate(et.getText().toString());
+                    Toast.makeText(SearchUser.this, "u entered Reg Date", Toast.LENGTH_SHORT).show();
+                    AL = new ArrayAdapter(SearchUser.this,android.R.layout.simple_list_item_1,new UserCRUD(SearchUser.this).searchUserByRegDate(input.toString()));
                 }
-
-                //arrayList.add(u);
-
-
+                lv.setAdapter(AL);
             }
         });
 

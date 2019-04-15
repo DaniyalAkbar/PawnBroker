@@ -49,27 +49,41 @@ public class TransactionCRUD {
         }
         return  getTransaction;
     }
-    public transaction searchTransactionByDate(String date){
+    public ArrayList<String> searchTransactionByDate(String date){
         Cursor c = d.executerawquery("select * from transactions where tdate='"+date+"'");
-        transaction u = new transaction();
+        ArrayList<String> getTransaction = new ArrayList<>();
         while(c.moveToNext()){
-            u.setTrID(c.getInt(c.getColumnIndex("TrID")));
-            u.setAmount(c.getFloat(c.getColumnIndex("amount")));
-            u.setTdate(c.getString(c.getColumnIndex("tdate")));
-            u.setType(c.getString(c.getColumnIndex("type")));
+            String u =null;
+            u=String.valueOf(c.getInt(c.getColumnIndex("TrID")));
+            u+="\t";
+            u+=String.valueOf(c.getFloat(c.getColumnIndex("amount")));
+            u+=" ";
+            u+=c.getString(c.getColumnIndex("tdate"));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("type"));
+
+            getTransaction.add(u);
+            Toast.makeText(context, getTransaction.get(0).toString(), Toast.LENGTH_SHORT).show();
         }
-        return  u;
+        return getTransaction;
     }
-    public transaction searchTransactionByID(int TrID){
+    public ArrayList<String> searchTransactionByID(int TrID){
         Cursor c = d.executerawquery("select * from transactions where TrID='"+TrID+"'");
-        transaction u = new transaction();
+        ArrayList<String> getTransaction = new ArrayList<>();
         while(c.moveToNext()){
-            u.setTrID(c.getInt(c.getColumnIndex("TrID")));
-            u.setAmount(c.getFloat(c.getColumnIndex("amount")));
-            u.setTdate(c.getString(c.getColumnIndex("tdate")));
-            u.setType(c.getString(c.getColumnIndex("type")));
+            String u =null;
+            u=String.valueOf(c.getInt(c.getColumnIndex("TrID")));
+            u+="\t";
+            u+=String.valueOf(c.getFloat(c.getColumnIndex("amount")));
+            u+=" ";
+            u+=c.getString(c.getColumnIndex("tdate"));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("type"));
+
+            getTransaction.add(u);
+            Toast.makeText(context, getTransaction.get(0).toString(), Toast.LENGTH_SHORT).show();
         }
-        return  u;
+        return getTransaction;
     }
 
 }

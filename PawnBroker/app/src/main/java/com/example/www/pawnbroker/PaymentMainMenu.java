@@ -36,6 +36,12 @@ public class PaymentMainMenu extends AppCompatActivity {
                 startActivity(new Intent(PaymentMainMenu.this,ViewPayment.class));
             }
         });
+        searchbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(PaymentMainMenu.this,SearchPayment.class));
+            }
+        });
 
 
 

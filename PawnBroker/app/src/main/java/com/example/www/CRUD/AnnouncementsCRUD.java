@@ -4,17 +4,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.widget.Toast;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import com.example.www.DB.Db;
 import com.example.www.model.announcements;
-import com.example.www.model.users;
 
-import java.nio.file.attribute.UserPrincipalLookupService;
 import java.util.ArrayList;
-import java.util.Date;
 
 
 public class AnnouncementsCRUD {
@@ -56,27 +49,39 @@ public class AnnouncementsCRUD {
         return  getAnnouncements;
 
     }
-    public announcements searchAnnouncementsByDate(String date){
+    public ArrayList<String> searchAnnouncementsByDate(String date){
         Cursor c = d.executerawquery("select * from announcements where date='"+date+"'");
-        announcements u = new announcements();
+        ArrayList<String> getAnnouncements = new ArrayList<>();
         while(c.moveToNext()){
-            u.setAID((c.getInt(c.getColumnIndex("UID"))));
-            u.setAnnouncement(c.getString(c.getColumnIndex("announcements")));
-            u.setType(c.getString(c.getColumnIndex("type")));
-            u.setDate(c.getString(c.getColumnIndex("date")));
+            String u =null;
+            u=String.valueOf(c.getInt(c.getColumnIndex("AID")));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("announcements"));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("date"));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("type"));
+
+            getAnnouncements.add(u);
         }
-        return  u;
+        return getAnnouncements;
     }
-    public announcements searchAnnouncementsByType(String type){
+    public ArrayList<String> searchAnnouncementsByType(String type){
         Cursor c = d.executerawquery("select * from announcements where type='"+type+"'");
-        announcements u = new announcements();
+        ArrayList<String> getAnnouncements = new ArrayList<>();
         while(c.moveToNext()){
-            u.setAID((c.getInt(c.getColumnIndex("UID"))));
-            u.setAnnouncement(c.getString(c.getColumnIndex("announcements")));
-            u.setType(c.getString(c.getColumnIndex("type")));
-            u.setDate(c.getString(c.getColumnIndex("date")));
+            String u =null;
+            u=String.valueOf(c.getInt(c.getColumnIndex("AID")));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("announcements"));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("date"));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("type"));
+
+            getAnnouncements.add(u);
         }
-        return  u;
+        return getAnnouncements;
     }
 
 }

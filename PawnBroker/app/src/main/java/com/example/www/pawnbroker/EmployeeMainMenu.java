@@ -36,6 +36,12 @@ public class EmployeeMainMenu extends AppCompatActivity {
                 startActivity(new Intent(EmployeeMainMenu.this,ViewEmployee.class));
             }
         });
+        searchbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(EmployeeMainMenu.this,SearchEmployee.class));
+            }
+        });
 
 
 

@@ -50,38 +50,59 @@ public class VisitationCRUD {
         }
         return  getVisitation;
     }
-    public visitation searchVisitationByID(int vid){
+    public ArrayList<String> searchVisitationByID(int vid){
         Cursor c = d.executerawquery("select * from visitation where vid='"+vid+"'");
-        visitation u = new visitation();
+        ArrayList<String> getVisitation = new ArrayList<>();
         while(c.moveToNext()){
-            u.setVid(c.getInt(c.getColumnIndex("vid")));
-            u.setVdate(c.getString(c.getColumnIndex("vdate")));
-            u.setEmpid(c.getInt(c.getColumnIndex("empid")));
-            u.setVisitation(c.getString(c.getColumnIndex("visitation")));
+            String u =null;
+            u=String.valueOf(c.getInt(c.getColumnIndex("vid")));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("vdate"));
+            u+="\t";
+            u=String.valueOf(c.getInt(c.getColumnIndex("empid")));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("visitation"));
+
+            getVisitation.add(u);
+            Toast.makeText(context, getVisitation.get(0).toString(), Toast.LENGTH_SHORT).show();
         }
-        return  u;
+        return  getVisitation;
     }
-    public visitation searchVisitationByDate(String date){
+    public ArrayList<String> searchVisitationByDate(String date){
         Cursor c = d.executerawquery("select * from visitation where vdate='"+date+"'");
-        visitation u = new visitation();
+        ArrayList<String> getVisitation = new ArrayList<>();
         while(c.moveToNext()){
-            u.setVid(c.getInt(c.getColumnIndex("vid")));
-            u.setVdate(c.getString(c.getColumnIndex("vdate")));
-            u.setEmpid(c.getInt(c.getColumnIndex("empid")));
-            u.setVisitation(c.getString(c.getColumnIndex("visitation")));
+            String u =null;
+            u=String.valueOf(c.getInt(c.getColumnIndex("vid")));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("vdate"));
+            u+="\t";
+            u=String.valueOf(c.getInt(c.getColumnIndex("empid")));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("visitation"));
+
+            getVisitation.add(u);
+            Toast.makeText(context, getVisitation.get(0).toString(), Toast.LENGTH_SHORT).show();
         }
-        return  u;
+        return  getVisitation;
     }
-    public visitation searchVisitationByEmp(int empid){
+    public ArrayList<String> searchVisitationByEmp(int empid){
         Cursor c = d.executerawquery("select * from visitation where empid='"+empid+"'");
-        visitation u = new visitation();
+        ArrayList<String> getVisitation = new ArrayList<>();
         while(c.moveToNext()){
-            u.setVid(c.getInt(c.getColumnIndex("vid")));
-            u.setVdate(c.getString(c.getColumnIndex("vdate")));
-            u.setEmpid(c.getInt(c.getColumnIndex("empid")));
-            u.setVisitation(c.getString(c.getColumnIndex("visitation")));
+            String u =null;
+            u=String.valueOf(c.getInt(c.getColumnIndex("vid")));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("vdate"));
+            u+="\t";
+            u=String.valueOf(c.getInt(c.getColumnIndex("empid")));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("visitation"));
+
+            getVisitation.add(u);
+            Toast.makeText(context, getVisitation.get(0).toString(), Toast.LENGTH_SHORT).show();
         }
-        return  u;
+        return  getVisitation;
     }
 
 

@@ -36,6 +36,12 @@ public class VisitationMainMenu extends AppCompatActivity {
                 startActivity(new Intent(VisitationMainMenu.this,ViewVisitation.class));
             }
         });
+        searchbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(VisitationMainMenu.this,SearchVisitations.class));
+            }
+        });
 
 
 

@@ -36,6 +36,12 @@ public class TestimonialMainMenu extends AppCompatActivity {
                 startActivity(new Intent(TestimonialMainMenu.this,ViewTestimonial.class));
             }
         });
+        searchbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(TestimonialMainMenu.this,SearchTestimonials.class));
+            }
+        });
 
 
 

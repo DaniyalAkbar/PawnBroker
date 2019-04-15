@@ -49,27 +49,41 @@ public class TestimonialCRUD {
         }
         return  getTestimonial;
     }
-    public testimonial searchTestimonialByDate(String date){
+    public ArrayList<String> searchTestimonialByDate(String date){
         Cursor c = d.executerawquery("select * from testimonial where adate='"+date+"'");
-        testimonial u = new testimonial();
+        ArrayList<String> getTestimonial = new ArrayList<>();
         while(c.moveToNext()){
-            u.setTid(c.getInt(c.getColumnIndex("TID")));
-            u.setAdate(c.getString(c.getColumnIndex("adate")));
-            u.setTestimonial(c.getString(c.getColumnIndex("testimonial")));
-            u.setUid(c.getInt(c.getColumnIndex("UID")));
+            String u =null;
+            u=String.valueOf(c.getInt(c.getColumnIndex("TID")));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("adate"));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("testimonial"));
+            u+="\t";
+            u=String.valueOf(c.getInt(c.getColumnIndex("UID")));
+
+            getTestimonial.add(u);
+            Toast.makeText(context, getTestimonial.get(0).toString(), Toast.LENGTH_SHORT).show();
         }
-        return  u;
+        return  getTestimonial;
     }
-    public testimonial searchTestimonialsByUserID(int UID){
+    public ArrayList<String> searchTestimonialsByUserID(int UID){
         Cursor c = d.executerawquery("select * from testimonial where UID='"+UID+"'");
-        testimonial u = new testimonial();
+        ArrayList<String> getTestimonial = new ArrayList<>();
         while(c.moveToNext()){
-            u.setTid(c.getInt(c.getColumnIndex("TID")));
-            u.setAdate(c.getString(c.getColumnIndex("adate")));
-            u.setTestimonial(c.getString(c.getColumnIndex("testimonial")));
-            u.setUid(c.getInt(c.getColumnIndex("UID")));
+            String u =null;
+            u=String.valueOf(c.getInt(c.getColumnIndex("TID")));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("adate"));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("testimonial"));
+            u+="\t";
+            u=String.valueOf(c.getInt(c.getColumnIndex("UID")));
+
+            getTestimonial.add(u);
+            Toast.makeText(context, getTestimonial.get(0).toString(), Toast.LENGTH_SHORT).show();
         }
-        return  u;
+        return  getTestimonial;
     }
 
 

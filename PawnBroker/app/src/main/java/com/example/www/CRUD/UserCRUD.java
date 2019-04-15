@@ -57,7 +57,7 @@ public class UserCRUD {
 
     }
     public  ArrayList<String> searchUserByFirstName(String fname){
-        Cursor c = d.executerawquery("select * from users where Fname = '"+fname+"' ");
+        Cursor c = d.executerawquery("select * from users where fname = '"+fname+"' ");
         ArrayList<String> arrayList = new ArrayList<>();
         c.moveToFirst();
         while(c.moveToNext()){
@@ -76,27 +76,44 @@ public class UserCRUD {
         return  arrayList;
 
     }
-    public users searchUserByLastName(String LastName){
-        Cursor c = d.executerawquery("select * from users where Lname='"+LastName+"'");
-        users u = new users();
+    public  ArrayList<String> searchUserByLastName(String lname){
+        Cursor c = d.executerawquery("select * from users where lname = '"+lname+"' ");
+        ArrayList<String> arrayList = new ArrayList<>();
+        c.moveToFirst();
         while(c.moveToNext()){
-            u.setUID(c.getInt(c.getColumnIndex("UID")));
-            u.setFname(c.getString(c.getColumnIndex("Fname")));
-            u.setLname(c.getString(c.getColumnIndex("Lname")));
-            u.setRegDate(c.getString(c.getColumnIndex("regdate")));
+            String u;
+            u=String.valueOf(c.getInt(c.getColumnIndex("UID")));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("Fname"));
+            u+=" ";
+            u+=c.getString(c.getColumnIndex("Lname"));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("regdate"));
+
+            arrayList.add(u);
+
         }
-        return  u;
+        return  arrayList;
 
     }
-    public users searchUserByRegDate(String regdate){
-        Cursor c = d.executerawquery("select * from users where regdate='"+regdate+"'");
-        users u = new users();
+    public  ArrayList<String> searchUserByRegDate(String regdate){
+        Cursor c = d.executerawquery("select * from users where regdate = '"+regdate+"' ");
+        ArrayList<String> arrayList = new ArrayList<>();
+        c.moveToFirst();
         while(c.moveToNext()){
-            u.setUID(c.getInt(c.getColumnIndex("UID")));
-            u.setFname(c.getString(c.getColumnIndex("Fname")));
-            u.setLname(c.getString(c.getColumnIndex("Lname")));
-            u.setRegDate(c.getString(c.getColumnIndex("regdate")));
+            String u;
+            u=String.valueOf(c.getInt(c.getColumnIndex("UID")));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("Fname"));
+            u+=" ";
+            u+=c.getString(c.getColumnIndex("Lname"));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("regdate"));
+
+            arrayList.add(u);
+
         }
-        return  u;
+        return  arrayList;
+
     }
 }

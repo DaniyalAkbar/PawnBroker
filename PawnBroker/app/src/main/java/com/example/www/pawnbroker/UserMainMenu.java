@@ -2,7 +2,6 @@ package com.example.www.pawnbroker;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -40,7 +39,7 @@ public class UserMainMenu extends AppCompatActivity {
         searchbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(UserMainMenu.this,SearchUserByAdmin.class));
+                startActivity(new Intent(UserMainMenu.this, SearchUser.class));
             }
         });
 

@@ -36,6 +36,12 @@ public class AnnouncementMainMenu extends AppCompatActivity {
                 startActivity(new Intent(AnnouncementMainMenu.this,ViewAnnouncement.class));
             }
         });
+        searchbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AnnouncementMainMenu.this,SearchAnnouncements.class));
+            }
+        });
 
 
 
