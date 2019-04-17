@@ -13,7 +13,7 @@ public class ViewVisitation extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_forall);
-        lv=(ListView)findViewById(R.id.lvUsers);
+        lv=(ListView)findViewById(R.id.lv);
         ArrayAdapter ap = new ArrayAdapter(ViewVisitation.this,android.R.layout.simple_list_item_1,new VisitationCRUD(ViewVisitation.this).viewAllVisitation());
         lv.setAdapter(ap);
     }

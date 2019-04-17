@@ -20,7 +20,7 @@ public class DeleteUser extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.delete_layout);
         et=(EditText)findViewById(R.id.idtodelete);
-        DelBtn=(Button)findViewById(R.id.deleteUserBtn);
+        DelBtn=(Button)findViewById(R.id.btnDelete);
         et.setHint("Enter UserID to Delete");
         et.setInputType(InputType.TYPE_CLASS_NUMBER);
         et.setInputType(InputType.TYPE_CLASS_PHONE);
