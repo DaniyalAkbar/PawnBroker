@@ -28,7 +28,7 @@ public class Db {
     }
     public Cursor executerawquery(String sql){
         Cursor c = db.rawQuery(sql,null);
-        c.moveToFirst();
+        //sc.moveToFirst();
         return c;
 
     }

@@ -37,8 +37,6 @@ public class SearchAnnouncements  extends AppCompatActivity {
         ArrayAdapter adapt = new ArrayAdapter(SearchAnnouncements.this, android.R.layout.simple_list_item_1,arrLst);
         spinner.setAdapter(adapt);
 
-
-
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

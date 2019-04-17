@@ -34,6 +34,7 @@ public class TestimonialCRUD {
     public ArrayList<String> viewAllTestimonial(){
         Cursor c = d.executerawquery("select * from testimonial");
         ArrayList<String> getTestimonial = new ArrayList<>();
+        c.moveToFirst();
         while(c.moveToNext()){
             String u =null;
             u=String.valueOf(c.getInt(c.getColumnIndex("TID")));

@@ -19,11 +19,11 @@ public class PaymentCRUD {
         d.OpenorCreatDB();
     }
     public void addPayment(payment u){
-        String sql = "insert into payment(amount, type, pdate, TrID) values('"+u.getAmount()+"','"+u.getType()+"','"+u.getPdate()+"', '"+u.getTrID()+"')";
+        String sql = "insert into payment(amount, pdate, TrID) values('"+u.getAmount()+"','"+u.getType()+"','"+u.getPdate()+"', '"+u.getTrID()+"')";
         d.executequery(sql);
     }
     public void updatePayment(payment u){
-        String sql = "update payment set amount='"+u.getAmount()+"',type='"+u.getType()+"',pdate='"+u.getPdate()+"' TrID='"+u.getTrID()+"' where pid='"+u.getPid()+"'  ";
+        String sql = "update payment set amount='"+u.getAmount()+"',pdate='"+u.getPdate()+"' TrID='"+u.getTrID()+"' where pid='"+u.getPid()+"'  ";
         d.executequery(sql);
     }
     public void deletePayment(int pid){
@@ -34,6 +34,7 @@ public class PaymentCRUD {
     public ArrayList<String> viewAllPayments(){
         Cursor c = d.executerawquery("select * from payment");
         ArrayList<String> getPayments = new ArrayList<>();
+        c.moveToFirst();
         while(c.moveToNext()){
             String u =null;
             u=String.valueOf(c.getInt(c.getColumnIndex("pid")));
@@ -82,8 +83,7 @@ public class PaymentCRUD {
             u+="\t";
             u+=String.valueOf(c.getFloat(c.getColumnIndex("amount")));
             u+="\t";
-            u+=c.getString(c.getColumnIndex("type"));
-            u+="\t";
+
             u=String.valueOf(c.getInt(c.getColumnIndex("TrID")));
 
             getPayments.add(u);

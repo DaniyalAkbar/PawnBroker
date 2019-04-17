@@ -33,6 +33,7 @@ public class AnnouncementsCRUD {
     public  ArrayList<String> viewAllAnnouncements(){
         Cursor c = d.executerawquery("select * from announcements");
         ArrayList<String> getAnnouncements = new ArrayList<>();
+        c.moveToFirst();
         while(c.moveToNext()){
             String u =null;
             u=String.valueOf(c.getInt(c.getColumnIndex("AID")));

@@ -7,7 +7,7 @@ public class payment {
     int PID;
     float amount;
     int TrID;
-    String type;
+    
     String pdate;
 
 
@@ -19,13 +19,6 @@ public class payment {
 
     public void setTrID(int trID) { TrID = trID; }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
 
     public float getAmount() {
         return amount;

@@ -34,6 +34,7 @@ public class EmployeeCRUD {
     public ArrayList<String> viewAllEmployee(){
         Cursor c = d.executerawquery("select * from employee");
         ArrayList<String> getEmployee = new ArrayList<>();
+        c.moveToFirst();
         while(c.moveToNext()){
             String u;
             u=String.valueOf(c.getInt(c.getColumnIndex("empid")));

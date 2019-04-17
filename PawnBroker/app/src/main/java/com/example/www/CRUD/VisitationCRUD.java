@@ -35,6 +35,7 @@ public class VisitationCRUD {
     public ArrayList<String> viewAllVisitation(){
         Cursor c = d.executerawquery("select * from visitation");
         ArrayList<String> getVisitation = new ArrayList<>();
+        c.moveToFirst();
         while(c.moveToNext()){
             String u =null;
             u=String.valueOf(c.getInt(c.getColumnIndex("vid")));

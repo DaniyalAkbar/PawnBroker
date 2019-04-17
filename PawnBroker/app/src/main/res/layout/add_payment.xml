@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
-        android:text="Add a Transaction"
+        android:text="Add a Payments"
         android:textSize="30sp"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
