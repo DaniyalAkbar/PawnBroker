@@ -22,7 +22,7 @@ public class AddTestimonial extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_announcement);
+        setContentView(R.layout.add_testimonial);
         AddTestimonialBtnButton=(Button)findViewById(R.id.txtAnnouncementSubmitBtn);
         Testimonial=(EditText)findViewById(R.id.txtTestimonial);
         TDate=(EditText)findViewById(R.id.txtDateTestimonial);
