@@ -22,7 +22,7 @@ public class AddPayment extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_transaction);
+        setContentView(R.layout.add_payment);
         AddPaymenttBtnButton=(Button)findViewById(R.id.txtPaymentSubmitBtn);
         Amount=(EditText)findViewById(R.id.txAmount);
         PDate=(EditText)findViewById(R.id.txtDatePayment);
