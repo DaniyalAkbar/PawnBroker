@@ -14,7 +14,7 @@ public class ViewTransaction extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_forall);
-        lv=(ListView)findViewById(R.id.lvUsers);
+        lv=(ListView)findViewById(R.id.lv);
         ArrayAdapter ap = new ArrayAdapter(ViewTransaction.this,android.R.layout.simple_list_item_1,new TransactionCRUD(ViewTransaction.this).viewAllTransaction());
         lv.setAdapter(ap);
     }

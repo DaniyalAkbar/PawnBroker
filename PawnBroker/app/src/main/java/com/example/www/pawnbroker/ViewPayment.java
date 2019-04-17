@@ -14,7 +14,7 @@ public class ViewPayment extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_forall);
-        lv=(ListView)findViewById(R.id.lvUsers);
+        lv=(ListView)findViewById(R.id.lv);
         ArrayAdapter ap = new ArrayAdapter(ViewPayment.this,android.R.layout.simple_list_item_1,new PaymentCRUD(ViewPayment.this).viewAllPayments());
         lv.setAdapter(ap);
     }
