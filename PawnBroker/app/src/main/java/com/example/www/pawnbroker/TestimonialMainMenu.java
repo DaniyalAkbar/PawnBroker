@@ -27,7 +27,7 @@ public class TestimonialMainMenu extends AppCompatActivity {
         addbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(TestimonialMainMenu.this,AddUser.class));
+                startActivity(new Intent(TestimonialMainMenu.this,AddTestimonial.class));
             }
         });
         viewbtn.setOnClickListener(new View.OnClickListener() {
@@ -40,6 +40,12 @@ public class TestimonialMainMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(TestimonialMainMenu.this,SearchTestimonials.class));
+            }
+        });
+        updatebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(TestimonialMainMenu.this,UpdateTestimonial.class));
             }
         });
 
