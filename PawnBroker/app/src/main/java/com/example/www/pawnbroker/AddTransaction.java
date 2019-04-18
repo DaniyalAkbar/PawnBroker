@@ -35,14 +35,10 @@ public class AddTransaction extends AppCompatActivity {
                     SimpleDateFormat fm = new SimpleDateFormat("dd-MM-yyyy");
                     t.setAmount(Float.parseFloat(Amount.getText().toString()));
                     t.setType(Type.getText().toString());
-                    t.setTdate(fm.parse(TDate.getText().toString()).toString());
+                    t.setTdate(TDate.getText().toString());
                     new TransactionCRUD(AddTransaction.this).addTransaction(t);
                     ShowDialog("New Transaction Added Successfully");
 
-                }catch (java.text.ParseException e){
-                    ShowDialog("Incorrect Date Format. Please Try Again");
-
-                    e.printStackTrace();
                 }catch (SQLiteException e){
                     ShowDialog(e.getMessage());
                 }catch (Exception e){

@@ -35,14 +35,10 @@ public class AddVisitation extends AppCompatActivity {
                     SimpleDateFormat fm = new SimpleDateFormat("dd-MM-yyyy");
                     v.setVisitation(Visitation.getText().toString());
                     v.setEmpid(Integer.parseInt(Empid.getText().toString()));
-                    v.setVdate(fm.parse(VDate.getText().toString()).toString());
+                    v.setVdate(VDate.getText().toString());
                     new VisitationCRUD(AddVisitation.this).addVisitation(v);
                     ShowDialog("New Visitation Added Successfully");
 
-                }catch (java.text.ParseException e){
-                    ShowDialog("Incorrect Date Format. Please Try Again");
-
-                    e.printStackTrace();
                 }catch (SQLiteException e){
                     ShowDialog(e.getMessage());
                 }

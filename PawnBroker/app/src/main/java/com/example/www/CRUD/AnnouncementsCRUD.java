@@ -53,7 +53,7 @@ public class AnnouncementsCRUD {
 
     }
     public ArrayList<String> searchAnnouncementsByDate(String date){
-        Cursor c = d.executerawquery("select * from announcements where date='"+date+"'");
+        Cursor c = d.executerawquery("select * from announcements where adate='"+date+"'");
         ArrayList<String> getAnnouncements = new ArrayList<>();
         while(c.moveToNext()){
             String u =null;

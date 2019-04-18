@@ -38,7 +38,8 @@ public class UpdateUser extends AppCompatActivity {
                     u.setFname(FirstName.getText().toString());
                     u.setLname(LastName.getText().toString());
                     u.setRegDate(fm.parse(RegDate.getText().toString()).toString());
-                    new UserCRUD(UpdateUser.this).add(u);
+
+                    new UserCRUD(UpdateUser.this).update(u);
                     ShowDialog("User Updated Successfully");
 
                 }catch (java.text.ParseException e){

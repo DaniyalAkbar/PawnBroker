@@ -35,16 +35,14 @@ public class AddTestimonial extends AppCompatActivity {
                 try {
                     testimonial t= new testimonial();
                     SimpleDateFormat fm = new SimpleDateFormat("dd-MM-yyyy");
+
                     t.setTestimonial(Testimonial.getText().toString().trim());
                     t.setUid(Integer.parseInt(UID.getText().toString().trim()));
                     t.setAdate(fm.parse(TDate.getText().toString()).toString().trim());
+
                     new TestimonialCRUD(AddTestimonial.this).addTestimonial(t);
                     ShowDialog("New Testimonial Added Successfully");
 
-                }catch (java.text.ParseException e){
-                    ShowDialog("Incorrect Date Format. Please Try Again");
-
-                    e.printStackTrace();
                 }catch (Exception e){
                     ShowDialog(e.getMessage());
                 }
