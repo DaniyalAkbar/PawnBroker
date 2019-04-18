@@ -37,72 +37,79 @@ public class VisitationCRUD {
         ArrayList<String> getVisitation = new ArrayList<>();
         c.moveToFirst();
 
-        while(c.moveToNext()){
-            String u =null;
+        while(!c.isAfterLast()){
+            String u ;
             u=String.valueOf(c.getInt(c.getColumnIndex("vid")));
             u+="\t";
-            u+=c.getString(c.getColumnIndex("vdate"));
+            u+=c.getString(c.getColumnIndex("visitation"));
             u+="\t";
             u+=String.valueOf(c.getInt(c.getColumnIndex("empid")));
             u+="\t";
-            u+=c.getString(c.getColumnIndex("visitation"));
+            u+=c.getString(c.getColumnIndex("vdate"));
 
             getVisitation.add(u);
-            Toast.makeText(context, getVisitation.get(0).toString(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context, getVisitation.get(0).toString(), Toast.LENGTH_SHORT).show();
+            c.moveToNext();
         }
         return  getVisitation;
     }
     public ArrayList<String> searchVisitationByID(int vid){
         Cursor c = d.executerawquery("select * from visitation where vid='"+vid+"'");
         ArrayList<String> getVisitation = new ArrayList<>();
-        while(c.moveToNext()){
-            String u =null;
+        c.moveToFirst();
+        while(!c.isAfterLast()){
+            String u ;
             u=String.valueOf(c.getInt(c.getColumnIndex("vid")));
             u+="\t";
-            u+=c.getString(c.getColumnIndex("vdate"));
+            u+=c.getString(c.getColumnIndex("visitation"));
             u+="\t";
             u+=String.valueOf(c.getInt(c.getColumnIndex("empid")));
             u+="\t";
-            u+=c.getString(c.getColumnIndex("visitation"));
+            u+=c.getString(c.getColumnIndex("vdate"));
 
             getVisitation.add(u);
-            Toast.makeText(context, getVisitation.get(0).toString(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context, getVisitation.get(0).toString(), Toast.LENGTH_SHORT).show();
+            c.moveToNext();
         }
         return  getVisitation;
     }
     public ArrayList<String> searchVisitationByDate(String date){
         Cursor c = d.executerawquery("select * from visitation where vdate='"+date+"'");
         ArrayList<String> getVisitation = new ArrayList<>();
-        while(c.moveToNext()){
-            String u =null;
+        c.moveToFirst();
+        while(!c.isAfterLast()){
+            String u ;
             u=String.valueOf(c.getInt(c.getColumnIndex("vid")));
             u+="\t";
-            u+=c.getString(c.getColumnIndex("vdate"));
+            u+=c.getString(c.getColumnIndex("visitation"));
             u+="\t";
             u+=String.valueOf(c.getInt(c.getColumnIndex("empid")));
             u+="\t";
-            u+=c.getString(c.getColumnIndex("visitation"));
+            u+=c.getString(c.getColumnIndex("vdate"));
 
             getVisitation.add(u);
-            Toast.makeText(context, getVisitation.get(0).toString(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context, getVisitation.get(0).toString(), Toast.LENGTH_SHORT).show();
+            c.moveToNext();
         }
         return  getVisitation;
     }
     public ArrayList<String> searchVisitationByEmp(int empid){
         Cursor c = d.executerawquery("select * from visitation where empid='"+empid+"'");
         ArrayList<String> getVisitation = new ArrayList<>();
-        while(c.moveToNext()){
-            String u =null;
+        c.moveToFirst();
+        while(!c.isAfterLast()){
+            String u ;
             u=String.valueOf(c.getInt(c.getColumnIndex("vid")));
             u+="\t";
-            u+=c.getString(c.getColumnIndex("vdate"));
+            u+=c.getString(c.getColumnIndex("visitation"));
             u+="\t";
             u+=String.valueOf(c.getInt(c.getColumnIndex("empid")));
             u+="\t";
-            u+=c.getString(c.getColumnIndex("visitation"));
+            u+=c.getString(c.getColumnIndex("vdate"));
 
             getVisitation.add(u);
-            Toast.makeText(context, getVisitation.get(0).toString(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context, getVisitation.get(0).toString(), Toast.LENGTH_SHORT).show();
+            c.moveToNext();
         }
         return  getVisitation;
     }

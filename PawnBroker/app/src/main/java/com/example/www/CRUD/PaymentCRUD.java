@@ -35,8 +35,8 @@ public class PaymentCRUD {
         Cursor c = d.executerawquery("select * from payment");
         ArrayList<String> getPayments = new ArrayList<>();
         c.moveToFirst();
-        while(c.moveToNext()){
-            String u =null;
+        while(!c.isAfterLast()){
+            String u ;
             u=String.valueOf(c.getInt(c.getColumnIndex("PID")));
             u+="\t";
             u+=String.valueOf(c.getFloat(c.getColumnIndex("amount")));
@@ -48,14 +48,16 @@ public class PaymentCRUD {
 
             getPayments.add(u);
             //Toast.makeText(context, getPayments.get(0).toString(), Toast.LENGTH_SHORT).show();
+            c.moveToNext();
         }
         return  getPayments;
     }
     public ArrayList<String> searchPaymentsByDate(String date){
         Cursor c = d.executerawquery("select * from payment where pdate='"+date+"'");
         ArrayList<String> getPayments = new ArrayList<>();
-        while(c.moveToNext()){
-            String u =null;
+        c.moveToFirst();
+        while(!c.isAfterLast()){
+            String u ;
             u=String.valueOf(c.getInt(c.getColumnIndex("PID")));
             u+="\t";
             u+=c.getString(c.getColumnIndex("pdate"));
@@ -65,15 +67,17 @@ public class PaymentCRUD {
             u+=String.valueOf(c.getInt(c.getColumnIndex("TrID")));
 
             getPayments.add(u);
-            Toast.makeText(context, getPayments.get(0).toString(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context, getPayments.get(0).toString(), Toast.LENGTH_SHORT).show();
+            c.moveToNext();
         }
         return  getPayments;
     }
     public ArrayList<String> searchPaymentsByType(String type){
         Cursor c = d.executerawquery("select * from payment where type='"+type+"'");
         ArrayList<String> getPayments = new ArrayList<>();
-        while(c.moveToNext()){
-            String u =null;
+        c.moveToFirst();
+        while(!c.isAfterLast()){
+            String u ;
             u=String.valueOf(c.getInt(c.getColumnIndex("PID")));
             u+="\t";
             u+=c.getString(c.getColumnIndex("pdate"));
@@ -84,7 +88,8 @@ public class PaymentCRUD {
 
 
             getPayments.add(u);
-            Toast.makeText(context, getPayments.get(0).toString(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context, getPayments.get(0).toString(), Toast.LENGTH_SHORT).show();
+            c.moveToNext();
         }
         return getPayments;
     }
@@ -92,8 +97,9 @@ public class PaymentCRUD {
     public ArrayList<String> searchPaymentsByTransaction(int TrID){
         Cursor c = d.executerawquery("select * from payment where TrID='"+TrID+"'");
         ArrayList<String> getPayments = new ArrayList<>();
-        while(c.moveToNext()){
-            String u =null;
+        c.moveToFirst();
+        while(!c.isAfterLast()){
+            String u ;
             u=String.valueOf(c.getInt(c.getColumnIndex("PID")));
             u+="\t";
             u+=c.getString(c.getColumnIndex("pdate"));
@@ -103,7 +109,8 @@ public class PaymentCRUD {
             u+=String.valueOf(c.getInt(c.getColumnIndex("TrID")));
 
             getPayments.add(u);
-            Toast.makeText(context, getPayments.get(0).toString(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context, getPayments.get(0).toString(), Toast.LENGTH_SHORT).show();
+            c.moveToNext();
         }
         return  getPayments;
     }

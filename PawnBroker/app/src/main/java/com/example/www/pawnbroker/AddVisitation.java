@@ -32,7 +32,6 @@ public class AddVisitation extends AppCompatActivity {
             public void onClick(View view) {
                 try {
                     visitation v= new visitation();
-                    SimpleDateFormat fm = new SimpleDateFormat("dd-MM-yyyy");
                     v.setVisitation(Visitation.getText().toString());
                     v.setEmpid(Integer.parseInt(Empid.getText().toString()));
                     v.setVdate(VDate.getText().toString());

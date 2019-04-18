@@ -27,8 +27,6 @@ public class UpdateVisitation extends AppCompatActivity {
         Visitation=(EditText)findViewById(R.id.txtVisitation);
         VDate=(EditText)findViewById(R.id.txtDateVisitation);
         Empid=(EditText)findViewById(R.id.txtEmpIdFK);
-        VID.setInputType(InputType.TYPE_CLASS_NUMBER);
-        VID.setInputType(InputType.TYPE_CLASS_PHONE);
         AddVisitationBtnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

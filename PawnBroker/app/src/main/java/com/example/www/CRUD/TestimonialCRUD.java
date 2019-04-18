@@ -35,8 +35,8 @@ public class TestimonialCRUD {
         Cursor c = d.executerawquery("select * from testimonial");
         ArrayList<String> getTestimonial = new ArrayList<>();
         c.moveToFirst();
-        while(c.moveToNext()){
-            String u =null;
+        while(!c.isAfterLast()){
+            String u ;
             u=String.valueOf(c.getInt(c.getColumnIndex("TID")));
             u+="\t";
             u+=c.getString(c.getColumnIndex("testimonial"));
@@ -47,14 +47,16 @@ public class TestimonialCRUD {
 
             getTestimonial.add(u);
             Toast.makeText(context, getTestimonial.get(0).toString(), Toast.LENGTH_SHORT).show();
+            c.moveToNext();
         }
         return  getTestimonial;
     }
     public ArrayList<String> searchTestimonialByDate(String date){
         Cursor c = d.executerawquery("select * from testimonial where adate='"+date+"'");
         ArrayList<String> getTestimonial = new ArrayList<>();
-        while(c.moveToNext()){
-            String u =null;
+        c.moveToFirst();
+        while(!c.isAfterLast()){
+            String u ;
             u=String.valueOf(c.getInt(c.getColumnIndex("TID")));
             u+="\t";
             u+=c.getString(c.getColumnIndex("testimonial"));
@@ -64,14 +66,16 @@ public class TestimonialCRUD {
             u+=c.getString(c.getColumnIndex("adate"));
 
             getTestimonial.add(u);
+            c.moveToNext();
         }
         return  getTestimonial;
     }
     public ArrayList<String> searchTestimonialsByUserID(int UID){
         Cursor c = d.executerawquery("select * from testimonial where UID='"+UID+"'");
         ArrayList<String> getTestimonial = new ArrayList<>();
-        while(c.moveToNext()){
-            String u =null;
+        c.moveToFirst();
+        while(!c.isAfterLast()){
+            String u ;
             u=String.valueOf(c.getInt(c.getColumnIndex("TID")));
             u+="\t";
             u+=c.getString(c.getColumnIndex("testimonial"));
@@ -81,6 +85,7 @@ public class TestimonialCRUD {
             u+=c.getString(c.getColumnIndex("adate"));
 
             getTestimonial.add(u);
+            c.moveToNext();
         }
         return  getTestimonial;
     }

@@ -35,7 +35,7 @@ public class EmployeeCRUD {
         Cursor c = d.executerawquery("select * from employee");
         ArrayList<String> getEmployee = new ArrayList<>();
         c.moveToFirst();
-        while(c.moveToNext()){
+        while(!c.isAfterLast()){
             String u;
             u=String.valueOf(c.getInt(c.getColumnIndex("empid")));
             u+="\t";
@@ -44,7 +44,7 @@ public class EmployeeCRUD {
             u+=c.getString(c.getColumnIndex("Lname"));
 
             getEmployee.add(u);
-
+            c.moveToNext();
         }
         return  getEmployee;
     }

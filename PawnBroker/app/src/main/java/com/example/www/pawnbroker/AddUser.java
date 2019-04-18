@@ -37,7 +37,7 @@ public class AddUser extends AppCompatActivity {
                     u.setFname(FirstName.getText().toString());
                     u.setLname(LastName.getText().toString());
                     u.setRegDate(RegDate.getText().toString());
-                    Toast.makeText(AddUser.this, u.getRegDate(), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(AddUser.this, u.getRegDate(), Toast.LENGTH_SHORT).show();
                     new UserCRUD(AddUser.this).add(u);
                     ShowDialog("New User Added Successfully");
 

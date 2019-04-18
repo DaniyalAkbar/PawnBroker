@@ -33,14 +33,14 @@ public class UserCRUD {
         d.executequery(sql);
     }
     public void update(users u){
-        String sql = "update users set fname='"+u.getFname()+"',lname='"+u.getLname()+"',regdate='"+u.getRegDate()+"' where UID='"+u.getUID()+"' ";
+        String sql = "update users set Fname='"+u.getFname()+"',Lname='"+u.getLname()+"',regdate='"+u.getRegDate()+"' where UID='"+u.getUID()+"' ";
         d.executequery(sql);
     }
     public  ArrayList<String> viewall(){
         Cursor c = d.executerawquery("select * from users");
         ArrayList<String> getusers = new ArrayList<>();
         c.moveToFirst();
-        while(c.moveToNext()){
+        while(!c.isAfterLast()){
             String u;
             u=String.valueOf(c.getInt(c.getColumnIndex("UID")));
             u+="\t";
@@ -48,19 +48,19 @@ public class UserCRUD {
             u+=" ";
             u+=c.getString(c.getColumnIndex("Lname"));
             u+="\t";
-                u+=c.getString(c.getColumnIndex("regdate"));
+            u+=c.getString(c.getColumnIndex("regdate"));
 
             getusers.add(u);
-
+            c.moveToNext();
         }
         return  getusers;
 
     }
     public  ArrayList<String> searchUserByFirstName(String fname){
-        Cursor c = d.executerawquery("select * from users where fname = '"+fname+"' ");
+        Cursor c = d.executerawquery("select * from users where Fname = '"+fname+"' ");
         ArrayList<String> arrayList = new ArrayList<>();
         c.moveToFirst();
-        while(c.moveToNext()){
+        while(!c.isAfterLast()){
             String u;
             u=String.valueOf(c.getInt(c.getColumnIndex("UID")));
             u+="\t";
@@ -71,16 +71,16 @@ public class UserCRUD {
             u+=c.getString(c.getColumnIndex("regdate"));
 
             arrayList.add(u);
-
+            c.moveToNext();
         }
         return  arrayList;
 
     }
     public  ArrayList<String> searchUserByLastName(String lname){
-        Cursor c = d.executerawquery("select * from users where lname = '"+lname+"' ");
+        Cursor c = d.executerawquery("select * from users where Lname = '"+lname+"' ");
         ArrayList<String> arrayList = new ArrayList<>();
         c.moveToFirst();
-        while(c.moveToNext()){
+        while(!c.isAfterLast()){
             String u;
             u=String.valueOf(c.getInt(c.getColumnIndex("UID")));
             u+="\t";
@@ -91,7 +91,7 @@ public class UserCRUD {
             u+=c.getString(c.getColumnIndex("regdate"));
 
             arrayList.add(u);
-
+            c.moveToNext();
         }
         return  arrayList;
 
@@ -100,7 +100,7 @@ public class UserCRUD {
         Cursor c = d.executerawquery("select * from users where regdate = '"+regdate+"' ");
         ArrayList<String> arrayList = new ArrayList<>();
         c.moveToFirst();
-        while(c.moveToNext()){
+        while(!c.isAfterLast()){
             String u;
             u=String.valueOf(c.getInt(c.getColumnIndex("UID")));
             u+="\t";
@@ -111,7 +111,7 @@ public class UserCRUD {
             u+=c.getString(c.getColumnIndex("regdate"));
 
             arrayList.add(u);
-
+            c.moveToNext();
         }
         return  arrayList;
 

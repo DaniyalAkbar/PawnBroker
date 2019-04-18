@@ -35,19 +35,19 @@ public class AnnouncementsCRUD {
         Cursor c = d.executerawquery("select * from announcements");
         ArrayList<String> getAnnouncements = new ArrayList<>();
         c.moveToFirst();
-        SimpleDateFormat fm = new SimpleDateFormat("dd-MM-yyyy");
-        while(c.moveToNext()){
-            String u =null;
-            u=String.valueOf(c.getInt(c.getColumnIndex("AID")));
-            u+="\t";
-            u+=c.getString(c.getColumnIndex("announcement"));
-            u+="\t";
-            u+=c.getString(c.getColumnIndex("adate"));
-            u+="\t";
-            u+=c.getString(c.getColumnIndex("type"));
+            while(!c.isAfterLast()){
+                String u ;
+                u = String.valueOf(c.getInt(c.getColumnIndex("AID")));
+                u += "\t";
+                u += c.getString(c.getColumnIndex("announcement"));
+                u += "\t";
+                u += c.getString(c.getColumnIndex("adate"));
+                u += "\t";
+                u += c.getString(c.getColumnIndex("type"));
 
-            getAnnouncements.add(u);
-            Toast.makeText(context, getAnnouncements.get(0).toString(), Toast.LENGTH_SHORT).show();
+                getAnnouncements.add(u);
+                //Toast.makeText(context, getAnnouncements.get(0).toString(), Toast.LENGTH_SHORT).show();
+                c.moveToNext();
         }
         return  getAnnouncements;
 
@@ -56,7 +56,7 @@ public class AnnouncementsCRUD {
         Cursor c = d.executerawquery("select * from announcements where adate='"+date+"'");
         ArrayList<String> getAnnouncements = new ArrayList<>();
         while(c.moveToNext()){
-            String u =null;
+            String u ;
             u=String.valueOf(c.getInt(c.getColumnIndex("AID")));
             u+="\t";
             u+=c.getString(c.getColumnIndex("announcement"));
@@ -73,7 +73,7 @@ public class AnnouncementsCRUD {
         Cursor c = d.executerawquery("select * from announcements where type='"+type+"'");
         ArrayList<String> getAnnouncements = new ArrayList<>();
         while(c.moveToNext()){
-            String u =null;
+            String u ;
             u=String.valueOf(c.getInt(c.getColumnIndex("AID")));
             u+="\t";
             u+=c.getString(c.getColumnIndex("announcement"));

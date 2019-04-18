@@ -35,8 +35,8 @@ public class TransactionCRUD {
         Cursor c = d.executerawquery("select * from transactions");
         ArrayList<String> getTransaction = new ArrayList<>();
         c.moveToFirst();
-        while(c.moveToNext()){
-            String u =null;
+        while(!c.isAfterLast()){
+            String u ;
             u=String.valueOf(c.getInt(c.getColumnIndex("TrID")));
             u+="\t";
             u+=String.valueOf(c.getFloat(c.getColumnIndex("amount")));
@@ -47,14 +47,16 @@ public class TransactionCRUD {
 
             getTransaction.add(u);
             Toast.makeText(context, getTransaction.get(0).toString(), Toast.LENGTH_SHORT).show();
+            c.moveToNext();
         }
         return  getTransaction;
     }
     public ArrayList<String> searchTransactionByDate(String date){
         Cursor c = d.executerawquery("select * from transactions where tdate='"+date+"'");
         ArrayList<String> getTransaction = new ArrayList<>();
-        while(c.moveToNext()){
-            String u =null;
+        c.moveToFirst();
+        while(!c.isAfterLast()){
+            String u;
             u=String.valueOf(c.getInt(c.getColumnIndex("TrID")));
             u+="\t";
             u+=String.valueOf(c.getFloat(c.getColumnIndex("amount")));
@@ -64,15 +66,17 @@ public class TransactionCRUD {
             u+=c.getString(c.getColumnIndex("type"));
 
             getTransaction.add(u);
-            Toast.makeText(context, getTransaction.get(0).toString(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context, getTransaction.get(0).toString(), Toast.LENGTH_SHORT).show();
+            c.moveToNext();
         }
         return getTransaction;
     }
     public ArrayList<String> searchTransactionByID(int TrID){
         Cursor c = d.executerawquery("select * from transactions where TrID='"+TrID+"'");
         ArrayList<String> getTransaction = new ArrayList<>();
-        while(c.moveToNext()){
-            String u =null;
+        c.moveToFirst();
+        while(!c.isAfterLast()){
+            String u;
             u=String.valueOf(c.getInt(c.getColumnIndex("TrID")));
             u+="\t";
             u+=String.valueOf(c.getFloat(c.getColumnIndex("amount")));
@@ -82,7 +86,8 @@ public class TransactionCRUD {
             u+=c.getString(c.getColumnIndex("type"));
 
             getTransaction.add(u);
-            Toast.makeText(context, getTransaction.get(0).toString(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context, getTransaction.get(0).toString(), Toast.LENGTH_SHORT).show();
+            c.moveToNext();
         }
         return getTransaction;
     }
