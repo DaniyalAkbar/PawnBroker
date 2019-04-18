@@ -19,7 +19,7 @@ public class PaymentCRUD {
         d.OpenorCreatDB();
     }
     public void addPayment(payment u){
-        String sql = "insert into payment(amount, pdate, TrID) values('"+u.getAmount()+"','"+u.getType()+"','"+u.getPdate()+"', '"+u.getTrID()+"')";
+        String sql = "insert into payment(amount, pdate, TrID) values('"+u.getAmount()+"','"+u.getPdate()+"', '"+u.getTrID()+"')";
         d.executequery(sql);
     }
     public void updatePayment(payment u){

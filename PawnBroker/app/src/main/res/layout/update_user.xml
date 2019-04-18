@@ -127,7 +127,7 @@
         android:textSize="25dp" />
 
     <Button
-        android:id="@+id/UserSubmitBtn"
+        android:id="@+id/updateUserSubmitBtn"
         android:layout_width="287dp"
         android:layout_height="59dp"
         android:layout_alignParentStart="true"

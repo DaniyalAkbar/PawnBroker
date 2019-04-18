@@ -7,6 +7,7 @@ import android.widget.Toast;
 import com.example.www.DB.Db;
 import com.example.www.model.announcements;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 
@@ -19,11 +20,11 @@ public class AnnouncementsCRUD {
         d.OpenorCreatDB();
     }
     public void addAnnouncement(announcements u){
-        String sql = "insert into announcement(announcement, type, date) values('"+u.getAnnouncement()+"','"+u.getType()+"','"+u.getDate()+"')";
+        String sql = "insert into announcements(announcement, type, adate) values('"+u.getAnnouncement()+"','"+u.getType()+"','"+u.getDate()+"')";
         d.executequery(sql);
     }
     public void update(announcements u){
-        String sql = "update announcements set announcements='"+u.getAnnouncement()+"',type='"+u.getType()+"',date='"+u.getDate()+"' where AID='"+u.getAID()+"' ";
+        String sql = "update announcements set announcement='"+u.getAnnouncement()+"',type='"+u.getType()+"',adate='"+u.getDate()+"' where AID='"+u.getAID()+"' ";
         d.executequery(sql);
     }
     public void delete(int AID){
@@ -34,13 +35,14 @@ public class AnnouncementsCRUD {
         Cursor c = d.executerawquery("select * from announcements");
         ArrayList<String> getAnnouncements = new ArrayList<>();
         c.moveToFirst();
+        SimpleDateFormat fm = new SimpleDateFormat("dd-MM-yyyy");
         while(c.moveToNext()){
             String u =null;
             u=String.valueOf(c.getInt(c.getColumnIndex("AID")));
             u+="\t";
-            u+=c.getString(c.getColumnIndex("announcements"));
+            u+=c.getString(c.getColumnIndex("announcement"));
             u+="\t";
-            u+=c.getString(c.getColumnIndex("date"));
+            u+=c.getString(c.getColumnIndex("adate"));
             u+="\t";
             u+=c.getString(c.getColumnIndex("type"));
 
@@ -57,9 +59,9 @@ public class AnnouncementsCRUD {
             String u =null;
             u=String.valueOf(c.getInt(c.getColumnIndex("AID")));
             u+="\t";
-            u+=c.getString(c.getColumnIndex("announcements"));
+            u+=c.getString(c.getColumnIndex("announcement"));
             u+="\t";
-            u+=c.getString(c.getColumnIndex("date"));
+            u+=c.getString(c.getColumnIndex("adate"));
             u+="\t";
             u+=c.getString(c.getColumnIndex("type"));
 
@@ -74,9 +76,9 @@ public class AnnouncementsCRUD {
             String u =null;
             u=String.valueOf(c.getInt(c.getColumnIndex("AID")));
             u+="\t";
-            u+=c.getString(c.getColumnIndex("announcements"));
+            u+=c.getString(c.getColumnIndex("announcement"));
             u+="\t";
-            u+=c.getString(c.getColumnIndex("date"));
+            u+=c.getString(c.getColumnIndex("adate"));
             u+="\t";
             u+=c.getString(c.getColumnIndex("type"));
 

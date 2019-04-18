@@ -21,7 +21,7 @@ public class UpdateUser extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.update_user);
-        AddUserBtnButton=(Button)findViewById(R.id.txtUserSubmitBtn);
+        AddUserBtnButton=(Button)findViewById(R.id.updateUserSubmitBtn);
         UserID=(EditText)findViewById(R.id.txtUserID);
         FirstName=(EditText)findViewById(R.id.txtFirstName);
         LastName=(EditText)findViewById(R.id.txtLastName);
