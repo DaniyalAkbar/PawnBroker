@@ -37,18 +37,17 @@ public class PaymentCRUD {
         c.moveToFirst();
         while(c.moveToNext()){
             String u =null;
-            u=String.valueOf(c.getInt(c.getColumnIndex("pid")));
-            u+="\t";
-            u+=c.getString(c.getColumnIndex("pdate"));
+            u=String.valueOf(c.getInt(c.getColumnIndex("PID")));
             u+="\t";
             u+=String.valueOf(c.getFloat(c.getColumnIndex("amount")));
             u+="\t";
-            u+=c.getString(c.getColumnIndex("type"));
+            u+=String.valueOf(c.getString(c.getColumnIndex("pdate")));
             u+="\t";
-            u=String.valueOf(c.getInt(c.getColumnIndex("TrID")));
+
+            u+=String.valueOf(c.getInt(c.getColumnIndex("TrID")));
 
             getPayments.add(u);
-            Toast.makeText(context, getPayments.get(0).toString(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context, getPayments.get(0).toString(), Toast.LENGTH_SHORT).show();
         }
         return  getPayments;
     }
@@ -57,15 +56,13 @@ public class PaymentCRUD {
         ArrayList<String> getPayments = new ArrayList<>();
         while(c.moveToNext()){
             String u =null;
-            u=String.valueOf(c.getInt(c.getColumnIndex("pid")));
+            u=String.valueOf(c.getInt(c.getColumnIndex("PID")));
             u+="\t";
             u+=c.getString(c.getColumnIndex("pdate"));
             u+="\t";
             u+=String.valueOf(c.getFloat(c.getColumnIndex("amount")));
             u+="\t";
-            u+=c.getString(c.getColumnIndex("type"));
-            u+="\t";
-            u=String.valueOf(c.getInt(c.getColumnIndex("TrID")));
+            u+=String.valueOf(c.getInt(c.getColumnIndex("TrID")));
 
             getPayments.add(u);
             Toast.makeText(context, getPayments.get(0).toString(), Toast.LENGTH_SHORT).show();
@@ -77,14 +74,14 @@ public class PaymentCRUD {
         ArrayList<String> getPayments = new ArrayList<>();
         while(c.moveToNext()){
             String u =null;
-            u=String.valueOf(c.getInt(c.getColumnIndex("pid")));
+            u=String.valueOf(c.getInt(c.getColumnIndex("PID")));
             u+="\t";
             u+=c.getString(c.getColumnIndex("pdate"));
             u+="\t";
             u+=String.valueOf(c.getFloat(c.getColumnIndex("amount")));
             u+="\t";
 
-            u=String.valueOf(c.getInt(c.getColumnIndex("TrID")));
+            u+=String.valueOf(c.getInt(c.getColumnIndex("TrID")));
 
             getPayments.add(u);
             Toast.makeText(context, getPayments.get(0).toString(), Toast.LENGTH_SHORT).show();
@@ -97,15 +94,13 @@ public class PaymentCRUD {
         ArrayList<String> getPayments = new ArrayList<>();
         while(c.moveToNext()){
             String u =null;
-            u=String.valueOf(c.getInt(c.getColumnIndex("pid")));
+            u=String.valueOf(c.getInt(c.getColumnIndex("PID")));
             u+="\t";
             u+=c.getString(c.getColumnIndex("pdate"));
             u+="\t";
             u+=String.valueOf(c.getFloat(c.getColumnIndex("amount")));
             u+="\t";
-            u+=c.getString(c.getColumnIndex("type"));
-            u+="\t";
-            u=String.valueOf(c.getInt(c.getColumnIndex("TrID")));
+            u+=String.valueOf(c.getInt(c.getColumnIndex("TrID")));
 
             getPayments.add(u);
             Toast.makeText(context, getPayments.get(0).toString(), Toast.LENGTH_SHORT).show();

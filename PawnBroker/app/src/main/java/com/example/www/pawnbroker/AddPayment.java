@@ -22,7 +22,7 @@ public class AddPayment extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_transaction);
+        setContentView(R.layout.add_payment);
         AddPaymenttBtnButton=(Button)findViewById(R.id.txtPaymentSubmitBtn);
         Amount=(EditText)findViewById(R.id.txAmount);
         PDate=(EditText)findViewById(R.id.txtDatePayment);
@@ -35,14 +35,10 @@ public class AddPayment extends AppCompatActivity {
                     SimpleDateFormat fm = new SimpleDateFormat("dd-MM-yyyy");
                     p.setAmount(Float.parseFloat(Amount.getText().toString()));
                     p.setTrID(Integer.parseInt(Trid.getText().toString()));
-                    p.setPdate(fm.parse(PDate.getText().toString()).toString());
+                    p.setPdate(PDate.getText().toString());
                     new PaymentCRUD(AddPayment.this).addPayment(p);
                     ShowDialog("New Payment Added Successfully");
 
-                }catch (java.text.ParseException e){
-                    ShowDialog("Incorrect Date Format. Please Try Again");
-
-                    e.printStackTrace();
                 }catch (SQLiteException e){
                     ShowDialog(e.getMessage());
                 }catch (Exception e){

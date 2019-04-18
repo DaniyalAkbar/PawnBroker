@@ -270,7 +270,13 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".UpdateEmployee">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".UpdateAnnouncement">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

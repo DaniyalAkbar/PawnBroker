@@ -62,7 +62,7 @@
 
         android:layout_centerHorizontal="true"
         android:layout_marginTop="21dp"
-        android:text="Update User"
+        android:text="Update Transaction"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.551"

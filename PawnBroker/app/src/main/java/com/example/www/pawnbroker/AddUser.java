@@ -33,17 +33,16 @@ public class AddUser extends AppCompatActivity {
             public void onClick(View view) {
                 try {
                     users u= new users();
-                    SimpleDateFormat fm = new SimpleDateFormat("dd-MM-yyyy");
+
                     u.setFname(FirstName.getText().toString());
                     u.setLname(LastName.getText().toString());
-                    u.setRegDate(fm.parse(RegDate.getText().toString()).toString());
+                    u.setRegDate(RegDate.getText().toString());
+                    Toast.makeText(AddUser.this, u.getRegDate(), Toast.LENGTH_SHORT).show();
                     new UserCRUD(AddUser.this).add(u);
                     ShowDialog("New User Added Successfully");
 
-                }catch (java.text.ParseException e){
-                    ShowDialog("Incorrect Date Format. Please Try Again");
-
-                    e.printStackTrace();
+                }catch (Exception e){
+                    ShowDialog(e.getMessage());
                 }
             }
         });
