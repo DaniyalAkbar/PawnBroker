@@ -27,7 +27,7 @@ public class VisitationMainMenu extends AppCompatActivity {
         addbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(VisitationMainMenu.this,AddUser.class));
+                startActivity(new Intent(VisitationMainMenu.this,AddVisitation.class));
             }
         });
         viewbtn.setOnClickListener(new View.OnClickListener() {

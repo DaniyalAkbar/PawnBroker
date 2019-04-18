@@ -40,14 +40,10 @@ public class UpdateTestimonial extends AppCompatActivity {
                     t.setTid(Integer.parseInt(TestID.getText().toString()));
                     t.setTestimonial(Testimonial.getText().toString());
                     t.setUid(Integer.parseInt(UID.getText().toString()));
-                    t.setAdate(fm.parse(TDate.getText().toString()).toString());
+                    t.setAdate(TDate.getText().toString());
                     new TestimonialCRUD(UpdateTestimonial.this).updateTestimonial(t);
                     ShowDialog("New Testimonial Added Successfully");
 
-                }catch (java.text.ParseException e){
-                    ShowDialog("Incorrect Date Format. Please Try Again");
-
-                    e.printStackTrace();
                 }catch (Exception e){
                     ShowDialog(e.getMessage());
                 }

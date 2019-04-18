@@ -41,7 +41,7 @@ public class TestimonialCRUD {
             u+="\t";
             u+=c.getString(c.getColumnIndex("testimonial"));
             u+="\t";
-            u=String.valueOf(c.getInt(c.getColumnIndex("UID")));
+            u+=String.valueOf(c.getInt(c.getColumnIndex("UID")));
             u+="\t";
             u+=c.getString(c.getColumnIndex("adate"));
 
@@ -59,7 +59,7 @@ public class TestimonialCRUD {
             u+="\t";
             u+=c.getString(c.getColumnIndex("testimonial"));
             u+="\t";
-            u=String.valueOf(c.getInt(c.getColumnIndex("UID")));
+            u+=String.valueOf(c.getInt(c.getColumnIndex("UID")));
             u+="\t";
             u+=c.getString(c.getColumnIndex("adate"));
 
@@ -76,7 +76,7 @@ public class TestimonialCRUD {
             u+="\t";
             u+=c.getString(c.getColumnIndex("testimonial"));
             u+="\t";
-            u=String.valueOf(c.getInt(c.getColumnIndex("UID")));
+            u+=String.valueOf(c.getInt(c.getColumnIndex("UID")));
             u+="\t";
             u+=c.getString(c.getColumnIndex("adate"));
 

@@ -39,14 +39,10 @@ public class UpdateTransaction extends AppCompatActivity {
                     t.setTrID(Integer.parseInt(TrID.getText().toString()));
                     t.setAmount(Float.parseFloat(Amount.getText().toString()));
                     t.setType(Type.getText().toString());
-                    t.setTdate(fm.parse(TDate.getText().toString()).toString());
-                    new TransactionCRUD(UpdateTransaction.this).addTransaction(t);
+                    t.setTdate(TDate.getText().toString());
+                    new TransactionCRUD(UpdateTransaction.this).updateTransaction(t);
                     ShowDialog("Transaction Updated Successfully");
 
-                }catch (java.text.ParseException e){
-                    ShowDialog("Incorrect Date Format. Please Try Again");
-
-                    e.printStackTrace();
                 }catch (SQLiteException e){
                     ShowDialog(e.getMessage());
                 }catch (Exception e){

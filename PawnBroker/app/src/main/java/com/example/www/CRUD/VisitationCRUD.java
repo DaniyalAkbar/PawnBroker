@@ -43,7 +43,7 @@ public class VisitationCRUD {
             u+="\t";
             u+=c.getString(c.getColumnIndex("vdate"));
             u+="\t";
-            u=String.valueOf(c.getInt(c.getColumnIndex("empid")));
+            u+=String.valueOf(c.getInt(c.getColumnIndex("empid")));
             u+="\t";
             u+=c.getString(c.getColumnIndex("visitation"));
 
@@ -61,7 +61,7 @@ public class VisitationCRUD {
             u+="\t";
             u+=c.getString(c.getColumnIndex("vdate"));
             u+="\t";
-            u=String.valueOf(c.getInt(c.getColumnIndex("empid")));
+            u+=String.valueOf(c.getInt(c.getColumnIndex("empid")));
             u+="\t";
             u+=c.getString(c.getColumnIndex("visitation"));
 
@@ -79,7 +79,7 @@ public class VisitationCRUD {
             u+="\t";
             u+=c.getString(c.getColumnIndex("vdate"));
             u+="\t";
-            u=String.valueOf(c.getInt(c.getColumnIndex("empid")));
+            u+=String.valueOf(c.getInt(c.getColumnIndex("empid")));
             u+="\t";
             u+=c.getString(c.getColumnIndex("visitation"));
 
@@ -97,7 +97,7 @@ public class VisitationCRUD {
             u+="\t";
             u+=c.getString(c.getColumnIndex("vdate"));
             u+="\t";
-            u=String.valueOf(c.getInt(c.getColumnIndex("empid")));
+            u+=String.valueOf(c.getInt(c.getColumnIndex("empid")));
             u+="\t";
             u+=c.getString(c.getColumnIndex("visitation"));
 

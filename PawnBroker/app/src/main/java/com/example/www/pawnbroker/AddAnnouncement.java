@@ -34,11 +34,11 @@ public class AddAnnouncement extends AppCompatActivity {
                     SimpleDateFormat fm = new SimpleDateFormat("dd-MM-yyyy");
                     a.setAnnouncement(Annoucncement.getText().toString());
                     a.setType(Type.getText().toString());
-                    a.setDate(fm.parse(ADate.getText().toString()).toString());
+                    a.setDate(ADate.getText().toString());
                     new AnnouncementsCRUD(AddAnnouncement.this).addAnnouncement(a);
                     ShowDialog("New Annoucement Added Successfully");
 
-                }catch (java.text.ParseException e){
+                }catch (Exception e){
                     ShowDialog("Incorrect Date Format. Please Try Again");
 
                     e.printStackTrace();

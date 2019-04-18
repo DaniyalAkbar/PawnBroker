@@ -37,12 +37,12 @@ public class UpdateUser extends AppCompatActivity {
                     u.setUID(Integer.parseInt(UserID.getText().toString()));
                     u.setFname(FirstName.getText().toString());
                     u.setLname(LastName.getText().toString());
-                    u.setRegDate(fm.parse(RegDate.getText().toString()).toString());
+                    u.setRegDate(RegDate.getText().toString());
 
                     new UserCRUD(UpdateUser.this).update(u);
                     ShowDialog("User Updated Successfully");
 
-                }catch (java.text.ParseException e){
+                }catch (Exception e){
                     ShowDialog("Incorrect Date Format. Please Try Again");
 
                     e.printStackTrace();

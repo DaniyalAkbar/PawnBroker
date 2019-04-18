@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.view.menu.ShowableListMenu;
 import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
@@ -35,18 +36,16 @@ public class UpdateAnnouncement extends AppCompatActivity {
             public void onClick(View view) {
                 try {
                     announcements a= new announcements();
-                    SimpleDateFormat fm = new SimpleDateFormat("dd-MM-yyyy");
                     a.setAID(Integer.parseInt(AnnouncementID.getText().toString()));
                     a.setAnnouncement(Annoucncement.getText().toString());
                     a.setType(Type.getText().toString());
-                    a.setDate(fm.parse(ADate.getText().toString()).toString());
+                    a.setDate(ADate.getText().toString());
                     new AnnouncementsCRUD(UpdateAnnouncement.this).update(a);
                     ShowDialog("Annoucement Updated Successfully");
 
-                }catch (java.text.ParseException e){
-                    ShowDialog("Incorrect Date Format. Please Try Again");
+                }catch (Exception e){
 
-                    e.printStackTrace();
+                    ShowDialog(e.getMessage());
                 }
             }
         });

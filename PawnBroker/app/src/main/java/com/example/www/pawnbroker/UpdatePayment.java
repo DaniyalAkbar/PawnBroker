@@ -40,14 +40,10 @@ public class UpdatePayment extends AppCompatActivity {
                     p.setPid(Integer.parseInt(PID.getText().toString()));
                     p.setAmount(Float.parseFloat(Amount.getText().toString()));
                     p.setTrID(Integer.parseInt(Trid.getText().toString()));
-                    p.setPdate(fm.parse(PDate.getText().toString()).toString());
+                    p.setPdate(PDate.getText().toString());
                     new PaymentCRUD(UpdatePayment.this).updatePayment(p);
                     ShowDialog("Payment Updated Successfully");
 
-                }catch (java.text.ParseException e){
-                    ShowDialog("Incorrect Date Format. Please Try Again");
-
-                    e.printStackTrace();
                 }catch (SQLiteException e){
                     ShowDialog(e.getMessage());
                 }catch (Exception e){
