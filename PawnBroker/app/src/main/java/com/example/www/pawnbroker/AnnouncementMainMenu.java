@@ -27,7 +27,7 @@ public class AnnouncementMainMenu extends AppCompatActivity {
         addbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(AnnouncementMainMenu.this,AddUser.class));
+                startActivity(new Intent(AnnouncementMainMenu.this,AddAnnouncement.class));
             }
         });
         viewbtn.setOnClickListener(new View.OnClickListener() {
@@ -42,6 +42,14 @@ public class AnnouncementMainMenu extends AppCompatActivity {
                 startActivity(new Intent(AnnouncementMainMenu.this,SearchAnnouncements.class));
             }
         });
+        updatebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AnnouncementMainMenu.this,UpdateAnnouncement.class));
+            }
+        });
+
+
 
 
 

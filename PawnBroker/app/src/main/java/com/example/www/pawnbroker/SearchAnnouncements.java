@@ -37,20 +37,18 @@ public class SearchAnnouncements  extends AppCompatActivity {
         ArrayAdapter adapt = new ArrayAdapter(SearchAnnouncements.this, android.R.layout.simple_list_item_1,arrLst);
         spinner.setAdapter(adapt);
 
-
-
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ArrayAdapter AL = null;
-                String input = et.getText().toString().trim();
+                String input = et.getText().toString();
 
                 if(spinner.getSelectedItem().equals("Date")){
-                    Toast.makeText(SearchAnnouncements.this, "u entered first name", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(SearchAnnouncements.this, "u entered first name", Toast.LENGTH_SHORT).show();
                     AL = new ArrayAdapter(SearchAnnouncements.this,android.R.layout.simple_list_item_1,new AnnouncementsCRUD(SearchAnnouncements.this).searchAnnouncementsByDate(input.toString()));
                 }
                 else if(spinner.getSelectedItem().equals("Type")){
-                    Toast.makeText(SearchAnnouncements.this, "u entered last name", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(SearchAnnouncements.this, "u entered last name", Toast.LENGTH_SHORT).show();
                     AL = new ArrayAdapter(SearchAnnouncements.this,android.R.layout.simple_list_item_1,new AnnouncementsCRUD(SearchAnnouncements.this).searchAnnouncementsByType(input.toString()));
                 }
                 lv.setAdapter(AL);

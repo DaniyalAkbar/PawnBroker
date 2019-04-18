@@ -21,7 +21,7 @@ public class DeleteTestimonial extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.delete_layout);
         et=(EditText)findViewById(R.id.idtodelete);
-        DelBtn=(Button)findViewById(R.id.deleteUserBtn);
+        DelBtn=(Button)findViewById(R.id.btnDelete);
         et.setHint("Enter Testimonial ID to Delete");
         et.setInputType(InputType.TYPE_CLASS_NUMBER);
         et.setInputType(InputType.TYPE_CLASS_PHONE);
@@ -29,13 +29,11 @@ public class DeleteTestimonial extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    new TestimonialCRUD(DeleteTestimonial.this).deleteTestimonial(Integer.parseInt(et.getText().toString()));
+                    new TestimonialCRUD(DeleteTestimonial.this).deleteTestimonial(Integer.parseInt(et.getText().toString().trim()));
                     ShowDialog("Testimonial Deleted Successfully");
                 }catch (Exception e){
                     ShowDialog(e.getMessage());
                 }
-
-
             }
         });
 

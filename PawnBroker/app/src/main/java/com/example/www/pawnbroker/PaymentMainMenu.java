@@ -27,7 +27,7 @@ public class PaymentMainMenu extends AppCompatActivity {
         addbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(PaymentMainMenu.this,AddUser.class));
+                startActivity(new Intent(PaymentMainMenu.this,AddPayment.class));
             }
         });
         viewbtn.setOnClickListener(new View.OnClickListener() {
@@ -42,7 +42,12 @@ public class PaymentMainMenu extends AppCompatActivity {
                 startActivity(new Intent(PaymentMainMenu.this,SearchPayment.class));
             }
         });
-
+        updatebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(PaymentMainMenu.this,UpdatePayment.class));
+            }
+        });
 
 
     }

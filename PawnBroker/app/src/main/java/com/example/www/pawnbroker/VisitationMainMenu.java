@@ -42,7 +42,12 @@ public class VisitationMainMenu extends AppCompatActivity {
                 startActivity(new Intent(VisitationMainMenu.this,SearchVisitations.class));
             }
         });
-
+        updatebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(VisitationMainMenu.this,UpdateVisitation.class));
+            }
+        });
 
 
     }

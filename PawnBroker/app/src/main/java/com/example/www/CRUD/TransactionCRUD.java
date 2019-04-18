@@ -34,6 +34,7 @@ public class TransactionCRUD {
     public ArrayList<String> viewAllTransaction(){
         Cursor c = d.executerawquery("select * from transactions");
         ArrayList<String> getTransaction = new ArrayList<>();
+        c.moveToFirst();
         while(c.moveToNext()){
             String u =null;
             u=String.valueOf(c.getInt(c.getColumnIndex("TrID")));

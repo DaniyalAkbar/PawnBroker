@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
-        android:text="Add a Transaction"
+        android:text="Add a Payments"
         android:textSize="30sp"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
@@ -105,7 +105,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="66dp"
         android:layout_marginLeft="66dp"
-        android:layout_marginBottom="212dp"
+        android:layout_marginBottom="160dp"
         android:textSize="30dp"
         android:textAllCaps="false"
         android:text="Add Payment" />

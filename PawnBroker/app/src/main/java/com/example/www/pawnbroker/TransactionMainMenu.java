@@ -12,7 +12,7 @@ public class TransactionMainMenu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.mainmenu_user);
+        setContentView(R.layout.mainmenu_transaction);
         addbtn=(Button)findViewById(R.id.addTransactionBtn);
         viewbtn=(Button)findViewById(R.id.viewTransactionBtn);
         updatebtn=(Button)findViewById(R.id.updateTransactionBtn);
@@ -27,7 +27,7 @@ public class TransactionMainMenu extends AppCompatActivity {
         addbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(TransactionMainMenu.this,AddUser.class));
+                startActivity(new Intent(TransactionMainMenu.this,AddTransaction.class));
             }
         });
         viewbtn.setOnClickListener(new View.OnClickListener() {
@@ -40,6 +40,12 @@ public class TransactionMainMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(TransactionMainMenu.this,SearchTransactions.class));
+            }
+        });
+        updatebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(TransactionMainMenu.this,UpdateTransaction.class));
             }
         });
 

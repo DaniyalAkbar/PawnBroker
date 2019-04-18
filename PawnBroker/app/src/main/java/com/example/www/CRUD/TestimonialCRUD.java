@@ -19,7 +19,7 @@ public class TestimonialCRUD {
         d.OpenorCreatDB();
     }
     public void addTestimonial(testimonial u){
-        String sql = "insert into testimonial(testimonial, uid, adate) values('"+u.getTestimonial()+"','"+u.getUid()+"','"+u.getAdate()+"')";
+        String sql = "insert into testimonial(testimonial, UID, adate) values('"+u.getTestimonial()+"','"+u.getUid()+"','"+u.getAdate()+"')";
         d.executequery(sql);
     }
     public void updateTestimonial(testimonial u){
@@ -34,15 +34,16 @@ public class TestimonialCRUD {
     public ArrayList<String> viewAllTestimonial(){
         Cursor c = d.executerawquery("select * from testimonial");
         ArrayList<String> getTestimonial = new ArrayList<>();
+        c.moveToFirst();
         while(c.moveToNext()){
             String u =null;
             u=String.valueOf(c.getInt(c.getColumnIndex("TID")));
             u+="\t";
-            u+=c.getString(c.getColumnIndex("adate"));
-            u+="\t";
             u+=c.getString(c.getColumnIndex("testimonial"));
             u+="\t";
             u=String.valueOf(c.getInt(c.getColumnIndex("UID")));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("adate"));
 
             getTestimonial.add(u);
             Toast.makeText(context, getTestimonial.get(0).toString(), Toast.LENGTH_SHORT).show();
@@ -56,14 +57,13 @@ public class TestimonialCRUD {
             String u =null;
             u=String.valueOf(c.getInt(c.getColumnIndex("TID")));
             u+="\t";
-            u+=c.getString(c.getColumnIndex("adate"));
-            u+="\t";
             u+=c.getString(c.getColumnIndex("testimonial"));
             u+="\t";
             u=String.valueOf(c.getInt(c.getColumnIndex("UID")));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("adate"));
 
             getTestimonial.add(u);
-            Toast.makeText(context, getTestimonial.get(0).toString(), Toast.LENGTH_SHORT).show();
         }
         return  getTestimonial;
     }
@@ -74,14 +74,13 @@ public class TestimonialCRUD {
             String u =null;
             u=String.valueOf(c.getInt(c.getColumnIndex("TID")));
             u+="\t";
-            u+=c.getString(c.getColumnIndex("adate"));
-            u+="\t";
             u+=c.getString(c.getColumnIndex("testimonial"));
             u+="\t";
             u=String.valueOf(c.getInt(c.getColumnIndex("UID")));
+            u+="\t";
+            u+=c.getString(c.getColumnIndex("adate"));
 
             getTestimonial.add(u);
-            Toast.makeText(context, getTestimonial.get(0).toString(), Toast.LENGTH_SHORT).show();
         }
         return  getTestimonial;
     }

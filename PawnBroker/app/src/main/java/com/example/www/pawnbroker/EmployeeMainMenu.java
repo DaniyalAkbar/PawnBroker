@@ -42,8 +42,12 @@ public class EmployeeMainMenu extends AppCompatActivity {
                 startActivity(new Intent(EmployeeMainMenu.this,SearchEmployee.class));
             }
         });
-
-
+        updatebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(EmployeeMainMenu.this,UpdateEmployee.class));
+            }
+        });
 
     }
 }
