@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="	#C0C0C0">
 
     <Button
         android:id="@+id/btnTransactionsSearch"
@@ -11,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginStart="24dp"
+        android:background="@drawable/button_round1"
         android:layout_marginLeft="34dp"
         android:layout_marginTop="69dp"
         android:text="Search"
@@ -20,6 +22,7 @@
         android:id="@+id/itemToSearchTransactions"
         android:layout_width="361dp"
         android:layout_height="wrap_content"
+        android:background="#f5f5f5"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginTop="16dp"

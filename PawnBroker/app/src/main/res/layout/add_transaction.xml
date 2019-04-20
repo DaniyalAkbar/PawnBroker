@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="	#C0C0C0">
     <TextView
         android:text="Add a Transaction"
         android:textSize="30sp"
@@ -19,6 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/txttitle"
         android:layout_alignParentEnd="true"
+        android:background="#f5f5f5"
         android:layout_alignParentRight="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
@@ -34,6 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/txttitle"
         android:layout_alignParentEnd="true"
+        android:background="#f5f5f5"
         android:layout_alignParentRight="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="116dp"
@@ -48,6 +51,7 @@
         android:layout_below="@+id/txttitle"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+        android:background="#f5f5f5"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="199dp"
         android:layout_marginEnd="16dp"
@@ -106,6 +110,7 @@
         android:layout_marginStart="66dp"
         android:layout_marginLeft="66dp"
         android:layout_marginBottom="170dp"
+        android:background="@drawable/button_round1"
         android:textSize="30dp"
         android:textAllCaps="false"
         android:text="Add Transaction" />

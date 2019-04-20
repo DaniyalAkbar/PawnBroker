@@ -4,50 +4,54 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="	#C0C0C0">
 
 
     <Button
         android:id="@+id/addUserBtn"
-        android:layout_width="132dp"
-        android:layout_height="47dp"
+        android:layout_width="169dp"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-
-
         android:layout_marginTop="80dp"
+
+        android:background="@drawable/button_round1"
         android:text="Add User"
         tools:layout_editor_absoluteX="116dp"
         tools:layout_editor_absoluteY="45dp" />
 
     <Button
         android:id="@+id/viewUserBtn"
-        android:layout_width="132dp"
+        android:layout_width="168dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/addUserBtn"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
+        android:background="@drawable/button_round1"
         android:text="View All Users"
         tools:layout_editor_absoluteX="116dp"
         tools:layout_editor_absoluteY="107dp" />
 
     <Button
         android:id="@+id/searchUserBtn"
-        android:layout_width="132dp"
+        android:layout_width="164dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/viewUserBtn"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
+        android:background="@drawable/button_round1"
         android:text="Search User"
         tools:layout_editor_absoluteX="116dp"
         tools:layout_editor_absoluteY="171dp" />
 
     <Button
         android:id="@+id/deleteUserBtn"
-        android:layout_width="132dp"
+        android:layout_width="164dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/searchUserBtn"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
+        android:background="@drawable/button_round1"
         android:text="Delete User"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -56,12 +60,13 @@
 
     <Button
         android:id="@+id/updateUserBtn"
-        android:layout_width="132dp"
+        android:layout_width="161dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/deleteUserBtn"
-
         android:layout_centerHorizontal="true"
+
         android:layout_marginTop="21dp"
+        android:background="@drawable/button_round1"
         android:text="Update User"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"

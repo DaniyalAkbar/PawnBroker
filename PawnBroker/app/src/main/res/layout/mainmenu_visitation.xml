@@ -4,50 +4,54 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="	#C0C0C0">
 
 
     <Button
         android:id="@+id/addVisitationBtn"
-        android:layout_width="132dp"
-        android:layout_height="47dp"
+        android:layout_width="173dp"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-
-
         android:layout_marginTop="80dp"
+
+        android:background="@drawable/button_round1"
         android:text="Add Visitation"
         tools:layout_editor_absoluteX="116dp"
         tools:layout_editor_absoluteY="45dp" />
 
     <Button
         android:id="@+id/viewVisitationBtn"
-        android:layout_width="132dp"
+        android:layout_width="169dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/addVisitationBtn"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
+        android:background="@drawable/button_round1"
         android:text="View All Visitations"
         tools:layout_editor_absoluteX="116dp"
         tools:layout_editor_absoluteY="107dp" />
 
     <Button
         android:id="@+id/searchVisitationBtn"
-        android:layout_width="132dp"
+        android:layout_width="172dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/viewVisitationBtn"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
+        android:background="@drawable/button_round1"
         android:text="Search Visitation"
         tools:layout_editor_absoluteX="116dp"
         tools:layout_editor_absoluteY="171dp" />
 
     <Button
         android:id="@+id/deleteVisitationBtn"
-        android:layout_width="132dp"
+        android:layout_width="178dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/searchVisitationBtn"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
+        android:background="@drawable/button_round1"
         android:text="Delete Visitation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -56,12 +60,12 @@
 
     <Button
         android:id="@+id/updateVisitationBtn"
-        android:layout_width="132dp"
+        android:layout_width="171dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/deleteVisitationBtn"
-
         android:layout_centerHorizontal="true"
         android:layout_marginTop="21dp"
+        android:background="@drawable/button_round1"
         android:text="Update Visitation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"

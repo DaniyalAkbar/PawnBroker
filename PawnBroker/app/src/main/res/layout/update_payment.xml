@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="	#C0C0C0">
     <TextView
         android:text="Update a Payment"
         android:textSize="30sp"
@@ -16,6 +17,7 @@
 
     <EditText
         android:id="@+id/txAmount"
+        android:background="#f5f5f5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txttitle"
@@ -28,6 +30,7 @@
         android:width="200dp" />
 
     <EditText
+        android:background="#f5f5f5"
         android:id="@+id/txtPaymentID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,6 +44,7 @@
         android:width="200dp" />
 
     <EditText
+        android:background="#f5f5f5"
         android:id="@+id/txtDatePayment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -54,6 +58,7 @@
         android:width="200dp" />
 
     <EditText
+        android:background="#f5f5f5"
         android:id="@+id/txtIDTransaction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -125,6 +130,7 @@
     <Button
         android:id="@+id/txtPaymentSubmitBtn"
         android:layout_width="287dp"
+        android:background="@drawable/button_round1"
         android:layout_height="59dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"

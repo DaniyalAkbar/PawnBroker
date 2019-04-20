@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="	#C0C0C0">
     <TextView
         android:text="Add a Visitation"
         android:textSize="30sp"
@@ -15,6 +16,7 @@
         android:layout_height="wrap_content" />
 
     <EditText
+        android:background="#f5f5f5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txttitle"
@@ -29,6 +31,7 @@
         />
 
     <EditText
+        android:background="#f5f5f5"
         android:id="@+id/txtDateVisitation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -42,6 +45,7 @@
         android:width="200dp" />
 
     <EditText
+        android:background="#f5f5f5"
         android:id="@+id/txtEmpIdFK"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -97,6 +101,7 @@
         android:textSize="25dp" />
 
     <Button
+        android:background="@drawable/button_round1"
         android:id="@+id/txtVisitationSubmitBtn"
         android:layout_width="287dp"
         android:layout_height="59dp"
