@@ -1,7 +1,9 @@
 package com.example.www.pawnbroker;
 
 import android.os.Bundle;
+import android.renderscript.ScriptGroup;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -47,10 +49,13 @@ public class SearchTransactions extends AppCompatActivity {
                 if(spinner.getSelectedItem().equals("Registration ID")){
                     Toast.makeText(SearchTransactions.this, "u entered ID", Toast.LENGTH_SHORT).show();
                     AL = new ArrayAdapter(SearchTransactions.this,android.R.layout.simple_list_item_1,new TransactionCRUD(SearchTransactions.this).searchTransactionByID(Integer.parseInt(input)));
+                    et.setInputType(InputType.TYPE_CLASS_NUMBER);
+                    et.setInputType(InputType.TYPE_CLASS_PHONE);
                 }
                 else if(spinner.getSelectedItem().equals("Registration Date")){
                     Toast.makeText(SearchTransactions.this, "u entered date", Toast.LENGTH_SHORT).show();
                     AL = new ArrayAdapter(SearchTransactions.this,android.R.layout.simple_list_item_1,new TransactionCRUD(SearchTransactions.this).searchTransactionByDate(input.toString()));
+                    et.setInputType(InputType.TYPE_CLASS_TEXT);
                 }
                 lv.setAdapter(AL);
             }

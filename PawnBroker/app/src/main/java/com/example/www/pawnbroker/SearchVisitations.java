@@ -1,7 +1,9 @@
 package com.example.www.pawnbroker;
 
 import android.os.Bundle;
+import android.renderscript.ScriptGroup;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -48,14 +50,20 @@ public class SearchVisitations extends AppCompatActivity {
                 if(spinner.getSelectedItem().equals("Employee ID")){
                     Toast.makeText(SearchVisitations.this, "u entered emp id", Toast.LENGTH_SHORT).show();
                     AL = new ArrayAdapter(SearchVisitations.this,android.R.layout.simple_list_item_1,new VisitationCRUD(SearchVisitations.this).searchVisitationByEmp(Integer.parseInt(input)));
+                    et.setInputType(InputType.TYPE_CLASS_NUMBER);
+                    et.setInputType(InputType.TYPE_CLASS_PHONE);
+
                 }
                 else if(spinner.getSelectedItem().equals("Visitation ID")){
                     Toast.makeText(SearchVisitations.this, "u visitation id", Toast.LENGTH_SHORT).show();
                     AL = new ArrayAdapter(SearchVisitations.this,android.R.layout.simple_list_item_1,new VisitationCRUD(SearchVisitations.this).searchVisitationByID(Integer.parseInt(input)));
+                    et.setInputType(InputType.TYPE_CLASS_NUMBER);
+                    et.setInputType(InputType.TYPE_CLASS_PHONE);
                 }
                 else if(spinner.getSelectedItem().equals("Date")){
                     Toast.makeText(SearchVisitations.this, "u entered date", Toast.LENGTH_SHORT).show();
                     AL = new ArrayAdapter(SearchVisitations.this,android.R.layout.simple_list_item_1,new VisitationCRUD(SearchVisitations.this).searchVisitationByDate(input.toString()));
+                    et.setInputType(InputType.TYPE_CLASS_TEXT);
                 }
                 lv.setAdapter(AL);
             }

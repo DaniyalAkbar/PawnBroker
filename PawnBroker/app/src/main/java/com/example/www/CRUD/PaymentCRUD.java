@@ -43,7 +43,6 @@ public class PaymentCRUD {
             u+="\t";
             u+=String.valueOf(c.getString(c.getColumnIndex("pdate")));
             u+="\t";
-
             u+=String.valueOf(c.getInt(c.getColumnIndex("TrID")));
 
             getPayments.add(u);

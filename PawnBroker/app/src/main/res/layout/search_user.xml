@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="	#C0C0C0">
+    android:background="#C0C0C0">
 
     <Button
         android:id="@+id/btnAdminSearch"
-        android:layout_width="200dp"
+        android:layout_width="179dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_round1"
         android:layout_alignParentTop="true"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="34dp"
         android:layout_marginTop="69dp"
+        android:background="@drawable/button_round1"
         android:text="Search"
         tools:layout_editor_absoluteY="54dp" />
 
@@ -43,9 +43,10 @@
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="153dp"
+        android:layout_width="170dp"
         android:layout_height="40dp"
-        android:layout_marginLeft="250dp"
+        android:layout_marginLeft="220dp"
+        android:background="@android:color/white"
         android:layout_marginTop="73dp" />
 
 </RelativeLayout>

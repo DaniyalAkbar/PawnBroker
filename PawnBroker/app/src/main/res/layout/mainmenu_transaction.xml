@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="	#C0C0C0">
+    android:background="#C0C0C0">
 
 
     <Button
@@ -85,8 +85,8 @@
         android:layout_marginStart="112dp"
         android:layout_marginLeft="112dp"
         android:layout_marginTop="33dp"
-        android:textColor="@android:color/black"
-        android:text="Transactions Menu"
+        android:text="Transactions"
         android:textAlignment="center"
+        android:textColor="@android:color/black"
         android:textSize="25dp" />
 </RelativeLayout>

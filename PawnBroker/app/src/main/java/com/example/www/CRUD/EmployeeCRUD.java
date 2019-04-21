@@ -40,7 +40,7 @@ public class EmployeeCRUD {
             u=String.valueOf(c.getInt(c.getColumnIndex("empid")));
             u+="\t";
             u+=c.getString(c.getColumnIndex("Fname"));
-            u+=" ";
+            u+="\t";
             u+=c.getString(c.getColumnIndex("Lname"));
 
             getEmployee.add(u);

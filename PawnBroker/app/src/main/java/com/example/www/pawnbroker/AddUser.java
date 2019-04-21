@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,8 +27,8 @@ public class AddUser extends AppCompatActivity {
         setContentView(R.layout.add_user);
         AddUserBtnButton=(Button)findViewById(R.id.txtUserSubmitBtn);
         FirstName=(EditText)findViewById(R.id.txtFirstName);
-        LastName=(EditText)findViewById(R.id.txtLastName);
         RegDate=(EditText)findViewById(R.id.txtRegDate);
+        LastName=(EditText)findViewById(R.id.txtLastName);
         AddUserBtnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

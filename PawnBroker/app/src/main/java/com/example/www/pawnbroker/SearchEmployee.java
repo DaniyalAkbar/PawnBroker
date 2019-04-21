@@ -2,6 +2,7 @@ package com.example.www.pawnbroker;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -48,14 +49,18 @@ public class SearchEmployee extends AppCompatActivity {
                 if(spinner.getSelectedItem().equals("Employee ID")){
                     Toast.makeText(SearchEmployee.this, "u entered Emp id", Toast.LENGTH_SHORT).show();
                     AL = new ArrayAdapter(SearchEmployee.this,android.R.layout.simple_list_item_1,new EmployeeCRUD(SearchEmployee.this).searchEmployeeByID(Integer.parseInt(input)));
+                    et.setInputType(InputType.TYPE_CLASS_NUMBER);
+                    et.setInputType(InputType.TYPE_CLASS_PHONE);
                 }
                 else if(spinner.getSelectedItem().equals("First Name")){
                     Toast.makeText(SearchEmployee.this, "u entered first name", Toast.LENGTH_SHORT).show();
                     AL = new ArrayAdapter(SearchEmployee.this,android.R.layout.simple_list_item_1,new EmployeeCRUD(SearchEmployee.this).searchEmployeeByFname(input.toString()));
+                    et.setInputType(InputType.TYPE_CLASS_TEXT);
                 }
                 else if(spinner.getSelectedItem().equals("Last Name")){
                     Toast.makeText(SearchEmployee.this, "u entered last name", Toast.LENGTH_SHORT).show();
                     AL = new ArrayAdapter(SearchEmployee.this,android.R.layout.simple_list_item_1,new EmployeeCRUD(SearchEmployee.this).searchEmployeeByLname(input.toString()));
+                    et.setInputType(InputType.TYPE_CLASS_TEXT);
                 }
 
                 lv.setAdapter(AL);

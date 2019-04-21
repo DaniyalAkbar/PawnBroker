@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="	#C0C0C0">
+    android:background="#C0C0C0">
     <TextView
         android:text="Update an Announcement"
         android:textSize="25sp"
@@ -20,17 +20,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txttitle"
-        android:background="#f5f5f5"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="89dp"
-        android:layout_marginEnd="27dp"
-        android:layout_marginRight="27dp"
-        android:width="200dp" />
+        android:layout_marginTop="97dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:width="200dp"
+        android:background="#f5f5f5" />
 
     <EditText
-        android:background="#f5f5f5"
         android:id="@+id/txtAnnouncementID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,13 +37,13 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="29dp"
-        android:layout_marginRight="29dp"
-        android:width="200dp" />
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:width="200dp"
+        android:background="#f5f5f5" />
 
     <EditText
-        android:background="#f5f5f5"
         android:id="@+id/txtDateAnnouncement"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -52,13 +51,13 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="165dp"
-        android:layout_marginEnd="27dp"
-        android:layout_marginRight="27dp"
-        android:width="200dp" />
+        android:layout_marginTop="168dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        android:width="200dp"
+        android:background="#f5f5f5" />
 
     <EditText
-        android:background="#f5f5f5"
         android:id="@+id/txtTypeAnnouncement"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -66,10 +65,11 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="248dp"
+        android:layout_marginTop="257dp"
         android:layout_marginEnd="21dp"
         android:layout_marginRight="21dp"
-        android:width="200dp" />
+        android:width="200dp"
+        android:background="#f5f5f5" />
 
     <TextView
         android:id="@+id/textView3"
