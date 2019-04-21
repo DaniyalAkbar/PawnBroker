@@ -18,7 +18,7 @@ import java.text.SimpleDateFormat;
 
 public class UpdatePayment extends AppCompatActivity {
     Button AddPaymenttBtnButton;
-    EditText Amount,PDate,Trid,PID;
+    EditText Amount,PDate,Trid,PID,paytype;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +27,7 @@ public class UpdatePayment extends AppCompatActivity {
         PID=(EditText)findViewById(R.id.txtPaymentID);
         Amount=(EditText)findViewById(R.id.txAmount);
         PDate=(EditText)findViewById(R.id.txtDatePayment);
+        paytype=(EditText)findViewById(R.id.txtPayType);
         Trid=(EditText)findViewById(R.id.txtIDTransaction);
         PID.setInputType(InputType.TYPE_CLASS_NUMBER);
         PID.setInputType(InputType.TYPE_CLASS_PHONE);
@@ -36,18 +37,14 @@ public class UpdatePayment extends AppCompatActivity {
             public void onClick(View view) {
                 try {
                     payment p= new payment();
-                    SimpleDateFormat fm = new SimpleDateFormat("dd-MM-yyyy");
                     p.setPid(Integer.parseInt(PID.getText().toString()));
                     p.setAmount(Float.parseFloat(Amount.getText().toString()));
                     p.setTrID(Integer.parseInt(Trid.getText().toString()));
-                    p.setPdate(fm.parse(PDate.getText().toString()).toString());
+                    p.setPaytype(paytype.getText().toString());
+                    p.setPdate(PDate.getText().toString());
                     new PaymentCRUD(UpdatePayment.this).updatePayment(p);
                     ShowDialog("Payment Updated Successfully");
 
-                }catch (java.text.ParseException e){
-                    ShowDialog("Incorrect Date Format. Please Try Again");
-
-                    e.printStackTrace();
                 }catch (SQLiteException e){
                     ShowDialog(e.getMessage());
                 }catch (Exception e){

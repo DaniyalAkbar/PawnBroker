@@ -4,6 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="166dp"
+        android:layout_height="42dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="311dp"
+        android:text="Payment Type: "
+        android:textColor="@android:color/black"
+        android:textSize="25dp" />
+
+    <EditText
+        android:id="@+id/txtPayType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txttitle"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="249dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="9dp"
+        android:width="200dp" />
+
     <TextView
         android:text="Update a Payment"
         android:textSize="30sp"
@@ -61,9 +89,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="241dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="9dp"
+        android:layout_marginTop="322dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginRight="7dp"
         android:width="200dp" />
 
     <TextView
@@ -115,9 +143,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="309dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="390dp"
         android:text="Transaction ID:"
         android:textColor="@android:color/black"
         android:textSize="22dp" />
@@ -131,7 +159,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="74dp"
         android:layout_marginLeft="74dp"
-        android:layout_marginBottom="170dp"
+        android:layout_marginBottom="55dp"
         android:text="Update Payment"
         android:textAllCaps="false"
         android:textSize="30dp" />

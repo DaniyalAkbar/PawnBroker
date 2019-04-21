@@ -19,11 +19,11 @@ public class PaymentCRUD {
         d.OpenorCreatDB();
     }
     public void addPayment(payment u){
-        String sql = "insert into payment(amount, pdate, TrID) values('"+u.getAmount()+"','"+u.getPdate()+"', '"+u.getTrID()+"')";
+        String sql = "insert into payment(amount, pdate, paytype, TrID) values('"+u.getAmount()+"','"+u.getPdate()+"', '"+u.getPaytype()+"', '"+u.getTrID()+"')";
         d.executequery(sql);
     }
     public void updatePayment(payment u){
-        String sql = "update payment set amount='"+u.getAmount()+"',pdate='"+u.getPdate()+"' TrID='"+u.getTrID()+"' where pid='"+u.getPid()+"'  ";
+        String sql = "update payment set amount='"+u.getAmount()+"',pdate='"+u.getPdate()+"', paytype='"+u.getPaytype()+"',  TrID='"+u.getTrID()+"' where pid='"+u.getPid()+"'  ";
         d.executequery(sql);
     }
     public void deletePayment(int pid){
@@ -43,7 +43,8 @@ public class PaymentCRUD {
             u+="\t";
             u+=String.valueOf(c.getString(c.getColumnIndex("pdate")));
             u+="\t";
-
+            u+=String.valueOf(c.getString(c.getColumnIndex("paytype")));
+            u+="\t";
             u+=String.valueOf(c.getInt(c.getColumnIndex("TrID")));
 
             getPayments.add(u);
@@ -60,9 +61,11 @@ public class PaymentCRUD {
             String u ;
             u=String.valueOf(c.getInt(c.getColumnIndex("PID")));
             u+="\t";
-            u+=c.getString(c.getColumnIndex("pdate"));
-            u+="\t";
             u+=String.valueOf(c.getFloat(c.getColumnIndex("amount")));
+            u+="\t";
+            u+=String.valueOf(c.getString(c.getColumnIndex("pdate")));
+            u+="\t";
+            u+=String.valueOf(c.getString(c.getColumnIndex("paytype")));
             u+="\t";
             u+=String.valueOf(c.getInt(c.getColumnIndex("TrID")));
 
@@ -73,16 +76,18 @@ public class PaymentCRUD {
         return  getPayments;
     }
     public ArrayList<String> searchPaymentsByType(String type){
-        Cursor c = d.executerawquery("select * from payment where type='"+type+"'");
+        Cursor c = d.executerawquery("select * from payment where paytype='"+type+"'");
         ArrayList<String> getPayments = new ArrayList<>();
         c.moveToFirst();
         while(!c.isAfterLast()){
             String u ;
             u=String.valueOf(c.getInt(c.getColumnIndex("PID")));
             u+="\t";
-            u+=c.getString(c.getColumnIndex("pdate"));
-            u+="\t";
             u+=String.valueOf(c.getFloat(c.getColumnIndex("amount")));
+            u+="\t";
+            u+=String.valueOf(c.getString(c.getColumnIndex("pdate")));
+            u+="\t";
+            u+=String.valueOf(c.getString(c.getColumnIndex("paytype")));
             u+="\t";
             u+=String.valueOf(c.getInt(c.getColumnIndex("TrID")));
 
@@ -102,9 +107,11 @@ public class PaymentCRUD {
             String u ;
             u=String.valueOf(c.getInt(c.getColumnIndex("PID")));
             u+="\t";
-            u+=c.getString(c.getColumnIndex("pdate"));
-            u+="\t";
             u+=String.valueOf(c.getFloat(c.getColumnIndex("amount")));
+            u+="\t";
+            u+=String.valueOf(c.getString(c.getColumnIndex("pdate")));
+            u+="\t";
+            u+=String.valueOf(c.getString(c.getColumnIndex("paytype")));
             u+="\t";
             u+=String.valueOf(c.getInt(c.getColumnIndex("TrID")));
 
