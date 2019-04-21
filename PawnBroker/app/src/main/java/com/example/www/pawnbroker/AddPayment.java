@@ -18,7 +18,7 @@ import java.text.SimpleDateFormat;
 
 public class AddPayment extends AppCompatActivity {
     Button AddPaymenttBtnButton;
-    EditText Amount,PDate,Trid;
+    EditText Amount,PDate,Trid,paytype;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +26,7 @@ public class AddPayment extends AppCompatActivity {
         AddPaymenttBtnButton=(Button)findViewById(R.id.txtPaymentSubmitBtn);
         Amount=(EditText)findViewById(R.id.txAmount);
         PDate=(EditText)findViewById(R.id.txtDatePayment);
+        paytype=(EditText)findViewById(R.id.txtPayType);
         Trid=(EditText)findViewById(R.id.txtIDTransaction);
         AddPaymenttBtnButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +37,7 @@ public class AddPayment extends AppCompatActivity {
                     p.setAmount(Float.parseFloat(Amount.getText().toString()));
                     p.setTrID(Integer.parseInt(Trid.getText().toString()));
                     p.setPdate(PDate.getText().toString());
+                    p.setPaytype(PDate.getText().toString());
                     new PaymentCRUD(AddPayment.this).addPayment(p);
                     ShowDialog("New Payment Added Successfully");
 
