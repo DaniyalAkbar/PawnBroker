@@ -63,12 +63,10 @@ public class SearchTestimonials extends AppCompatActivity {
                 if(spinner.getSelectedItem().equals("User ID")){
                     //Toast.makeText(SearchTestimonials.this, "u entered user id", Toast.LENGTH_SHORT).show();
                     AL = new ArrayAdapter(SearchTestimonials.this,android.R.layout.simple_list_item_1,new TestimonialCRUD(SearchTestimonials.this).searchTestimonialsByUserID(Integer.parseInt(input)));
-
                 }
                 else if(spinner.getSelectedItem().equals("Date")){
                     //Toast.makeText(SearchTestimonials.this, "u entered Date", Toast.LENGTH_SHORT).show();
                     AL = new ArrayAdapter(SearchTestimonials.this,android.R.layout.simple_list_item_1,new TestimonialCRUD(SearchTestimonials.this).searchTestimonialByDate(input.toString()));
-
                 }
                 lv.setAdapter(AL);
             }

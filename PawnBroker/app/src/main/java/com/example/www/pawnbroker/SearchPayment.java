@@ -76,17 +76,15 @@ public class SearchPayment extends AppCompatActivity {
                 if(spinner.getSelectedItem().equals("Payment Date")){
                    // Toast.makeText(SearchPayment.this, "u entered Payment Date", Toast.LENGTH_SHORT).show();
                     AL = new ArrayAdapter(SearchPayment.this,android.R.layout.simple_list_item_1,new PaymentCRUD(SearchPayment.this).searchPaymentsByDate(input.toString()));
-
+                    et.setInputType(InputType.TYPE_CLASS_TEXT);
                 }
                 else if(spinner.getSelectedItem().equals("Payment Type")){
                     //Toast.makeText(SearchPayment.this, "u entered Payment Type", Toast.LENGTH_SHORT).show();
                     AL = new ArrayAdapter(SearchPayment.this,android.R.layout.simple_list_item_1,new PaymentCRUD(SearchPayment.this).searchPaymentsByType(input.toString()));
-
                 }
                 else if(spinner.getSelectedItem().equals("Transaction ID")){
                     //Toast.makeText(SearchPayment.this, "u entered Transaction ID", Toast.LENGTH_SHORT).show();
                     AL = new ArrayAdapter(SearchPayment.this,android.R.layout.simple_list_item_1,new PaymentCRUD(SearchPayment.this).searchPaymentsByTransaction(Integer.parseInt(input)));
-
                 }
                 lv.setAdapter(AL);
             }

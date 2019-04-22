@@ -14,7 +14,6 @@ import com.example.www.CRUD.VisitationCRUD;
 import com.example.www.model.announcements;
 import com.example.www.model.visitation;
 
-import java.text.SimpleDateFormat;
 
 public class AddVisitation extends AppCompatActivity {
     Button AddVisitationBtnButton;

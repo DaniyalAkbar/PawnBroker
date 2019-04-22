@@ -7,7 +7,7 @@ public class payment {
     int PID;
     float amount;
     int TrID;
-    
+    String paytype;
     String pdate;
 
 
@@ -19,6 +19,9 @@ public class payment {
 
     public void setTrID(int trID) { TrID = trID; }
 
+    public String getPaytype() { return paytype; }
+
+    public void setPaytype(String paytype) { this.paytype = paytype; }
 
     public float getAmount() {
         return amount;

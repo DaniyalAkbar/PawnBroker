@@ -21,7 +21,7 @@ public class Db {
         executequery("create table if not exists announcements(AID Integer primary key autoincrement, announcement varchar,type varchar,adate varchar)");
         executequery("create table if not exists testimonial(TID Integer primary key autoincrement,testimonial varchar,UID varchar references users(UID),adate varchar)");
         executequery("create table if not exists transactions(TrID Integer primary key autoincrement,amount real,type varchar,tdate varchar)");
-        executequery("create table if not exists payment(PID Integer primary key autoincrement,amount real,pdate date,TrID int references transactions(Trid))");
+        executequery("create table if not exists payment(PID Integer primary key autoincrement,amount real,pdate date, paytype varchar, TrID int references transactions(Trid))");
         executequery("create table if not exists employee(empid Integer primary key autoincrement,Fname varchar, Lname varchar)");
         executequery("create table if not exists visitation(vid Integer primary key autoincrement,visitation varchar, empid int references employee(empid),vdate varchar)");
 
