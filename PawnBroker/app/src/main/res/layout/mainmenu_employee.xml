@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C0C0C0">
+
+
+    <Button
+        android:id="@+id/addEmployeeBtn"
+        android:layout_width="189dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+
+        android:background="@drawable/button_round1"
+        android:text="Add Employee"
+        tools:layout_editor_absoluteX="116dp"
+        tools:layout_editor_absoluteY="45dp" />
+
+    <Button
+        android:id="@+id/viewEmployeeBtn"
+        android:layout_width="188dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addEmployeeBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_round1"
+        android:text="View All Employees"
+        tools:layout_editor_absoluteX="116dp"
+        tools:layout_editor_absoluteY="107dp" />
+
+    <Button
+        android:id="@+id/searchEmployeeBtn"
+        android:layout_width="187dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/viewEmployeeBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_round1"
+        android:text="Search Employee"
+        tools:layout_editor_absoluteX="116dp"
+        tools:layout_editor_absoluteY="171dp" />
+
+    <Button
+        android:id="@+id/deleteEmployeeBtn"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/searchEmployeeBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_round1"
+        android:text="Delete Employee"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.43"
+        tools:layout_editor_absoluteX="116dp" />
+
+    <Button
+        android:id="@+id/updateEmployeeBtn"
+        android:layout_width="181dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/deleteEmployeeBtn"
+        android:layout_centerHorizontal="true"
+
+        android:layout_marginTop="21dp"
+        android:background="@drawable/button_round1"
+        android:text="Update Employee"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.551"
+        tools:layout_editor_absoluteX="116dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+
+        android:layout_width="182dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="112dp"
+        android:layout_marginLeft="112dp"
+        android:layout_marginTop="33dp"
+        android:textColor="@android:color/black"
+        android:text="Employees"
+        android:textAlignment="center"
+        android:textSize="25dp" />
+</RelativeLayout>
