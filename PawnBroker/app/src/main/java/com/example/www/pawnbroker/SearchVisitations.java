@@ -78,9 +78,11 @@ public class SearchVisitations extends AppCompatActivity {
                 else if(spinner.getSelectedItem().equals("Visitation ID")){
                     //Toast.makeText(SearchVisitations.this, "u visitation id", Toast.LENGTH_SHORT).show();
                     AL = new ArrayAdapter(SearchVisitations.this,android.R.layout.simple_list_item_1,new VisitationCRUD(SearchVisitations.this).searchVisitationByID(Integer.parseInt(input)));
+                    }
                 else if(spinner.getSelectedItem().equals("Date")){
                    // Toast.makeText(SearchVisitations.this, "u entered date", Toast.LENGTH_SHORT).show();
                     AL = new ArrayAdapter(SearchVisitations.this,android.R.layout.simple_list_item_1,new VisitationCRUD(SearchVisitations.this).searchVisitationByDate(input.toString()));
+
                 }
                 lv.setAdapter(AL);
             }

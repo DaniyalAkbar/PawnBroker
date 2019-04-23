@@ -65,9 +65,11 @@ public class SearchTransactions extends AppCompatActivity {
 
                 if(spinner.getSelectedItem().equals("Registration ID")){
                     AL = new ArrayAdapter(SearchTransactions.this,android.R.layout.simple_list_item_1,new TransactionCRUD(SearchTransactions.this).searchTransactionByID(Integer.parseInt(input)));
+
                 }
                 else if(spinner.getSelectedItem().equals("Registration Date")){
                     AL = new ArrayAdapter(SearchTransactions.this,android.R.layout.simple_list_item_1,new TransactionCRUD(SearchTransactions.this).searchTransactionByDate(input.toString()));
+
                 }
                 lv.setAdapter(AL);
             }

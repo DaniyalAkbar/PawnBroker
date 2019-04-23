@@ -32,6 +32,7 @@ public class UpdateVisitation extends AppCompatActivity {
             public void onClick(View view) {
                 try {
                     visitation v= new visitation();
+                    SimpleDateFormat fm = new SimpleDateFormat("dd-MM-yyyy");
                     v.setVid(Integer.parseInt(VID.getText().toString()));
                     v.setVisitation(Visitation.getText().toString());
                     v.setEmpid(Integer.parseInt(Empid.getText().toString()));
@@ -39,8 +40,10 @@ public class UpdateVisitation extends AppCompatActivity {
                     new VisitationCRUD(UpdateVisitation.this).updateVisitation(v);
                     ShowDialog("Visitation Updated Successfully");
 
-                }catch (SQLiteException e){
-                    ShowDialog(e.getMessage());
+                }catch (Exception e){
+                    ShowDialog("Incorrect Date Format. Please Try Again");
+
+                    e.printStackTrace();
                 }
             }
         });
