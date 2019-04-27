@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtTestimonialID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="@android:color/black"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:text="1" />
+
+    <TextView
+        android:id="@+id/txtTestimonialTestim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtTestimonialID"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="5dp"
+        android:textColor="@android:color/black"
+        android:layout_marginStart="5dp"
+        android:text="Hello World!" />
+
+    <TextView
+        android:id="@+id/txtTestimonialUID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtTestimonialTestim"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:textColor="@android:color/black"
+        android:layout_marginStart="5dp"
+        android:text="1"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/txtTestimonialDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtTestimonialUID"
+        android:layout_marginTop="9dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:textColor="@android:color/black"
+        android:text="10-04-2011"
+        android:textSize="16dp" />
+
+
+    <Button
+        android:id="@+id/btn_Testimonial"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginBottom="7dp"
+
+        android:background="@drawable/button_round1"
+        android:text="Delete" />
+</RelativeLayout>
