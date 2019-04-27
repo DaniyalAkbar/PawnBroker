@@ -23,11 +23,12 @@
         android:id="@+id/txtAnnouncmentAnnounce"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/txtAnnouncmentID"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="306dp"
-        android:layout_marginRight="306dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="329dp"
+        android:layout_marginRight="329dp"
         android:text="Hello World"
         android:textSize="16dp" />
 
@@ -35,11 +36,12 @@
         android:id="@+id/txtAnnouncmentType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/txtAnnouncmentAnnounce"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="218dp"
-        android:layout_marginRight="218dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="331dp"
+        android:layout_marginRight="331dp"
         android:text="Something"
         android:textSize="16dp" />
 
@@ -47,11 +49,12 @@
         android:id="@+id/txtAnnouncmentDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/txtAnnouncmentType"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="126dp"
-        android:layout_marginRight="126dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="328dp"
+        android:layout_marginRight="328dp"
         android:text="10.12.2012"
         android:textSize="16dp" />
 
@@ -60,13 +63,12 @@
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_alignParentTop="true"
-
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginRight="46dp"
         android:layout_marginBottom="7dp"
-        android:layout_marginRight="28dp"
         android:background="@drawable/button_round1"
-
         android:text="Delete" />
 </RelativeLayout>

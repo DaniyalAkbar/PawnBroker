@@ -19,11 +19,12 @@
         android:id="@+id/txtPaymentAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/txtPaymentID"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="326dp"
-        android:layout_marginRight="326dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="348dp"
+        android:layout_marginRight="348dp"
         android:text="10000"
         android:textSize="16sp" />
 
@@ -31,13 +32,13 @@
         android:id="@+id/txtPaymentDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/txtPaymentAmount"
         android:layout_alignTop="@+id/txtPaymentID"
         android:layout_alignParentEnd="true"
-
         android:layout_alignParentRight="true"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="133dp"
-        android:layout_marginRight="133dp"
+        android:layout_marginTop="118dp"
+        android:layout_marginEnd="307dp"
+        android:layout_marginRight="307dp"
         android:text="01-12-2011"
         android:textSize="16sp" />
 
@@ -45,13 +46,13 @@
         android:id="@+id/txtPaymentTRID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/txtPaymentDate"
         android:layout_alignTop="@+id/txtPaymentID"
         android:layout_alignParentEnd="true"
-
         android:layout_alignParentRight="true"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="236dp"
-        android:layout_marginRight="236dp"
+        android:layout_marginTop="63dp"
+        android:layout_marginEnd="382dp"
+        android:layout_marginRight="382dp"
         android:text="1"
         android:textSize="16sp" />
 
@@ -59,13 +60,13 @@
         android:id="@+id/txtPaymentType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:layout_below="@id/txtPaymentTRID"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="104dp"
-        android:layout_marginLeft="104dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="105dp"
         android:text="Credit"
         android:textSize="16dp" />
 
@@ -75,13 +76,13 @@
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_alignParentTop="true"
-
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginRight="52dp"
         android:layout_marginBottom="7dp"
-        android:layout_marginRight="28dp"
-        android:background="@drawable/button_round1"
 
+        android:background="@drawable/button_round1"
         android:text="Delete" />
 </RelativeLayout>
