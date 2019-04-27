@@ -8,8 +8,10 @@ import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 
 import com.example.www.CRUD.UserCRUD;
+import com.example.www.adapter.UserAdapter;
 
 public class DeleteUser extends AppCompatActivity {
     EditText et;
@@ -18,25 +20,15 @@ public class DeleteUser extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.delete_layout);
-        et=(EditText)findViewById(R.id.idtodelete);
-        DelBtn=(Button)findViewById(R.id.btnDelete);
-        et.setHint("Enter UserID to Delete");
-        et.setInputType(InputType.TYPE_CLASS_NUMBER);
-        et.setInputType(InputType.TYPE_CLASS_PHONE);
-        DelBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    new UserCRUD(DeleteUser.this).deleteByID(Integer.parseInt(et.getText().toString()));
-                    ShowDialog("User Delete Successfully");
-                }catch (Exception e){
-                    ShowDialog(e.getMessage());
-                }
-            }
-        });
-
-
+        setContentView(R.layout.dels);
+        ListView lv = (ListView) findViewById(R.id.lvdel);
+        UserAdapter AL = new UserAdapter(this, new UserCRUD(this).viewall(), "delete");
+        if(AL.getCount()==0){
+            ShowDialog("No records found!");
+        }
+        else {
+            lv.setAdapter(AL);
+        }
     }
     public void ShowDialog(String Message)
     {

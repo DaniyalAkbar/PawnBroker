@@ -11,6 +11,9 @@ public class payment {
     String pdate;
 
 
+    String Type;
+
+
     public int getPid() { return PID; }
 
     public void setPid(int PID) { this.PID = PID; }
@@ -35,6 +38,14 @@ public class payment {
     public void setPdate(String pdate) {
         this.pdate = pdate;
     }
+    public String getType() {
+        return Type;
+    }
+
+    public void setType(String type) {
+        Type = type;
+    }
+
 }
 
 

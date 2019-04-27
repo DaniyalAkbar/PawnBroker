@@ -19,11 +19,11 @@ public class PaymentCRUD {
         d.OpenorCreatDB();
     }
     public void addPayment(payment u){
-        String sql = "insert into payment(amount, pdate, TrID) values('"+u.getAmount()+"','"+u.getPdate()+"', '"+u.getTrID()+"')";
+        String sql = "insert into payment(amount, pdate, TrID,type) values('"+u.getAmount()+"','"+u.getPdate()+"', '"+u.getTrID()+"','"+u.getType()+"')";
         d.executequery(sql);
     }
     public void updatePayment(payment u){
-        String sql = "update payment set amount='"+u.getAmount()+"',pdate='"+u.getPdate()+"' TrID='"+u.getTrID()+"' where pid='"+u.getPid()+"'  ";
+        String sql = "update payment set amount='"+u.getAmount()+"',pdate='"+u.getPdate()+"', TrID='"+u.getTrID()+"',type='"+u.getType()+"' where pid='"+u.getPid()+"'  ";
         d.executequery(sql);
     }
     public void deletePayment(int pid){
@@ -31,20 +31,17 @@ public class PaymentCRUD {
         d.executequery(sql);
     }
 
-    public ArrayList<String> viewAllPayments(){
+    public ArrayList<payment> viewAllPayments(){
         Cursor c = d.executerawquery("select * from payment");
-        ArrayList<String> getPayments = new ArrayList<>();
+        ArrayList<payment> getPayments = new ArrayList<>();
         c.moveToFirst();
         while(!c.isAfterLast()){
-            String u ;
-            u=String.valueOf(c.getInt(c.getColumnIndex("PID")));
-            u+="\t";
-            u+=String.valueOf(c.getFloat(c.getColumnIndex("amount")));
-            u+="\t";
-            u+=String.valueOf(c.getString(c.getColumnIndex("pdate")));
-            u+="\t";
-            u+=String.valueOf(c.getInt(c.getColumnIndex("TrID")));
-
+            payment u= new payment() ;
+            u.setPid(c.getInt(c.getColumnIndex("PID")));
+            u.setAmount(c.getFloat(c.getColumnIndex("amount")));
+            u.setPdate(c.getString(c.getColumnIndex("pdate")));
+            u.setTrID(c.getInt(c.getColumnIndex("TrID")));
+            u.setType(c.getString(c.getColumnIndex("type")));
             getPayments.add(u);
             //Toast.makeText(context, getPayments.get(0).toString(), Toast.LENGTH_SHORT).show();
             c.moveToNext();
@@ -65,6 +62,7 @@ public class PaymentCRUD {
             u+="\t";
             u+=String.valueOf(c.getInt(c.getColumnIndex("TrID")));
 
+            u+=String.valueOf(c.getInt(c.getColumnIndex("type")));
             getPayments.add(u);
             //Toast.makeText(context, getPayments.get(0).toString(), Toast.LENGTH_SHORT).show();
             c.moveToNext();
@@ -84,6 +82,8 @@ public class PaymentCRUD {
             u+=String.valueOf(c.getFloat(c.getColumnIndex("amount")));
             u+="\t";
             u+=String.valueOf(c.getInt(c.getColumnIndex("TrID")));
+            u+=String.valueOf(c.getInt(c.getColumnIndex("type")));
+
 
 
             getPayments.add(u);
@@ -106,7 +106,7 @@ public class PaymentCRUD {
             u+=String.valueOf(c.getFloat(c.getColumnIndex("amount")));
             u+="\t";
             u+=String.valueOf(c.getInt(c.getColumnIndex("TrID")));
-
+            u+=String.valueOf(c.getInt(c.getColumnIndex("type")));
             getPayments.add(u);
             //Toast.makeText(context, getPayments.get(0).toString(), Toast.LENGTH_SHORT).show();
             c.moveToNext();

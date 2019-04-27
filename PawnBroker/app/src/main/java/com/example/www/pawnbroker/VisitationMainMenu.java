@@ -15,7 +15,6 @@ public class VisitationMainMenu extends AppCompatActivity {
         setContentView(R.layout.mainmenu_visitation);
         addbtn=(Button)findViewById(R.id.addVisitationBtn);
         viewbtn=(Button)findViewById(R.id.viewVisitationBtn);
-        updatebtn=(Button)findViewById(R.id.updateVisitationBtn);
         deletebtn=(Button)findViewById(R.id.deleteVisitationBtn);
         searchbtn=(Button)findViewById(R.id.searchVisitationBtn);
         deletebtn.setOnClickListener(new View.OnClickListener() {
@@ -40,12 +39,6 @@ public class VisitationMainMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(VisitationMainMenu.this,SearchVisitations.class));
-            }
-        });
-        updatebtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(VisitationMainMenu.this,UpdateVisitation.class));
             }
         });
 

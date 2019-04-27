@@ -15,7 +15,6 @@ public class PaymentMainMenu extends AppCompatActivity {
         setContentView(R.layout.mainmenu_payment);
         addbtn=(Button)findViewById(R.id.addPaymentBtn);
         viewbtn=(Button)findViewById(R.id.viewPaymentBtn);
-        updatebtn=(Button)findViewById(R.id.updatePaymentBtn);
         deletebtn=(Button)findViewById(R.id.deletePaymentBtn);
         searchbtn=(Button)findViewById(R.id.searchPaymentBtn);
         deletebtn.setOnClickListener(new View.OnClickListener() {
@@ -40,12 +39,6 @@ public class PaymentMainMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(PaymentMainMenu.this,SearchPayment.class));
-            }
-        });
-        updatebtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(PaymentMainMenu.this,UpdatePayment.class));
             }
         });
 

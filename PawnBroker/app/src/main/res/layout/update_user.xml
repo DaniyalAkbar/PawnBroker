@@ -23,7 +23,7 @@
         android:id="@+id/txtFirstName"
         android:background="#f5f5f5"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_below="@+id/txttitle"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
@@ -37,7 +37,7 @@
         android:id="@+id/txtUserID"
         android:background="#f5f5f5"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_below="@+id/txttitle"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
@@ -50,7 +50,7 @@
     <EditText
         android:id="@+id/txtLastName"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:background="#f5f5f5"
         android:layout_below="@+id/txttitle"
         android:layout_alignParentEnd="true"
@@ -64,16 +64,16 @@
     <EditText
         android:id="@+id/txtRegDate"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#f5f5f5"
+        android:layout_height="35dp"
         android:layout_below="@+id/txttitle"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="253dp"
-        android:layout_marginEnd="13dp"
-        android:layout_marginRight="13dp"
-        android:width="200dp" />
+        android:layout_marginEnd="19dp"
+        android:layout_marginRight="19dp"
+        android:width="200dp"
+        android:background="#f5f5f5" />
 
     <TextView
         android:id="@+id/textView3"

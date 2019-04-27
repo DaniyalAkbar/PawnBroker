@@ -31,19 +31,16 @@ public class AnnouncementsCRUD {
         String sql = "delete from announcements where AID= "+AID+"; ";
         d.executequery(sql);
     }
-    public  ArrayList<String> viewAllAnnouncements(){
+    public  ArrayList<announcements> viewAllAnnouncements(){
         Cursor c = d.executerawquery("select * from announcements");
-        ArrayList<String> getAnnouncements = new ArrayList<>();
+        ArrayList<announcements> getAnnouncements = new ArrayList<>();
         c.moveToFirst();
             while(!c.isAfterLast()){
-                String u ;
-                u = String.valueOf(c.getInt(c.getColumnIndex("AID")));
-                u += "\t";
-                u += c.getString(c.getColumnIndex("announcement"));
-                u += "\t";
-                u += c.getString(c.getColumnIndex("adate"));
-                u += "\t";
-                u += c.getString(c.getColumnIndex("type"));
+                announcements u = new announcements();
+                u.setAID(c.getInt(c.getColumnIndex("AID")));
+                u.setAnnouncement(c.getString(c.getColumnIndex("announcement")));
+                u.setDate(c.getString(c.getColumnIndex("adate")));
+                u.setType(c.getString(c.getColumnIndex("type")));
 
                 getAnnouncements.add(u);
                 //Toast.makeText(context, getAnnouncements.get(0).toString(), Toast.LENGTH_SHORT).show();

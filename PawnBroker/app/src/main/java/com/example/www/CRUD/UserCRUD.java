@@ -36,19 +36,16 @@ public class UserCRUD {
         String sql = "update users set Fname='"+u.getFname()+"',Lname='"+u.getLname()+"',regdate='"+u.getRegDate()+"' where UID='"+u.getUID()+"' ";
         d.executequery(sql);
     }
-    public  ArrayList<String> viewall(){
+    public  ArrayList<users> viewall(){
         Cursor c = d.executerawquery("select * from users");
-        ArrayList<String> getusers = new ArrayList<>();
+        ArrayList<users> getusers = new ArrayList<>();
         c.moveToFirst();
         while(!c.isAfterLast()){
-            String u;
-            u=String.valueOf(c.getInt(c.getColumnIndex("UID")));
-            u+="\t";
-            u+=c.getString(c.getColumnIndex("Fname"));
-            u+=" ";
-            u+=c.getString(c.getColumnIndex("Lname"));
-            u+="\t";
-            u+=c.getString(c.getColumnIndex("regdate"));
+            users u=new users();
+            u.setUID(c.getInt(c.getColumnIndex("UID")));
+            u.setFname(c.getString(c.getColumnIndex("Fname")));
+            u.setLname(c.getString(c.getColumnIndex("Lname")));
+            u.setRegDate(c.getString(c.getColumnIndex("regdate")));
 
             getusers.add(u);
             c.moveToNext();

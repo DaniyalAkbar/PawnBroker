@@ -31,22 +31,18 @@ public class TransactionCRUD {
         d.executequery(sql);
     }
 
-    public ArrayList<String> viewAllTransaction(){
+    public ArrayList<transaction> viewAllTransaction(){
         Cursor c = d.executerawquery("select * from transactions");
-        ArrayList<String> getTransaction = new ArrayList<>();
+        ArrayList<transaction> getTransaction = new ArrayList<>();
         c.moveToFirst();
         while(!c.isAfterLast()){
-            String u ;
-            u=String.valueOf(c.getInt(c.getColumnIndex("TrID")));
-            u+="\t";
-            u+=String.valueOf(c.getFloat(c.getColumnIndex("amount")));
-            u+=" ";
-            u+=c.getString(c.getColumnIndex("tdate"));
-            u+="\t";
-            u+=c.getString(c.getColumnIndex("type"));
+            transaction u = new transaction();
+            u.setTrID(c.getInt(c.getColumnIndex("TrID")));
+            u.setAmount(c.getFloat(c.getColumnIndex("amount")));
+            u.setTdate(c.getString(c.getColumnIndex("tdate")));
+            u.setType(c.getString(c.getColumnIndex("type")));
 
             getTransaction.add(u);
-            Toast.makeText(context, getTransaction.get(0).toString(), Toast.LENGTH_SHORT).show();
             c.moveToNext();
         }
         return  getTransaction;

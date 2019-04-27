@@ -32,20 +32,17 @@ public class VisitationCRUD {
         d.executequery(sql);
     }
 
-    public ArrayList<String> viewAllVisitation(){
+    public ArrayList<visitation> viewAllVisitation(){
         Cursor c = d.executerawquery("select * from visitation");
-        ArrayList<String> getVisitation = new ArrayList<>();
+        ArrayList<visitation> getVisitation = new ArrayList<>();
         c.moveToFirst();
 
         while(!c.isAfterLast()){
-            String u ;
-            u=String.valueOf(c.getInt(c.getColumnIndex("vid")));
-            u+="\t";
-            u+=c.getString(c.getColumnIndex("visitation"));
-            u+="\t";
-            u+=String.valueOf(c.getInt(c.getColumnIndex("empid")));
-            u+="\t";
-            u+=c.getString(c.getColumnIndex("vdate"));
+            visitation u =new visitation();
+            u.setVid(c.getInt(c.getColumnIndex("vid")));
+            u.setVisitation(c.getString(c.getColumnIndex("visitation")));
+            u.setEmpid(c.getInt(c.getColumnIndex("empid")));
+            u.setVdate(c.getString(c.getColumnIndex("vdate")));
 
             getVisitation.add(u);
             //Toast.makeText(context, getVisitation.get(0).toString(), Toast.LENGTH_SHORT).show();

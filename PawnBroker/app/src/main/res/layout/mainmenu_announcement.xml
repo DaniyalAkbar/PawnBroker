@@ -58,20 +58,6 @@
         app:layout_constraintVertical_bias="0.43"
         tools:layout_editor_absoluteX="116dp" />
 
-    <Button
-        android:id="@+id/updateAnnouncementBtn"
-        android:layout_width="230dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/deleteAnnouncementBtn"
-        android:background="@drawable/button_round1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="21dp"
-        android:text="Update Announcement"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.551"
-        tools:layout_editor_absoluteX="116dp" />
-
     <TextView
         android:id="@+id/textView2"
 

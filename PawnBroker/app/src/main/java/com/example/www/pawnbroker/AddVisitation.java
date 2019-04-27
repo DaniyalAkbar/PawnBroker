@@ -15,6 +15,7 @@ import com.example.www.model.announcements;
 import com.example.www.model.visitation;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class AddVisitation extends AppCompatActivity {
     Button AddVisitationBtnButton;
@@ -27,16 +28,21 @@ public class AddVisitation extends AppCompatActivity {
         Visitation=(EditText)findViewById(R.id.txtVisitation);
         VDate=(EditText)findViewById(R.id.txtDateVisitation);
         Empid=(EditText)findViewById(R.id.txtEmpIdFK);
+        VDate.setText(new SimpleDateFormat("dd-MM-yyyy").format(new Date()));
         AddVisitationBtnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-                    visitation v= new visitation();
-                    v.setVisitation(Visitation.getText().toString());
-                    v.setEmpid(Integer.parseInt(Empid.getText().toString()));
-                    v.setVdate(VDate.getText().toString());
-                    new VisitationCRUD(AddVisitation.this).addVisitation(v);
-                    ShowDialog("New Visitation Added Successfully");
+                    if(Visitation.getText().length()!=0 && Empid.getText().length()!=0 && VDate.getText().length()!=0) {
+                        visitation v = new visitation();
+                        v.setVisitation(Visitation.getText().toString());
+                        v.setEmpid(Integer.parseInt(Empid.getText().toString()));
+                        v.setVdate(VDate.getText().toString());
+                        new VisitationCRUD(AddVisitation.this).addVisitation(v);
+                        ShowDialog("New Visitation Added Successfully");
+                    }else {
+                        ShowDialog("Please enter all values!");
+                    }
 
                 }catch (SQLiteException e){
                     ShowDialog(e.getMessage());

@@ -29,11 +29,15 @@ public class AddEmployee extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    employee e= new employee();
-                    e.setFname(FirstName.getText().toString());
-                    e.setLname(LastName.getText().toString());
-                    new EmployeeCRUD(AddEmployee.this).addEmployee(e);
-                    ShowDialog("New Employee Added Successfully");
+                    if(FirstName.getText().length()!=0 && LastName.getText().length()!=0) {
+                        employee e = new employee();
+                        e.setFname(FirstName.getText().toString());
+                        e.setLname(LastName.getText().toString());
+                        new EmployeeCRUD(AddEmployee.this).addEmployee(e);
+                        ShowDialog("New Employee Added Successfully");
+                    }else {
+                        ShowDialog("Please enter all values");
+                    }
 
                 }catch (Exception e){
                     ShowDialog(e.getMessage());

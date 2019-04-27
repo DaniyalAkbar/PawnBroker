@@ -31,22 +31,18 @@ public class TestimonialCRUD {
         d.executequery(sql);
     }
 
-    public ArrayList<String> viewAllTestimonial(){
+    public ArrayList<testimonial> viewAllTestimonial(){
         Cursor c = d.executerawquery("select * from testimonial");
-        ArrayList<String> getTestimonial = new ArrayList<>();
+        ArrayList<testimonial> getTestimonial = new ArrayList<>();
         c.moveToFirst();
         while(!c.isAfterLast()){
-            String u ;
-            u=String.valueOf(c.getInt(c.getColumnIndex("TID")));
-            u+="\t";
-            u+=c.getString(c.getColumnIndex("testimonial"));
-            u+="\t";
-            u+=String.valueOf(c.getInt(c.getColumnIndex("UID")));
-            u+="\t";
-            u+=c.getString(c.getColumnIndex("adate"));
+            testimonial u= new testimonial();
+            u.setTid(c.getInt(c.getColumnIndex("TID")));
+            u.setTestimonial(c.getString(c.getColumnIndex("testimonial")));
+            u.setUid(c.getInt(c.getColumnIndex("UID")));
+            u.setAdate(c.getString(c.getColumnIndex("adate")));
 
             getTestimonial.add(u);
-            Toast.makeText(context, getTestimonial.get(0).toString(), Toast.LENGTH_SHORT).show();
             c.moveToNext();
         }
         return  getTestimonial;

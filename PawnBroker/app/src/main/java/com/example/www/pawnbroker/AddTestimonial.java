@@ -15,6 +15,7 @@ import com.example.www.model.announcements;
 import com.example.www.model.testimonial;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class AddTestimonial extends AppCompatActivity {
     Button AddTestimonialBtnButton;
@@ -29,18 +30,21 @@ public class AddTestimonial extends AppCompatActivity {
         UID=(EditText)findViewById(R.id.txtUIDFk);
         UID.setInputType(InputType.TYPE_CLASS_NUMBER);
         UID.setInputType(InputType.TYPE_CLASS_PHONE);
+        TDate.setText(new SimpleDateFormat("dd-MM-yyyy").format(new Date()));
         AddTestimonialBtnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-                    testimonial t= new testimonial();
+                    if(Testimonial.getText().length()!=0 && UID.getText().length()!=0 && TDate.getText().length()!=0) {
+                        testimonial t = new testimonial();
 
-                    t.setTestimonial(Testimonial.getText().toString().trim());
-                    t.setUid(Integer.parseInt(UID.getText().toString().trim()));
-                    t.setAdate(TDate.getText().toString());
+                        t.setTestimonial(Testimonial.getText().toString().trim());
+                        t.setUid(Integer.parseInt(UID.getText().toString().trim()));
+                        t.setAdate(TDate.getText().toString());
 
-                    new TestimonialCRUD(AddTestimonial.this).addTestimonial(t);
-                    ShowDialog("New Testimonial Added Successfully");
+                        new TestimonialCRUD(AddTestimonial.this).addTestimonial(t);
+                        ShowDialog("New Testimonial Added Successfully");
+                    }
 
                 }catch (Exception e){
                     ShowDialog(e.getMessage());

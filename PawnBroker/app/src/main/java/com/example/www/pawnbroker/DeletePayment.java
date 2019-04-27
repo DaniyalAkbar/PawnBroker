@@ -8,37 +8,26 @@ import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 
 import com.example.www.CRUD.AnnouncementsCRUD;
 import com.example.www.CRUD.PaymentCRUD;
+import com.example.www.adapter.PaymentAdapter;
 
 public class DeletePayment extends AppCompatActivity {
-    EditText et;
-    Button DelBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.delete_layout);
-        et=(EditText)findViewById(R.id.idtodelete);
-        DelBtn=(Button)findViewById(R.id.btnDelete);
-        et.setHint("Enter Payment ID to Delete");
-        et.setInputType(InputType.TYPE_CLASS_NUMBER);
-        et.setInputType(InputType.TYPE_CLASS_PHONE);
-        DelBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    new PaymentCRUD(DeletePayment.this).deletePayment(Integer.parseInt(et.getText().toString()));
-                    ShowDialog("Payment Deleted Successfully");
-                }catch (Exception e){
-                    ShowDialog(e.getMessage());
-                }
-
-            }
-        });
-
-
+        setContentView(R.layout.dels);
+        ListView lv = (ListView)findViewById(R.id.lvdel);
+        PaymentAdapter AL = new PaymentAdapter(this,new PaymentCRUD(this).viewAllPayments(),"delete");
+        if(AL.getCount()==0){
+            ShowDialog("No records found!");
+        }
+        else {
+            lv.setAdapter(AL);
+        }
     }
     public void ShowDialog(String Message)
     {

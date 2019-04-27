@@ -15,6 +15,7 @@ import com.example.www.model.announcements;
 import com.example.www.model.transaction;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class AddTransaction extends AppCompatActivity {
     Button AddTransactiontBtnButton;
@@ -27,17 +28,20 @@ public class AddTransaction extends AppCompatActivity {
         Amount=(EditText)findViewById(R.id.txAmount);
         TDate=(EditText)findViewById(R.id.txtDateTransaction);
         Type=(EditText)findViewById(R.id.txtTypeTransaction);
+        TDate.setText(new SimpleDateFormat("dd-MM-yyyy").format(new Date()));
         AddTransactiontBtnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-                    transaction t= new transaction();
-                    SimpleDateFormat fm = new SimpleDateFormat("dd-MM-yyyy");
-                    t.setAmount(Float.parseFloat(Amount.getText().toString()));
-                    t.setType(Type.getText().toString());
-                    t.setTdate(TDate.getText().toString());
-                    new TransactionCRUD(AddTransaction.this).addTransaction(t);
-                    ShowDialog("New Transaction Added Successfully");
+                    if(Amount.getText().length()!=0 && Type.getText().length()!=0 && TDate.getText().length()!=0) {
+                        transaction t = new transaction();
+                        SimpleDateFormat fm = new SimpleDateFormat("dd-MM-yyyy");
+                        t.setAmount(Float.parseFloat(Amount.getText().toString()));
+                        t.setType(Type.getText().toString());
+                        t.setTdate(TDate.getText().toString());
+                        new TransactionCRUD(AddTransaction.this).addTransaction(t);
+                        ShowDialog("New Transaction Added Successfully");
+                    }
 
                 }catch (SQLiteException e){
                     ShowDialog(e.getMessage());

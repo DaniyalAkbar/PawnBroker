@@ -17,7 +17,7 @@
 
     <EditText
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_below="@+id/txttitle"
         android:layout_alignParentEnd="true"
         android:background="#f5f5f5"
@@ -27,13 +27,14 @@
         android:layout_marginEnd="22dp"
         android:layout_marginRight="22dp"
         android:width="200dp"
+
         android:id="@+id/txAmount"
         />
 
     <EditText
         android:id="@+id/txtDateTransaction"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_below="@+id/txttitle"
         android:layout_alignParentEnd="true"
         android:background="#f5f5f5"
@@ -47,16 +48,16 @@
     <EditText
         android:id="@+id/txtTypeTransaction"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_below="@+id/txttitle"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:background="#f5f5f5"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="199dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:width="200dp" />
+        android:layout_marginTop="198dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginRight="22dp"
+        android:width="200dp"
+        android:background="#f5f5f5" />
 
     <TextView
         android:id="@+id/textView3"

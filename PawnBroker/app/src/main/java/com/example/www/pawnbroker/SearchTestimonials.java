@@ -1,6 +1,8 @@
 package com.example.www.pawnbroker;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
 import android.view.View;
@@ -15,6 +17,7 @@ import android.widget.Toast;
 import com.example.www.CRUD.TestimonialCRUD;
 
 import java.util.ArrayList;
+
 
 public class SearchTestimonials extends AppCompatActivity {
 
@@ -70,11 +73,26 @@ public class SearchTestimonials extends AppCompatActivity {
                     AL = new ArrayAdapter(SearchTestimonials.this,android.R.layout.simple_list_item_1,new TestimonialCRUD(SearchTestimonials.this).searchTestimonialByDate(input.toString()));
 
                 }
-                lv.setAdapter(AL);
+                if(AL.getCount()>0) {
+                    lv.setAdapter(AL);
+                }else{
+                    ShowDialog("No records found!");
+                }
             }
         });
 
-
-
+    }
+    public void ShowDialog(String Message)
+    {
+        AlertDialog.Builder AD = new AlertDialog.Builder(SearchTestimonials.this);
+        AD.setTitle("PawnBroker");
+        AD.setMessage(Message);
+        AD.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+        AD.show();
     }
 }

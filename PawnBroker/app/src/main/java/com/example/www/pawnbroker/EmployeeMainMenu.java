@@ -15,7 +15,6 @@ public class EmployeeMainMenu extends AppCompatActivity {
         setContentView(R.layout.mainmenu_employee);
         addbtn=(Button)findViewById(R.id.addEmployeeBtn);
         viewbtn=(Button)findViewById(R.id.viewEmployeeBtn);
-        updatebtn=(Button)findViewById(R.id.updateEmployeeBtn);
         deletebtn=(Button)findViewById(R.id.deleteEmployeeBtn);
         searchbtn=(Button)findViewById(R.id.searchEmployeeBtn);
         deletebtn.setOnClickListener(new View.OnClickListener() {
@@ -40,12 +39,6 @@ public class EmployeeMainMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(EmployeeMainMenu.this,SearchEmployee.class));
-            }
-        });
-        updatebtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(EmployeeMainMenu.this,UpdateEmployee.class));
             }
         });
 

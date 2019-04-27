@@ -1,6 +1,8 @@
 package com.example.www.pawnbroker;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -57,11 +59,27 @@ public class SearchUser extends AppCompatActivity {
                     //Toast.makeText(SearchUser.this, "u entered Reg Date", Toast.LENGTH_SHORT).show();
                     AL = new ArrayAdapter(SearchUser.this,android.R.layout.simple_list_item_1,new UserCRUD(SearchUser.this).searchUserByRegDate(input.toString()));
                 }
-                lv.setAdapter(AL);
+
+                if(AL.getCount()>0) {
+                    lv.setAdapter(AL);
+                }else{
+                    ShowDialog("No records found!");
+                }
             }
         });
 
-
-
+    }
+    public void ShowDialog(String Message)
+    {
+        AlertDialog.Builder AD = new AlertDialog.Builder(SearchUser.this);
+        AD.setTitle("PawnBroker");
+        AD.setMessage(Message);
+        AD.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+        AD.show();
     }
 }

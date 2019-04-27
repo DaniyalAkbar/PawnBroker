@@ -8,37 +8,28 @@ import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 
 import com.example.www.CRUD.EmployeeCRUD;
 import com.example.www.CRUD.TransactionCRUD;
+import com.example.www.adapter.TransactionAdapter;
 
 public class DeleteTransaction extends AppCompatActivity {
-    EditText et;
-    Button DelBtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.delete_layout);
-        et=(EditText)findViewById(R.id.idtodelete);
-        DelBtn=(Button)findViewById(R.id.btnDelete);
-        et.setHint("Enter Transaction ID to Delete");
-        et.setInputType(InputType.TYPE_CLASS_NUMBER);
-        et.setInputType(InputType.TYPE_CLASS_PHONE);
-        DelBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    new TransactionCRUD(DeleteTransaction.this).deleteTransaction(Integer.parseInt(et.getText().toString()));
-                    ShowDialog("Transaction Deleted Successfully");
-                }catch (Exception e){
-                    ShowDialog(e.getMessage());
-                }
+        setContentView(R.layout.dels);
+        ListView lv =(ListView)findViewById(R.id.lvdel);
+        TransactionAdapter AL = new TransactionAdapter(this,new TransactionCRUD(this).viewAllTransaction(),"delete");
 
-            }
-        });
-
-
+        if(AL.getCount()==0){
+            ShowDialog("No records found!");
+        }
+        else {
+            lv.setAdapter(AL);
+        }
     }
     public void ShowDialog(String Message)
     {

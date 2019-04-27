@@ -31,17 +31,15 @@ public class EmployeeCRUD {
         d.executequery(sql);
     }
 
-    public ArrayList<String> viewAllEmployee(){
+    public ArrayList<employee> viewAllEmployee(){
         Cursor c = d.executerawquery("select * from employee");
-        ArrayList<String> getEmployee = new ArrayList<>();
+        ArrayList<employee> getEmployee = new ArrayList<>();
         c.moveToFirst();
         while(!c.isAfterLast()){
-            String u;
-            u=String.valueOf(c.getInt(c.getColumnIndex("empid")));
-            u+="\t";
-            u+=c.getString(c.getColumnIndex("Fname"));
-            u+="\t";
-            u+=c.getString(c.getColumnIndex("Lname"));
+            employee u= new employee();
+            u.setEmpid(c.getInt(c.getColumnIndex("empid")));
+            u.setFname(c.getString(c.getColumnIndex("Fname")));
+            u.setLname(c.getString(c.getColumnIndex("Lname")));
 
             getEmployee.add(u);
             c.moveToNext();

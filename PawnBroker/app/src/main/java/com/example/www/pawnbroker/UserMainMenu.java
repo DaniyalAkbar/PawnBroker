@@ -15,7 +15,7 @@ public class UserMainMenu extends AppCompatActivity {
         setContentView(R.layout.mainmenu_user);
         addbtn=(Button)findViewById(R.id.addUserBtn);
         viewbtn=(Button)findViewById(R.id.viewUserBtn);
-        updatebtn=(Button)findViewById(R.id.updateUserBtn);
+
         deletebtn=(Button)findViewById(R.id.deleteUserBtn);
         searchbtn=(Button)findViewById(R.id.searchUserBtn);
         deletebtn.setOnClickListener(new View.OnClickListener() {
@@ -40,12 +40,6 @@ public class UserMainMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(UserMainMenu.this, SearchUser.class));
-            }
-        });
-        updatebtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(UserMainMenu.this,UpdateUser.class));
             }
         });
 

@@ -15,10 +15,11 @@ import com.example.www.model.payment;
 import com.example.www.model.transaction;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class AddPayment extends AppCompatActivity {
     Button AddPaymenttBtnButton;
-    EditText Amount,PDate,Trid;
+    EditText Amount,PDate,Trid,PaymentType;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,17 +28,24 @@ public class AddPayment extends AppCompatActivity {
         Amount=(EditText)findViewById(R.id.txAmount);
         PDate=(EditText)findViewById(R.id.txtDatePayment);
         Trid=(EditText)findViewById(R.id.txtIDTransaction);
+        PaymentType=(EditText)findViewById(R.id.txtTypePayment);
+        PDate.setText(new SimpleDateFormat("dd-MM-yyyy").format(new Date()));
         AddPaymenttBtnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-                    payment p= new payment();
-                    SimpleDateFormat fm = new SimpleDateFormat("dd-MM-yyyy");
-                    p.setAmount(Float.parseFloat(Amount.getText().toString()));
-                    p.setTrID(Integer.parseInt(Trid.getText().toString()));
-                    p.setPdate(PDate.getText().toString());
-                    new PaymentCRUD(AddPayment.this).addPayment(p);
-                    ShowDialog("New Payment Added Successfully");
+                    if(Amount.getText().length()!=0 && Trid.getText().length()!=0 && PDate.getText().length()!=0 && PaymentType.getText().length()!=0 ) {
+                        payment p = new payment();
+                        SimpleDateFormat fm = new SimpleDateFormat("dd-MM-yyyy");
+                        p.setAmount(Float.parseFloat(Amount.getText().toString()));
+                        p.setTrID(Integer.parseInt(Trid.getText().toString()));
+                        p.setPdate(PDate.getText().toString());
+                        p.setType(PaymentType.getText().toString());
+                        new PaymentCRUD(AddPayment.this).addPayment(p);
+                        ShowDialog("New Payment Added Successfully");
+                    }else {
+                        ShowDialog("Please enter all values!");
+                    }
 
                 }catch (SQLiteException e){
                     ShowDialog(e.getMessage());

@@ -1,7 +1,9 @@
 package com.example.www.pawnbroker;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.renderscript.ScriptGroup;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
 import android.view.View;
@@ -71,11 +73,27 @@ public class SearchTransactions extends AppCompatActivity {
                     AL = new ArrayAdapter(SearchTransactions.this,android.R.layout.simple_list_item_1,new TransactionCRUD(SearchTransactions.this).searchTransactionByDate(input.toString()));
 
                 }
-                lv.setAdapter(AL);
+
+                if(AL.getCount()>0) {
+                    lv.setAdapter(AL);
+                }else{
+                    ShowDialog("No records found!");
+                }
             }
         });
 
-
-
+   }
+    public void ShowDialog(String Message)
+    {
+        AlertDialog.Builder AD = new AlertDialog.Builder(SearchTransactions.this);
+        AD.setTitle("PawnBroker");
+        AD.setMessage(Message);
+        AD.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+        AD.show();
     }
 }

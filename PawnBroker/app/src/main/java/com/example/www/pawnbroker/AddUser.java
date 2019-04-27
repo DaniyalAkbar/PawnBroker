@@ -15,6 +15,7 @@ import com.example.www.CRUD.UserCRUD;
 import com.example.www.model.users;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.ExecutionException;
 
@@ -25,22 +26,28 @@ public class AddUser extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_user);
+
         AddUserBtnButton=(Button)findViewById(R.id.txtUserSubmitBtn);
         FirstName=(EditText)findViewById(R.id.txtFirstName);
         RegDate=(EditText)findViewById(R.id.txtRegDate);
         LastName=(EditText)findViewById(R.id.txtLastName);
+        RegDate.setText(new SimpleDateFormat("dd-MM-yyyy").format(new Date()));
         AddUserBtnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-                    users u= new users();
+                    if(FirstName.getText().length()!=0 && LastName.getText().length()!=0 && RegDate.getText().length()!=0) {
+                        users u = new users();
 
-                    u.setFname(FirstName.getText().toString());
-                    u.setLname(LastName.getText().toString());
-                    u.setRegDate(RegDate.getText().toString());
-                    //Toast.makeText(AddUser.this, u.getRegDate(), Toast.LENGTH_SHORT).show();
-                    new UserCRUD(AddUser.this).add(u);
-                    ShowDialog("New User Added Successfully");
+                        u.setFname(FirstName.getText().toString());
+                        u.setLname(LastName.getText().toString());
+                        u.setRegDate(RegDate.getText().toString());
+
+                        new UserCRUD(AddUser.this).add(u);
+                        ShowDialog("New User Added Successfully");
+                    }else {
+                        ShowDialog("Please enter all values!");
+                    }
 
                 }catch (Exception e){
                     ShowDialog(e.getMessage());

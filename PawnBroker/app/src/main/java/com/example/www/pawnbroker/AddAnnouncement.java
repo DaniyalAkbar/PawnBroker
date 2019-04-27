@@ -14,6 +14,7 @@ import com.example.www.model.announcements;
 import com.example.www.model.users;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class AddAnnouncement extends AppCompatActivity {
     Button AddAnnouncementBtnButton;
@@ -26,17 +27,24 @@ public class AddAnnouncement extends AppCompatActivity {
         Annoucncement=(EditText)findViewById(R.id.txtAnnouncement);
         ADate=(EditText)findViewById(R.id.txtDateAnnouncement);
         Type=(EditText)findViewById(R.id.txtTypeAnnouncement);
+        ADate.setText(new SimpleDateFormat("dd-MM-yyyy").format(new Date()));
         AddAnnouncementBtnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-                    announcements a= new announcements();
-                    SimpleDateFormat fm = new SimpleDateFormat("dd-MM-yyyy");
-                    a.setAnnouncement(Annoucncement.getText().toString());
-                    a.setType(Type.getText().toString());
-                    a.setDate(ADate.getText().toString());
-                    new AnnouncementsCRUD(AddAnnouncement.this).addAnnouncement(a);
-                    ShowDialog("New Annoucement Added Successfully");
+                    if(Type.getText().length()!=0 && Annoucncement.getText().length()!=0 && ADate.getText().length()!=0) {
+                        announcements a = new announcements();
+                        SimpleDateFormat fm = new SimpleDateFormat("dd-MM-yyyy");
+                        a.setAnnouncement(Annoucncement.getText().toString());
+                        a.setType(Type.getText().toString());
+                        a.setDate(ADate.getText().toString());
+                        new AnnouncementsCRUD(AddAnnouncement.this).addAnnouncement(a);
+                        ShowDialog("New Annoucement Added Successfully");
+                    }
+                    else
+                    {
+                        ShowDialog("Please enter all values!");
+                    }
 
                 }catch (Exception e){
                     ShowDialog("Incorrect Date Format. Please Try Again");

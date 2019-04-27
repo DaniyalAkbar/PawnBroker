@@ -1,6 +1,7 @@
 package com.example.www.pawnbroker;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -28,19 +29,33 @@ public class UpdateUser extends AppCompatActivity {
         RegDate=(EditText)findViewById(R.id.txtRegDate);
         UserID.setInputType(InputType.TYPE_CLASS_NUMBER);
         UserID.setInputType(InputType.TYPE_CLASS_PHONE);
+        UserID.setText(getIntent().getStringExtra("UID"));
+        FirstName.setText(getIntent().getStringExtra("FNAME"));
+        LastName.setText(getIntent().getStringExtra("LNAME"));
+        RegDate.setText(getIntent().getStringExtra("REGDATE"));
+        UserID.setEnabled(false);
+
+
         AddUserBtnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-                    users u= new users();
-                    SimpleDateFormat fm = new SimpleDateFormat("dd-MM-yyyy");
-                    u.setUID(Integer.parseInt(UserID.getText().toString()));
-                    u.setFname(FirstName.getText().toString());
-                    u.setLname(LastName.getText().toString());
-                    u.setRegDate(RegDate.getText().toString());
+                    if(UserID.getText().length()!=0 && FirstName.getText().length()!=0 && LastName.getText().length()!=0 && RegDate.getText().length()!=0) {
+                        users u = new users();
+                        SimpleDateFormat fm = new SimpleDateFormat("dd-MM-yyyy");
+                        u.setUID(Integer.parseInt(UserID.getText().toString()));
+                        u.setFname(FirstName.getText().toString());
+                        u.setLname(LastName.getText().toString());
+                        u.setRegDate(RegDate.getText().toString());
 
-                    new UserCRUD(UpdateUser.this).update(u);
-                    ShowDialog("User Updated Successfully");
+                        new UserCRUD(UpdateUser.this).update(u);
+                        ShowDialog("User Updated Successfully");
+                        Intent i = new Intent("refresh");
+                        sendBroadcast(i);
+                    }else {
+                        ShowDialog("Please enter all values!");
+                    }
+
 
                 }catch (Exception e){
                     ShowDialog("Incorrect Date Format. Please Try Again");

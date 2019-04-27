@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+    <TextView
+        android:id="@+id/txtAnnouncmentID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="396dp"
+        android:layout_marginRight="396dp"
+        android:text="1"
+
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/txtAnnouncmentAnnounce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="306dp"
+        android:layout_marginRight="306dp"
+        android:text="Hello World"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/txtAnnouncmentType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="218dp"
+        android:layout_marginRight="218dp"
+        android:text="Something"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/txtAnnouncmentDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="126dp"
+        android:layout_marginRight="126dp"
+        android:text="10.12.2012"
+        android:textSize="16dp" />
+
+    <Button
+        android:id="@+id/btn_Announcment"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="7dp"
+        android:layout_marginRight="28dp"
+        android:background="@drawable/button_round1"
+
+        android:text="Delete" />
+</RelativeLayout>

@@ -15,7 +15,6 @@ public class TestimonialMainMenu extends AppCompatActivity {
         setContentView(R.layout.mainmenu_testimonial);
         addbtn=(Button)findViewById(R.id.addTestimonialBtn);
         viewbtn=(Button)findViewById(R.id.viewTestimonialBtn);
-        updatebtn=(Button)findViewById(R.id.updateTestimonialBtn);
         deletebtn=(Button)findViewById(R.id.deleteTestimonialBtn);
         searchbtn=(Button)findViewById(R.id.searchTestimonialBtn);
         deletebtn.setOnClickListener(new View.OnClickListener() {
@@ -40,12 +39,6 @@ public class TestimonialMainMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(TestimonialMainMenu.this,SearchTestimonials.class));
-            }
-        });
-        updatebtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(TestimonialMainMenu.this,UpdateTestimonial.class));
             }
         });
 

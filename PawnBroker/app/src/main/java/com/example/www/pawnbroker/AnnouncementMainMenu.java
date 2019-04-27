@@ -15,7 +15,6 @@ public class AnnouncementMainMenu extends AppCompatActivity {
         setContentView(R.layout.mainmenu_announcement);
         addbtn=(Button)findViewById(R.id.addAnnouncementBtn);
         viewbtn=(Button)findViewById(R.id.viewAnnouncementBtn);
-        updatebtn=(Button)findViewById(R.id.updateAnnouncementBtn);
         deletebtn=(Button)findViewById(R.id.deleteAnnouncementBtn);
         searchbtn=(Button)findViewById(R.id.searchAnnouncementBtn);
         deletebtn.setOnClickListener(new View.OnClickListener() {
@@ -42,12 +41,7 @@ public class AnnouncementMainMenu extends AppCompatActivity {
                 startActivity(new Intent(AnnouncementMainMenu.this,SearchAnnouncements.class));
             }
         });
-        updatebtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(AnnouncementMainMenu.this,UpdateAnnouncement.class));
-            }
-        });
+
 
 
 

@@ -19,7 +19,7 @@
         android:background="#f5f5f5"
         android:id="@+id/txAmount"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_below="@+id/txttitle"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
@@ -33,7 +33,7 @@
         android:background="#f5f5f5"
         android:id="@+id/txtTrID"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_below="@+id/txttitle"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
@@ -47,7 +47,7 @@
         android:background="#f5f5f5"
         android:id="@+id/txtDateTransaction"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_below="@+id/txttitle"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
@@ -58,18 +58,18 @@
         android:width="200dp" />
 
     <EditText
-        android:background="#f5f5f5"
         android:id="@+id/txtTypeTransaction"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_below="@+id/txttitle"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="271dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginRight="11dp"
-        android:width="200dp" />
+        android:layout_marginTop="270dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
+        android:width="200dp"
+        android:background="#f5f5f5" />
 
     <TextView
         android:id="@+id/textView3"

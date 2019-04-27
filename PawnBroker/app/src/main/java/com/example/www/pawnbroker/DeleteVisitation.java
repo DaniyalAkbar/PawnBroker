@@ -8,37 +8,26 @@ import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 
 import com.example.www.CRUD.TransactionCRUD;
 import com.example.www.CRUD.VisitationCRUD;
+import com.example.www.adapter.VisitationAdapter;
 
 public class DeleteVisitation extends AppCompatActivity {
-    EditText et;
-    Button DelBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.delete_layout);
-        et=(EditText)findViewById(R.id.idtodelete);
-        DelBtn=(Button)findViewById(R.id.btnDelete);
-        et.setHint("Enter Visitation ID to Delete");
-        et.setInputType(InputType.TYPE_CLASS_NUMBER);
-        et.setInputType(InputType.TYPE_CLASS_PHONE);
-        DelBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    new VisitationCRUD(DeleteVisitation.this).deleteVisitation(Integer.parseInt(et.getText().toString()));
-                    ShowDialog("Visitation Deleted Successfully");
-                }catch (Exception e){
-                    ShowDialog(e.getMessage());
-                }
-
-            }
-        });
-
-
+        setContentView(R.layout.dels);
+        ListView lv = (ListView)findViewById(R.id.lvdel);
+        VisitationAdapter AL = new VisitationAdapter(this,new VisitationCRUD(this).viewAllVisitation(),"delete");
+        if(AL.getCount()==0){
+            ShowDialog("No records found!");
+        }
+        else {
+            lv.setAdapter(AL);
+        }
     }
     public void ShowDialog(String Message)
     {

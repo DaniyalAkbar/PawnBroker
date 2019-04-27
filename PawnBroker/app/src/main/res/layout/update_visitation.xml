@@ -16,9 +16,9 @@
         android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@+id/txtVisitationID"
+        android:id="@+id/txtVisitation"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:background="#f5f5f5"
         android:layout_below="@+id/txttitle"
         android:layout_alignParentEnd="true"
@@ -33,7 +33,7 @@
         android:id="@+id/txtVID"
         android:background="#f5f5f5"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_below="@+id/txttitle"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
@@ -47,7 +47,7 @@
         android:background="#f5f5f5"
         android:id="@+id/txtDateVisitation"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_below="@+id/txttitle"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
@@ -58,18 +58,18 @@
         android:width="200dp" />
 
     <EditText
-        android:background="#f5f5f5"
         android:id="@+id/txtEmpIdFK"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_below="@+id/txttitle"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="244dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:width="200dp" />
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
+        android:width="200dp"
+        android:background="#f5f5f5" />
 
     <TextView
         android:id="@+id/textView3"
